@@ -13,9 +13,11 @@ Tiedostot: `site/kuvat/esimerkit/<sivu>/<nimi>-{640,1280}.webp` ja `<nimi>-960.j
 
 | Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
 |---|---|---|---|---|---|
-| `hero` | Hero | [Chesley McCarty](https://unsplash.com/@thetangledtomato?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/ZimlF1xeZ8k](https://unsplash.com/photos/white-and-brown-dining-table-and-chairs-ZimlF1xeZ8k) | Unsplash License | rajattu, pakattu |
+| `pavut-ympyra` | Hero, pyöreä kuva | [Scott Soltys-Curry](https://unsplash.com/@heyscottcurry?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/_7CVm353m7A](https://unsplash.com/photos/a-close-up-of-a-machine-making-coffee-beans-_7CVm353m7A) | Unsplash License | rajattu neliöksi, pakattu (vain 640 ja 960 px) |
 | `lounas` | Viikon lounas | [Mary Potoplyak](https://unsplash.com/@driadadora?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/Hd0QSMK2LPw](https://unsplash.com/photos/two-bowls-of-carrot-soup-on-a-white-table-Hd0QSMK2LPw) | Unsplash License | rajattu, pakattu |
-| `pavut` | Pavut mukaan -kortti | [Scott Soltys-Curry](https://unsplash.com/@heyscottcurry?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/_7CVm353m7A](https://unsplash.com/photos/a-close-up-of-a-machine-making-coffee-beans-_7CVm353m7A) | Unsplash License | rajattu, pakattu |
+| `kaato` | Menu, kahvit | [Beau Carpenter](https://unsplash.com/@btcarpenter?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/KGR2u2rG6c4](https://unsplash.com/photos/a-coffee-maker-pouring-coffee-into-a-cup-KGR2u2rG6c4) | Unsplash License | rajattu, pakattu |
+| `leivonnaiset` | Menu, leivonnaiset | [Jennifer Burk](https://unsplash.com/@jenandjoon?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/rWWCQhrEaco](https://unsplash.com/photos/brown-bread-on-white-textile-rWWCQhrEaco) | Unsplash License | rajattu, pakattu |
+| `paahdin` | Pavut mukaan | [Nathan Dumlao](https://unsplash.com/@nate_dumlao?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/IxtmPV7YDaM](https://unsplash.com/photos/machine-grinding-coffee-IxtmPV7YDaM) | Unsplash License | rajattu, pakattu |
 
 ## Hiusstudio Kaislaranta (`/esimerkit/kaislaranta/`)
 
@@ -46,7 +48,8 @@ kuvakaappauksia yllä mainituista esimerkkisivuista, ja niissä näkyvät samat 
 |---|---|---|
 | Schibsted Grotesk | Palin Web, leipäteksti | SIL Open Font License 1.1 |
 | Archivo (rajattu: leveys 100–125 %, paino 600–900, latin) | Palin Web, otsikot | SIL Open Font License 1.1 (`site/fonts/OFL-archivo.txt`) |
-| Bricolage Grotesque | Pikkupaahtimo | SIL Open Font License 1.1 |
+| Young Serif | Pikkupaahtimo, otsikot | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-young-serif.txt`) |
+| Familjen Grotesk (latin) | Pikkupaahtimo, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-familjen-grotesk.txt`) |
 | Instrument Serif | Kaislaranta | SIL Open Font License 1.1 |
 | Big Shoulders Display | Kulmapää | SIL Open Font License 1.1 |
 

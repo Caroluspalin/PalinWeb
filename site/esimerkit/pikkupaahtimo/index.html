@@ -6,146 +6,181 @@
   <title>Kahvila Pikkupaahtimo – kahvila ja lounas</title>
   <meta name="description" content="Kahvila Pikkupaahtimo: oman paahtimon kahvit, kotitekoinen lounas arkisin ja leivonnaiset.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#2a1912">
+  <meta name="theme-color" content="#E3E4CF">
   <link rel="icon" href="data:,">
-  <link rel="preload" href="bricolage.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="tyylit.css">
+  <link rel="preload" href="young-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="familjen-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/kuvat/esimerkit/pikkupaahtimo/pavut-ympyra-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/pavut-ympyra-960.webp 960w" imagesizes="(min-width: 64rem) 60vw, 112vw" fetchpriority="high">
+  <link rel="stylesheet" href="tyylit.css?v=20261108b">
+  <script defer src="aukiolo.js?v=20261108b"></script>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-inner">
-      <a class="logo" href="#">Pikku<span>paahtimo</span></a>
-      <nav aria-label="Valikko">
-        <ul>
-          <li><a href="#lounas">Lounas</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#yhteys">Yhteystiedot</a></li>
-        </ul>
-      </nav>
+  <a class="ohitus" href="#sisalto">Siirry sisältöön</a>
+
+  <!--
+    Aukioloajat koneluettavana: aukiolo.js laskee näistä "Auki nyt" -tilan ja tämän päivän lounaan.
+    Viikonpäivät 1 = ma … 7 = su. Puuttuva päivä = suljettu.
+  -->
+  <div hidden id="aukiolo" data-ma="07:30-17:00" data-ti="07:30-17:00" data-ke="07:30-17:00" data-to="07:30-17:00" data-pe="07:30-17:00" data-la="09:00-16:00"></div>
+
+  <header class="yla">
+    <div class="kehys yla-sisa">
+      <a class="logo" href="#">Pikkupaahtimo</a>
+      <a class="tila" href="#yhteys" data-tila>Aukioloajat</a>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <div class="hero-text">
-          <p class="open"><span class="dot" aria-hidden="true"></span> Auki tänään 7.30–17</p>
+  <main id="sisalto">
+    <!-- Sävy 1: vaalein (raakapapu) -->
+    <section class="hero savy-1">
+      <div class="kehys hero-sisa">
+        <div class="hero-teksti">
           <h1>Kahvia, joka paahdetaan kulman takana.</h1>
-          <p class="hero-sub">Oman pienpaahtimon kahvit, kotitekoinen lounas arkisin ja pullaa, joka loppuu yleensä ennen kahta.</p>
-          <div class="hero-cta">
-            <a class="btn" href="#lounas">Viikon lounas</a>
-            <a class="btn btn-ghost" href="#yhteys">Löydä perille</a>
+          <p class="hero-lause">Oman pienpaahtimon kahvit, kotitekoinen lounas arkisin ja pulla, joka loppuu yleensä ennen kahta.</p>
+          <div class="napit">
+            <a class="nappi" href="#lounas">Viikon lounas</a>
+            <a class="nappi nappi-toissijainen" href="tel:+358400000000">Soita</a>
           </div>
         </div>
-        <picture class="hero-photo">
-            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/hero-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/hero-1280.webp 1280w" sizes="(min-width: 56rem) 40vw, 100vw">
-            <img src="/kuvat/esimerkit/pikkupaahtimo/hero-960.jpg" width="1280" height="1600" loading="eager" fetchpriority="high" decoding="async" alt="Valoisa kahvila, jossa on rottinkivalaisimia, kasveja ja suuret ikkunat">
+        <div class="allas" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/pavut-ympyra-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/pavut-ympyra-960.webp 960w" sizes="(min-width: 64rem) 60vw, 112vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/pavut-ympyra-960.jpg" width="960" height="960" alt="" fetchpriority="high" decoding="async">
           </picture>
+        </div>
       </div>
     </section>
 
-    <section id="lounas" class="lunch">
-      <div class="wrap">
-        <div class="lunch-grid">
-          <picture class="lunch-photo">
-            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/lounas-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/lounas-1280.webp 1280w" sizes="(min-width: 56rem) 30vw, 100vw">
-            <img src="/kuvat/esimerkit/pikkupaahtimo/lounas-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kaksi kulhoa kurpitsakeittoa ja kurpitsansiemeniä">
-          </picture>
+    <section class="tanaan savy-1" aria-label="Aukiolo ja osoite">
+      <div class="kehys">
+        <dl class="tanaan-rivi">
           <div>
-        <div class="head">
-          <h2>Viikon lounas</h2>
-          <p>Arkisin 10.30–14.00 · 12,90 € · sisältää salaatin, leivän ja kahvin</p>
-        </div>
-        <ol class="days">
-          <li><span class="day">Ma</span><span class="dish">Paahdettu kukkakaalikeitto ja yrttiöljy <small>VEG, G</small></span></li>
-          <li><span class="day">Ti</span><span class="dish">Kanaa, sitruunaa ja ohrattoa <small>L</small></span></li>
-          <li><span class="day">Ke</span><span class="dish">Lohikeitto ja ruisleipä <small>L, G</small></span></li>
-          <li><span class="day">To</span><span class="dish">Hernekeitto ja pannukakku, mansikkahillo <small>L</small></span></li>
-          <li><span class="day">Pe</span><span class="dish">Bataatti-linssicurry ja raita <small>VEG, G</small></span></li>
-        </ol>
+            <dt>Tänään</dt>
+            <dd data-tanaan>Ma–pe 7.30–17.00, la 9.00–16.00, su suljettu</dd>
           </div>
+          <div>
+            <dt>Osoite</dt>
+            <dd>Esimerkkikatu 12, 02100 Espoo</dd>
+          </div>
+          <div>
+            <dt>Puhelin</dt>
+            <dd><a href="tel:+358400000000">040 000 0000</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Sävy 2: vaalea paahto (kraft) -->
+    <section id="lounas" class="lounas savy-2">
+      <div class="kehys lounas-sisa">
+        <picture class="lounas-kuva">
+          <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/lounas-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/lounas-1280.webp 1280w" sizes="(min-width: 64rem) 34rem, 100vw">
+          <img src="/kuvat/esimerkit/pikkupaahtimo/lounas-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kaksi kulhoa kurpitsakeittoa ja kurpitsansiemeniä">
+        </picture>
+        <div class="lounas-teksti">
+          <h2>Viikon lounas</h2>
+          <p class="lounas-hinta">Arkisin 10.30–14.00, 12,90 €.<br>Salaatti, leipä ja kahvi kuuluvat hintaan.</p>
+          <ol class="paivat">
+            <li data-paiva="1"><span class="pv">Ma</span><span class="ruoka">Paahdettu kukkakaalikeitto ja yrttiöljy <small>VEG, G</small></span></li>
+            <li data-paiva="2"><span class="pv">Ti</span><span class="ruoka">Kanaa, sitruunaa ja ohrattoa <small>L</small></span></li>
+            <li data-paiva="3"><span class="pv">Ke</span><span class="ruoka">Lohikeitto ja ruisleipä <small>L, G</small></span></li>
+            <li data-paiva="4"><span class="pv">To</span><span class="ruoka">Hernekeitto ja pannukakku, mansikkahillo <small>L</small></span></li>
+            <li data-paiva="5"><span class="pv">Pe</span><span class="ruoka">Bataatti-linssicurry ja raita <small>VEG, G</small></span></li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <section id="menu" class="menu">
-      <div class="wrap menu-grid">
-        <div>
-          <h2>Kahvit</h2>
-          <ul class="price-list">
-            <li><span>Päivän suodatin</span><b>3,20</b></li>
-            <li><span>Espresso</span><b>3,00</b></li>
-            <li><span>Cappuccino</span><b>4,50</b></li>
-            <li><span>Kaura-latte</span><b>4,90</b></li>
-            <li><span>Kylmäuute (kesäisin)</span><b>4,50</b></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Leivonnaiset</h2>
-          <ul class="price-list">
-            <li><span>Korvapuusti</span><b>3,90</b></li>
-            <li><span>Mustikkapiirakka</span><b>4,50</b></li>
-            <li><span>Kardemummasolmu</span><b>4,20</b></li>
-            <li><span>Suklaakakku <small>G</small></span><b>5,20</b></li>
-            <li><span>Juustosämpylä</span><b>4,80</b></li>
-          </ul>
-        </div>
-        <aside class="beans">
-          <picture class="beans-photo">
-            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/pavut-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/pavut-1280.webp 1280w" sizes="(min-width: 56rem) 25vw, 100vw">
-            <img src="/kuvat/esimerkit/pikkupaahtimo/pavut-960.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Juuri paahdettuja kahvipapuja paahtimen jäähdytysaltaassa">
+    <!-- Sävy 3: keskipaahto (kaneli) -->
+    <section id="menu" class="menu savy-3">
+      <div class="kehys menu-sisa">
+        <div class="menu-lista">
+          <picture class="menu-kuva">
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/kaato-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/kaato-1280.webp 1280w" sizes="(min-width: 40rem) 46vw, 100vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/kaato-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kahvia suodatetaan kannusta lasikannuun">
           </picture>
+          <h2>Kahvit</h2>
+          <ul class="hinnat">
+            <li><span>Päivän suodatin</span><span>3,20</span></li>
+            <li><span>Espresso</span><span>3,00</span></li>
+            <li><span>Cappuccino</span><span>4,50</span></li>
+            <li><span>Kaura-latte</span><span>4,90</span></li>
+            <li><span>Kylmäuute (kesäisin)</span><span>4,50</span></li>
+          </ul>
+        </div>
+        <div class="menu-lista">
+          <picture class="menu-kuva">
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/leivonnaiset-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/leivonnaiset-1280.webp 1280w" sizes="(min-width: 40rem) 46vw, 78vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/leivonnaiset-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kardemummasolmuja uunipellillä">
+          </picture>
+          <h2>Leivonnaiset</h2>
+          <ul class="hinnat">
+            <li><span>Korvapuusti</span><span>3,90</span></li>
+            <li><span>Mustikkapiirakka</span><span>4,50</span></li>
+            <li><span>Kardemummasolmu</span><span>4,20</span></li>
+            <li><span>Suklaakakku <small>G</small></span><span>5,20</span></li>
+            <li><span>Juustosämpylä</span><span>4,80</span></li>
+          </ul>
+        </div>
+        <p class="menu-huom">Hinnat euroina. Kaurajuoma ja laktoositon maito ilman lisähintaa.</p>
+      </div>
+    </section>
+
+    <!-- Sävy 4: tumma paahto -->
+    <section class="pavut savy-4">
+      <div class="kehys pavut-sisa">
+        <picture class="pavut-kuva">
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/paahdin-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/paahdin-1280.webp 1280w" sizes="(min-width: 64rem) 40vw, 100vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/paahdin-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Juuri paahdetut pavut valuvat paahtimesta jäähdytysaltaaseen">
+          </picture>
+        <div class="pavut-teksti">
           <h2>Pavut mukaan</h2>
-          <p>Paahdamme pieniä eriä joka torstai. Talon sekoitus, 250 g.</p>
-          <p class="beans-price">13,50 €</p>
-        </aside>
+          <p>Paahdamme pieniä eriä joka torstai, ja tiskiltä saa aina tämän viikon erän. Talon sekoitus on pehmeä ja suklainen, sopii suodattimeen ja pressoon.</p>
+          <p class="pavut-hinta">Talon sekoitus 250 g <span>13,50 €</span></p>
+        </div>
+        <blockquote class="sitaatti">
+          <p>”Halusimme kahvilan, jossa paahtimo tuoksuu oven läpi ja lounas tehdään samana aamuna.”</p>
+          <footer>Pikkupaahtimo on perheyritys. Kahvila, paahtimo ja keittiö mahtuvat samaan pieneen kivijalkaan.</footer>
+        </blockquote>
       </div>
     </section>
 
-    <section class="about">
-      <div class="wrap about-inner">
-        <p class="quote">”Halusimme kahvilan, jossa paahtimo tuoksuu oven läpi ja lounas tehdään samana aamuna.”</p>
-        <p class="about-by">Kahvila Pikkupaahtimo on perheyritys. Kahvila, paahtimo ja keittiö mahtuvat samaan pieneen kivijalkaan.</p>
-      </div>
-    </section>
-
-    <section id="yhteys" class="contact">
-      <div class="wrap contact-grid">
+    <section id="yhteys" class="yhteys savy-4">
+      <div class="kehys yhteys-sisa">
         <div>
           <h2>Tervetuloa käymään</h2>
-          <dl class="hours">
+          <dl class="ajat">
             <div><dt>Ma–pe</dt><dd>7.30–17.00</dd></div>
             <div><dt>La</dt><dd>9.00–16.00</dd></div>
             <div><dt>Su</dt><dd>suljettu</dd></div>
           </dl>
-          <p class="addr">Esimerkkikatu 12<br>02100 Espoo</p>
-          <p class="addr"><a href="tel:+358400000000">040 000 0000</a><br><a href="mailto:hei@pikkupaahtimo.example">hei@pikkupaahtimo.example</a></p>
+          <p class="osoite">Esimerkkikatu 12<br>02100 Espoo</p>
+          <p class="osoite"><a href="tel:+358400000000">040 000 0000</a><br><a href="mailto:hei@pikkupaahtimo.example">hei@pikkupaahtimo.example</a></p>
         </div>
-        <figure class="map">
-          <svg viewBox="0 0 600 420" role="img" aria-label="Kartta: kahvila sijaitsee Esimerkkikadun ja Puistotien kulmassa">
-            <rect width="600" height="420" fill="#efe4d3"/>
-            <path d="M0 300h600M0 120h600M180 0v420M430 0v420" stroke="#fffaf2" stroke-width="26"/>
-            <path d="M-20 400C120 330 240 380 330 300S520 240 620 260" stroke="#fffaf2" stroke-width="14" fill="none"/>
-            <rect x="460" y="150" width="120" height="120" fill="#c9d6b0"/>
-            <rect x="20" y="150" width="130" height="120" fill="#e6d6bf"/>
-            <rect x="210" y="150" width="190" height="120" fill="#e6d6bf"/>
-            <rect x="210" y="20" width="190" height="80" fill="#e6d6bf"/>
-            <text x="300" y="309" font-size="15" text-anchor="middle" fill="#7a5a48">Esimerkkikatu</text>
-            <text x="440" y="60" font-size="15" fill="#7a5a48" transform="rotate(90 440 60)">Puistotie</text>
-            <text x="520" y="215" font-size="14" text-anchor="middle" fill="#56663e">Puisto</text>
-            <circle cx="400" cy="270" r="22" fill="#e2552e"/>
-            <circle cx="400" cy="270" r="8" fill="#fff"/>
+        <figure class="kartta">
+          <svg viewBox="0 0 600 420" role="img" aria-label="Kartta: kahvila on Esimerkkikadun ja Puistotien kulmassa">
+            <rect class="k-pohja" width="600" height="420"/>
+            <path class="k-katu" d="M0 300h600M0 120h600M180 0v420M430 0v420"/>
+            <path class="k-polku" d="M-20 400C120 330 240 380 330 300S520 240 620 260"/>
+            <rect class="k-puisto" x="460" y="150" width="120" height="120"/>
+            <rect class="k-kortteli" x="20" y="150" width="130" height="120"/>
+            <rect class="k-kortteli" x="210" y="150" width="190" height="120"/>
+            <rect class="k-kortteli" x="210" y="20" width="190" height="80"/>
+            <text class="k-teksti" x="300" y="306" text-anchor="middle">Esimerkkikatu</text>
+            <text class="k-teksti" x="440" y="60" transform="rotate(90 440 60)">Puistotie</text>
+            <circle class="k-merkki" cx="400" cy="270" r="22"/>
+            <circle class="k-merkki-sisa" cx="400" cy="270" r="8"/>
           </svg>
         </figure>
       </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot-inner">
+  <footer class="ala savy-4">
+    <div class="kehys ala-sisa">
       <p>© Kahvila Pikkupaahtimo</p>
-      <p>Kuvitteellinen yritys, esimerkkisivu · Sivut: <a href="/">Palin Web</a></p>
-      <p class="credit">Kuvat: <a href="https://unsplash.com/@thetangledtomato?utm_source=palinweb&amp;utm_medium=referral">Chesley McCarty</a>, <a href="https://unsplash.com/@driadadora?utm_source=palinweb&amp;utm_medium=referral">Mary Potoplyak</a>, <a href="https://unsplash.com/@heyscottcurry?utm_source=palinweb&amp;utm_medium=referral">Scott Soltys-Curry</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
+      <p>Kuvitteellinen yritys, esimerkkisivu.<br>Sivut: <a href="/">Palin Web</a></p>
+      <p class="kiitos">Kuvat: <a href="https://unsplash.com/@heyscottcurry?utm_source=palinweb&amp;utm_medium=referral">Scott Soltys-Curry</a>, <a href="https://unsplash.com/@driadadora?utm_source=palinweb&amp;utm_medium=referral">Mary Potoplyak</a>, <a href="https://unsplash.com/@btcarpenter?utm_source=palinweb&amp;utm_medium=referral">Beau Carpenter</a>, <a href="https://unsplash.com/@jenandjoon?utm_source=palinweb&amp;utm_medium=referral">Jennifer Burk</a>, <a href="https://unsplash.com/@nate_dumlao?utm_source=palinweb&amp;utm_medium=referral">Nathan Dumlao</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
     </div>
   </footer>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[ANALYTICS-TOKEN]"}'></script>

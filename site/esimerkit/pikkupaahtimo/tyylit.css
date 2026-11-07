@@ -1,115 +1,238 @@
+/* Kahvila Pikkupaahtimo: "Paahtoaste"
+   Sivu tummuu osio osiolta (sävyt 1–4) kuin papu paahdossa. Heron iso pyöreä kuva
+   kääntyy kerran sivun avautuessa. Fontit: Young Serif (otsikot), Familjen Grotesk (teksti). */
+
 @font-face {
-  font-family: "Bricolage";
-  src: url("bricolage.woff2") format("woff2");
-  font-weight: 200 800;
+  font-family: "Young Serif";
+  src: url("young-serif.woff2") format("woff2");
+  font-weight: 400;
   font-display: swap;
 }
-:root {
-  --espresso: #2a1912;
-  --cream: #f6eee2;
-  --tomato: #e2552e;
-  --tomato-dark: #b83a17;
-  --mustard: #e8b04b;
-  --ink: #2a1912;
-  --muted: #6b5246;
+@font-face {
+  font-family: "Familjen Grotesk";
+  src: url("familjen-grotesk.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
 }
+
+:root {
+  /* Sävyt vaaleasta tummaan. Jokaisella sävyllä on oma teksti- ja toissijainen väri (AA, ≥ 4,5:1). */
+  --savy-1: #E3E4CF;      /* raakapapu */
+  --savy-1-teksti: #2A1A12;   /* 13,0:1 */
+  --savy-1-toinen: #5E4A3A;   /* 6,5:1 */
+  --savy-1-viiva: #C4C3AA;
+  --savy-2: #D2B98E;      /* vaalea paahto, kraft */
+  --savy-2-teksti: #2A1A12;   /* 8,8:1 */
+  --savy-2-toinen: #553A27;   /* 5,5:1 */
+  --savy-2-viiva: #B49B70;
+  --savy-3: #7A4627;      /* keskipaahto, kaneli */
+  --savy-3-teksti: #FFF6E8;   /* 7,2:1 */
+  --savy-3-toinen: #F2DCC0;   /* 5,8:1 */
+  --savy-3-viiva: #94603F;
+  --savy-4: #2A1A12;      /* tumma paahto */
+  --savy-4-teksti: #E3E4CF;   /* 13,0:1 */
+  --savy-4-toinen: #BFA98E;   /* 7,4:1 */
+  --savy-4-viiva: #4A3426;
+
+  --korostus: #B3202C;        /* kahvikirsikka: napit (valkoinen teksti 6,7:1), korostus vaalealla 5,2:1 */
+  --korostus-tumma: #8E1A24;  /* korostusteksti kraftilla 4,8:1, napin hover */
+  --auki: #4E6B2E;
+
+  --otsikko: "Young Serif", Georgia, serif;
+  --teksti: "Familjen Grotesk", system-ui, sans-serif;
+  --ulko: max(1.25rem, calc((100% - 76rem) / 2));
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Bricolage", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.55; overflow-wrap: break-word; }
-h1, h2 { margin: 0; line-height: 1; letter-spacing: -0.03em; font-weight: 800; }
+body {
+  margin: 0;
+  background: var(--savy-1);
+  color: var(--savy-1-teksti);
+  font: 400 1.0625rem/1.55 var(--teksti);
+  font-variant-numeric: lining-nums;
+  overflow-wrap: break-word;
+}
+h1, h2 {
+  margin: 0;
+  font-family: var(--otsikko);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
 p { margin: 0 0 1em; }
-ul, ol, dl, dd { margin: 0; padding: 0; list-style: none; }
-figure { margin: 0; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--mustard); outline-offset: 3px; }
-.wrap { max-width: 72rem; margin-inline: auto; padding-inline: 1.25rem; }
-@media (min-width: 48rem) { .wrap { padding-inline: 2.5rem; } }
+a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+img { display: block; max-width: 100%; height: auto; }
+small { font-size: 0.75em; letter-spacing: 0.02em; opacity: 0.85; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 
-/* Ylätunniste */
-.top { background: var(--espresso); color: var(--cream); }
-.top-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
-.logo { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.03em; text-decoration: none; }
-.logo span { color: var(--mustard); }
-.top nav ul { display: flex; gap: 1.25rem; }
-.top nav a { text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-.top nav a:hover { color: var(--mustard); }
-@media (max-width: 30rem) { .top nav li:not(:first-child) { display: none; } }
+.kehys { padding-inline: var(--ulko); }
+
+.ohitus { position: absolute; left: 1rem; top: -4rem; padding: 0.6rem 1rem; background: var(--savy-4); color: var(--savy-4-teksti); z-index: 10; }
+.ohitus:focus { top: 1rem; }
+
+/* Sävyt */
+.savy-1 { background: var(--savy-1); color: var(--savy-1-teksti); --toinen: var(--savy-1-toinen); --viiva: var(--savy-1-viiva); }
+.savy-2 { background: var(--savy-2); color: var(--savy-2-teksti); --toinen: var(--savy-2-toinen); --viiva: var(--savy-2-viiva); }
+.savy-3 { background: var(--savy-3); color: var(--savy-3-teksti); --toinen: var(--savy-3-toinen); --viiva: var(--savy-3-viiva); }
+.savy-4 { background: var(--savy-4); color: var(--savy-4-teksti); --toinen: var(--savy-4-toinen); --viiva: var(--savy-4-viiva); }
+
+/* Yläpalkki */
+.yla-sisa { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.1rem; }
+.logo { font-family: var(--otsikko); font-size: 1.375rem; line-height: 1.1; letter-spacing: -0.02em; text-decoration: none; text-wrap: balance; }
+.tila { font-size: 0.9375rem; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.tila.on-auki, .tila.on-kiinni { display: inline-flex; align-items: center; gap: 0.5em; color: var(--savy-1-teksti); font-weight: 500; }
+.tila.on-auki::before, .tila.on-kiinni::before { content: ""; width: 0.6em; height: 0.6em; border-radius: 50%; }
+.tila.on-auki::before { background: var(--auki); }
+.tila.on-kiinni::before { border: 1.5px solid currentColor; }
+
+/* Napit */
+.napit { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.nappi {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3rem; padding: 0.75rem 1.5rem;
+  border-radius: 999px; border: 1.5px solid var(--korostus);
+  background: var(--korostus); color: #fff;
+  font-weight: 600; text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.nappi:hover { background: var(--korostus-tumma); border-color: var(--korostus-tumma); }
+.nappi-toissijainen { background: transparent; color: inherit; border-color: currentColor; }
+.nappi-toissijainen:hover { background: var(--savy-1-teksti); border-color: var(--savy-1-teksti); color: var(--savy-1); }
 
 /* Hero */
-.hero { background: var(--espresso); color: var(--cream); padding-block: 3rem 4rem; overflow: hidden; }
-.hero-inner { display: grid; gap: 2.5rem; align-items: center; }
-.open { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 0.95rem; background: rgba(246, 238, 226, 0.1); padding: 0.35rem 0.85rem; border-radius: 999px; }
-.dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: #7fd18b; }
-.hero h1 { font-size: clamp(2.5rem, 9vw, 5rem); margin-top: 1.25rem; }
-.hero-sub { font-size: 1.2rem; max-width: 30rem; margin-top: 1.25rem; color: #e9dccb; }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
-.btn { display: inline-flex; align-items: center; min-height: 3rem; padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--tomato); color: #fff; font-weight: 700; text-decoration: none; }
-.btn:hover { background: var(--tomato-dark); }
-.btn-ghost { background: transparent; color: var(--cream); box-shadow: inset 0 0 0 2px var(--cream); }
-.btn-ghost:hover { background: var(--cream); color: var(--espresso); }
-.hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 1.5rem; }
-@media (min-width: 56rem) {
-  .hero { padding-block: 5rem 6rem; }
-  .hero-inner { grid-template-columns: 1.3fr 1fr; }
-  .hero-photo img { aspect-ratio: 4 / 5; max-height: 34rem; }
+.hero { overflow: clip; }
+.hero-sisa { display: grid; grid-template-columns: minmax(0, 1fr); padding-top: 1.5rem; }
+.hero h1 { font-size: clamp(2.5rem, 1.6rem + 5vw, 6rem); max-width: 11ch; }
+.hero-lause { max-width: 34ch; margin: 1.25rem 0 1.75rem; font-size: 1.125rem; color: var(--savy-1-toinen); }
+
+/* Jäähdytysallas: iso pyöreä kuva, joka jatkuu ruudun reunan yli */
+.allas {
+  width: 112vw; aspect-ratio: 1;
+  margin: 2.75rem 0 3rem 14vw;
+  border-radius: 50%; overflow: hidden;
+  outline: 1px solid var(--savy-1-viiva); outline-offset: 0.6rem;
+  background: var(--savy-4);
 }
+.allas img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Tänään-rivi */
+.tanaan-rivi { margin: 0; padding-block: 1.5rem 2.5rem; border-top: 1px solid var(--viiva); display: grid; gap: 1rem; }
+.tanaan-rivi div { display: grid; gap: 0.1rem; }
+.tanaan-rivi dt { font-size: 0.875rem; color: var(--toinen); }
+.tanaan-rivi dd { margin: 0; font-size: 1.125rem; font-weight: 500; }
+.tanaan-rivi dd.on-auki::before { content: ""; display: inline-block; width: 0.55em; height: 0.55em; margin-right: 0.45em; border-radius: 50%; background: var(--auki); vertical-align: 0.08em; }
 
 /* Lounas */
-.lunch { padding-block: 4rem; }
-.head { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
-.head h2, .menu h2, .contact h2 { font-size: clamp(2rem, 6vw, 3.25rem); }
-.head p { color: var(--muted); font-weight: 500; margin: 0; }
-.days li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; align-items: baseline; padding-block: 1.1rem; border-top: 2px solid var(--espresso); }
-.days li:last-child { border-bottom: 2px solid var(--espresso); }
-.day { font-weight: 800; font-size: 1.4rem; color: var(--tomato-dark); }
-.dish { font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 600; letter-spacing: -0.01em; }
-small { font-size: 0.7em; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; margin-left: 0.3rem; }
-@media (min-width: 56rem) { .lunch { padding-block: 6rem; } .head { grid-template-columns: 1fr 1fr; align-items: end; } .head p { justify-self: end; text-align: right; } }
+.lounas { padding-block: 0 4.5rem; }
+.lounas-kuva { display: block; margin-inline: calc(-1 * var(--ulko)); }
+.lounas-kuva img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.lounas-teksti { padding-top: 2.5rem; }
+.lounas h2 { font-size: clamp(2.25rem, 1.5rem + 3.5vw, 4rem); }
+.lounas-hinta { margin: 1rem 0 2rem; color: var(--toinen); }
+.paivat { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--viiva); }
+.paivat li { display: grid; grid-template-columns: 3.25rem 1fr; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--viiva); align-items: baseline; }
+.pv { font-family: var(--otsikko); font-size: 1.375rem; }
+.ruoka small { display: inline-block; margin-left: 0.25em; }
+.paivat li.on-tanaan .pv { color: var(--korostus-tumma); }
+.paivat li.on-tanaan .ruoka::after { content: "Tänään"; display: block; margin-top: 0.2rem; font-size: 0.875rem; font-weight: 600; color: var(--korostus-tumma); }
 
 /* Menu */
-.menu { background: var(--mustard); padding-block: 4rem; }
-.menu-grid { display: grid; gap: 3rem; }
-.menu h2 { margin-bottom: 1.25rem; }
-.price-list li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.65rem; border-bottom: 1.5px dashed rgba(42, 25, 18, 0.35); font-weight: 500; font-size: 1.125rem; }
-.price-list b { font-weight: 800; }
-.beans { background: var(--espresso); color: var(--cream); padding: 2rem; border-radius: 1.5rem; align-self: start; }
-.beans h2 { font-size: 2rem; color: var(--mustard); }
-.beans p { margin: 1rem 0 0; color: #e9dccb; }
-.beans .beans-price { font-size: 2.5rem; font-weight: 800; color: var(--cream); letter-spacing: -0.03em; }
-@media (min-width: 56rem) { .menu { padding-block: 6rem; } .menu-grid { grid-template-columns: 1fr 1fr 0.85fr; gap: 3.5rem; } }
+.menu { padding-block: 4.5rem; }
+.menu-sisa { display: grid; gap: 3rem; }
+.menu h2 { font-size: clamp(2rem, 1.4rem + 3vw, 3.25rem); margin-bottom: 1.25rem; }
+.hinnat { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--viiva); }
+.hinnat li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--viiva); }
+.hinnat li span:last-child { font-variant-numeric: tabular-nums; }
+.menu-huom { margin: 0; color: var(--toinen); font-size: 0.9375rem; }
+.menu-kuva { display: block; margin: 0 calc(-1 * var(--ulko)) 2rem; }
+.menu-kuva img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+/* Toinen kuva kapeampi ja oikeaan reunaan, ettei osio näytä korttiruudukolta */
+.menu-lista + .menu-lista .menu-kuva { width: 78%; margin-left: auto; margin-right: 0; }
 
-/* Meistä */
-.about { padding-block: 4.5rem; background: var(--tomato); color: #fff; }
-.quote { font-size: clamp(1.6rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; max-width: 22em; }
-.about-by { max-width: 34rem; font-size: 1.125rem; margin: 1.5rem 0 0; }
-@media (min-width: 56rem) { .about { padding-block: 7rem; } }
+/* Pavut */
+.pavut { padding-block: 4.5rem 2rem; }
+.pavut-sisa { display: grid; gap: 3.5rem; }
+.pavut h2 { font-size: clamp(2.5rem, 1.6rem + 4.5vw, 5rem); margin-bottom: 1.25rem; }
+.pavut-kuva { display: block; margin: -4.5rem calc(-1 * var(--ulko)) 0; }
+.pavut-kuva img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.pavut-teksti p { max-width: 38ch; color: var(--toinen); }
+.pavut-hinta { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; max-width: 26rem; padding-top: 1rem; border-top: 1px solid var(--viiva); }
+.pavut .pavut-hinta { color: var(--savy-4-teksti); }
+.pavut-hinta span { font-family: var(--otsikko); font-size: 2rem; }
+.sitaatti { margin: 0; }
+.sitaatti p { font-family: var(--otsikko); font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem); line-height: 1.2; letter-spacing: -0.01em; }
+.sitaatti footer { color: var(--toinen); max-width: 40ch; }
 
 /* Yhteystiedot */
-.contact { padding-block: 4rem; }
-.contact-grid { display: grid; gap: 2.5rem; }
-.hours { margin: 1.75rem 0; max-width: 20rem; }
-.hours div { display: flex; justify-content: space-between; padding-block: 0.5rem; border-bottom: 1.5px solid rgba(42, 25, 18, 0.2); font-size: 1.125rem; }
-.hours dt { font-weight: 700; }
-.addr { font-size: 1.125rem; }
-.addr a { text-decoration-color: var(--tomato); text-underline-offset: 0.2em; }
-.map svg { width: 100%; height: auto; display: block; border-radius: 1.5rem; font-family: "Bricolage", sans-serif; }
-@media (min-width: 56rem) { .contact { padding-block: 6rem; } .contact-grid { grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: center; } }
+.yhteys { padding-block: 4rem 4.5rem; }
+.yhteys-sisa { display: grid; gap: 2.5rem; padding-top: 3rem; border-top: 1px solid var(--viiva); }
+.yhteys h2 { font-size: clamp(2rem, 1.4rem + 3vw, 3.25rem); margin-bottom: 1.5rem; }
+.ajat { margin: 0 0 1.5rem; max-width: 22rem; }
+.ajat div { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid var(--viiva); }
+.ajat dd { margin: 0; font-variant-numeric: tabular-nums; }
+.osoite { margin-bottom: 1rem; }
+.kartta { margin: 0; }
+.kartta svg { display: block; width: 100%; height: auto; border-radius: 0.75rem; }
+.k-pohja { fill: #3A2619; }
+.k-katu { stroke: #5A3F2C; stroke-width: 26; fill: none; }
+.k-polku { stroke: #5A3F2C; stroke-width: 12; fill: none; }
+.k-kortteli { fill: #32211A; }
+.k-puisto { fill: #4A5233; }
+.k-teksti { fill: #CDBFA8; font: 15px var(--teksti); }
+.k-merkki { fill: var(--korostus); }
+.k-merkki-sisa { fill: #fff; }
 
 /* Alatunniste */
-.foot { background: var(--espresso); color: #cdbba8; font-size: 0.9rem; }
-.foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 2rem; padding-block: 1.5rem; }
-.foot p { margin: 0; }
-.foot a { color: var(--cream); }
+.ala { font-size: 0.875rem; color: var(--savy-4-toinen); }
+.ala-sisa { display: grid; gap: 0.5rem; padding-block: 2rem 2.5rem; border-top: 1px solid var(--savy-4-viiva); }
+.ala p { margin: 0; }
 
-/* Valokuvat */
-.lunch-grid { display: grid; gap: 2rem; }
-.lunch-photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1.5rem; }
-@media (min-width: 56rem) {
-  .lunch-grid { grid-template-columns: 0.75fr 1.6fr; gap: 3.5rem; align-items: start; }
-  .lunch-photo img { aspect-ratio: 4 / 5; }
-  .lunch-grid .head { grid-template-columns: 1fr; }
-  .lunch-grid .head p { justify-self: start; text-align: left; }
+/* Leveät näytöt */
+@media (min-width: 40rem) {
+  .tanaan-rivi { grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 4rem; }
+  .menu-sisa { grid-template-columns: 1fr 1fr; column-gap: 4rem; }
+  .menu-huom { grid-column: 1 / -1; }
+  .menu-kuva, .menu-lista + .menu-lista .menu-kuva { width: auto; margin: 0 0 2.5rem; }
+  .menu-kuva img { border-radius: 0.5rem; }
+  /* Tabletilla täysleveät pystykuvat olisivat liian korkeita */
+  .lounas-kuva img, .pavut-kuva img { aspect-ratio: 3 / 2; }
 }
-.beans { overflow: hidden; }
-.beans-photo img { display: block; width: calc(100% + 4rem); max-width: none; height: auto; aspect-ratio: 4 / 3; object-fit: cover; margin: -2rem -2rem 1.5rem; }
-.credit a { color: #cdbba8; }
+@media (min-width: 64rem) {
+  .hero-sisa { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; min-height: min(calc(100svh - 4.5rem), 56rem); padding-block: 2rem 4rem; }
+  .hero h1 { font-size: clamp(3.5rem, 1rem + 4.6vw, 5.75rem); max-width: 13ch; }
+  .hero-lause { font-size: 1.25rem; }
+  .allas { width: 60vw; max-width: 64rem; margin: 0 0 0 2vw; }
+  .tanaan-rivi { padding-block: 2rem 3.5rem; }
+  .lounas { padding-block: 7rem; }
+  .lounas-sisa { display: grid; grid-template-columns: 5fr 7fr; gap: 5rem; align-items: center; }
+  .lounas-kuva { margin: 0; }
+  .lounas-kuva img { aspect-ratio: 4 / 5; border-radius: 0.5rem; }
+  .lounas-teksti { padding: 0; }
+  .menu { padding-block: 7rem; }
+  .pavut { padding-block: 7rem 3rem; }
+  .pavut-sisa { grid-template-columns: 5fr 6fr; column-gap: 6rem; row-gap: 4rem; align-items: end; }
+  .pavut-kuva { grid-row: span 2; margin: 0; align-self: stretch; }
+  .pavut-kuva img { height: 100%; aspect-ratio: 4 / 5; border-radius: 0.5rem; }
+  .menu-lista + .menu-lista { margin-top: 7rem; }
+  .yhteys { padding-block: 4rem 7rem; }
+  .yhteys-sisa { grid-template-columns: 5fr 7fr; gap: 5rem; }
+}
+
+/* Avausjakso: allas kääntyy kerran, otsikko ja napit nousevat. Vain transform ja opacity. */
+@media (prefers-reduced-motion: no-preference) {
+  .allas { animation: allas 2.6s cubic-bezier(0.16, 0.84, 0.24, 1) 0.1s both; }
+  .hero h1 { animation: nousu 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both; }
+  .hero-lause { animation: nousu 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both; }
+  .hero .napit { animation: nousu 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s both; }
+}
+@keyframes allas {
+  from { transform: rotate(-140deg) scale(0.94); }
+  to { transform: none; }
+}
+@keyframes nousu {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to { opacity: 1; transform: none; }
+}

@@ -33,7 +33,8 @@ Tiedostot: `site/kuvat/esimerkit/<sivu>/<nimi>-{640,1280}.webp` ja `<nimi>-960.j
 
 | Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
 |---|---|---|---|---|---|
-| `hero` | Hero | [YearOne](https://unsplash.com/@year1?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/Xw1NnubpdPY](https://unsplash.com/photos/a-black-and-white-striped-chair-in-front-of-a-mirror-Xw1NnubpdPY) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
+| `pyyhe` | Hero, kulmakyltin kuva | [Jonathan Cooper](https://unsplash.com/@theshuttervision?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/MzgQbB72dDo](https://unsplash.com/photos/a-man-getting-his-hair-cut-by-a-barber-MzgQbB72dDo) | Unsplash License | rajattu, pakattu (lisäksi WebP 960 px), **muokattu: mustavalkoiseksi** |
+| `kulma` | Kulmassa, katutasossa | [Haberdoedas](https://unsplash.com/@haberdoedas?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/zj2CkHpoDPQ](https://unsplash.com/photos/barbershop-sign-with-a-traditional-pole-zj2CkHpoDPQ) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
 | `leikkaus` | Parturi Eetu | [Jonathan Cooper](https://unsplash.com/@theshuttervision?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/sS3qRFsKZlg](https://unsplash.com/photos/person-holding-white-and-gold-hair-comb-sS3qRFsKZlg) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
 | `parta` | Parturi Jari | [Nathon Oski](https://unsplash.com/@onatecan?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/fE42nRlBcG8](https://unsplash.com/photos/grayscale-photography-of-person-holding-scissor-clipping-mans-beard-fE42nRlBcG8) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
 
@@ -53,7 +54,8 @@ kuvakaappauksia yllä mainituista esimerkkisivuista, ja niissä näkyvät samat 
 | Familjen Grotesk (latin) | Pikkupaahtimo, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-familjen-grotesk.txt`) |
 | Bodoni Moda (paino 400–600, optinen koko, latin) | Kaislaranta, otsikot | SIL Open Font License 1.1 (`site/esimerkit/kaislaranta/OFL-bodoni-moda.txt`) |
 | Albert Sans (paino 400–600, latin) | Kaislaranta, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/kaislaranta/OFL-albert-sans.txt`) |
-| Big Shoulders Display | Kulmapää | SIL Open Font License 1.1 |
+| Antonio (paino 700, latin) | Kulmapää, kyltti ja otsikot | SIL Open Font License 1.1 (`site/esimerkit/kulmapaa/OFL-antonio.txt`) |
+| Public Sans (paino 400–600, latin) | Kulmapää, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/kulmapaa/OFL-public-sans.txt`) |
 
 ## Kirjastot
 

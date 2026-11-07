@@ -3,109 +3,159 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parturi Kulmapää – miesten parturi</title>
-  <meta name="description" content="Parturi Kulmapää: hiustenleikkaukset, parran muotoilu ja kuumapyyhe-parranajo. Drop-in arkisin.">
+  <title>Parturi Kulmapää – miesten parturi Espoossa</title>
+  <meta name="description" content="Parturi Kulmapää: leikkaukset, parrat ja kuumapyyhe-parranajot. Drop-in arkisin 10–14.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#0e0e0e">
+  <meta name="theme-color" content="#F2F1EC">
   <link rel="icon" href="data:,">
-  <link rel="preload" href="big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="tyylit.css">
+  <link rel="preload" href="antonio.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/kuvat/esimerkit/kulmapaa/pyyhe-640.webp 640w, /kuvat/esimerkit/kulmapaa/pyyhe-960.webp 960w, /kuvat/esimerkit/kulmapaa/pyyhe-1280.webp 1280w" imagesizes="(min-width: 64rem) 40vw, 70vw" fetchpriority="high">
+  <link rel="stylesheet" href="tyylit.css?v=20261108b">
+  <script defer src="aukiolo.js?v=20261108b"></script>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-inner">
-      <a class="logo" href="#">Kulmapää</a>
-      <nav aria-label="Valikko">
-        <ul>
-          <li><a href="#palvelut">Palvelut</a></li>
-          <li><a href="#parturit">Parturit</a></li>
-          <li><a href="#yhteys">Yhteystiedot</a></li>
-        </ul>
-      </nav>
-      <a class="top-phone" href="tel:+358400000000">040 000 0000</a>
+  <a class="ohitus" href="#sisalto">Siirry sisältöön</a>
+
+  <!--
+    Aukioloajat koneluettavana: aukiolo.js laskee näistä "Auki nyt" -tilan.
+    Puuttuva päivä = suljettu.
+  -->
+  <div hidden id="aukiolo" data-ma="10:00-19:00" data-ti="10:00-19:00" data-ke="10:00-19:00" data-to="10:00-19:00" data-pe="10:00-19:00" data-la="10:00-15:00"></div>
+
+  <header class="yla">
+    <div class="kehys yla-sisa">
+      <a class="logo" href="#">Parturi Kulmapää</a>
+      <a class="tila" href="#yhteys" data-tila>Aukioloajat</a>
     </div>
   </header>
 
-  <main>
+  <main id="sisalto">
     <section class="hero">
-      <div class="wrap hero-inner">
-        <div class="hero-text">
-          <p class="label">Miesten parturi · Espoo</p>
-          <h1>Tarkka leikkaus.<br><span>Ei turhaa jutustelua.</span></h1>
-          <p class="hero-sub">Leikkaukset, parrat ja kuumapyyhe-parranajot. Drop-in arkisin 10–14, muulloin ajanvarauksella.</p>
-          <div class="hero-cta">
-            <a class="btn" href="tel:+358400000000">Varaa aika</a>
-            <a class="link" href="#palvelut">Hinnasto</a>
+      <div class="kehys hero-sisa">
+        <!--
+          Kulmakyltti: nimi kahdella seinällä, jotka kohtaavat keltaisessa kulmassa.
+          data-vaaka ja data-pysty = seinien merkkimäärät (2–16). CSS laskee niistä koon.
+          Jakosääntö demopohjaan: monisanainen nimi sanan kohdalta, yhdyssana sanaliitoksesta,
+          enintään 5 merkkiä tai ei jakokohtaa: koko nimi vaakaseinälle ja "Parturi" pystyseinälle.
+        -->
+        <div class="kyltti">
+          <div class="kyltti-sisa" data-vaaka="5" data-pysty="3">
+            <span class="seina seina-vaaka" aria-hidden="true"><span>Kulma</span></span>
+            <span class="kulma" aria-hidden="true"></span>
+            <span class="seina seina-pysty" aria-hidden="true"><span>pää</span></span>
+            <picture class="kyltti-kuva">
+              <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/pyyhe-640.webp 640w, /kuvat/esimerkit/kulmapaa/pyyhe-960.webp 960w, /kuvat/esimerkit/kulmapaa/pyyhe-1280.webp 1280w" sizes="(min-width: 64rem) 40vw, 70vw">
+              <img src="/kuvat/esimerkit/kulmapaa/pyyhe-960.jpg" width="1280" height="1600" alt="Parturi ajaa asiakkaan partaa partaveitsellä, kasvoilla kuuma pyyhe" fetchpriority="high" decoding="async">
+            </picture>
           </div>
         </div>
-        <picture class="hero-photo">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/hero-640.webp 640w, /kuvat/esimerkit/kulmapaa/hero-1280.webp 1280w" sizes="(min-width: 56rem) 35vw, 100vw">
-            <img src="/kuvat/esimerkit/kulmapaa/hero-960.jpg" width="1280" height="1600" loading="eager" fetchpriority="high" decoding="async" alt="Musta parturintuoli, jonka käsinojalla on raidallinen pyyhe">
-          </picture>
-      </div>
-      <div class="ticker" aria-hidden="true">
-        <div>Leikkaus · Parta · Koneajo · Kuumapyyhe · Leikkaus · Parta · Koneajo · Kuumapyyhe ·</div>
-      </div>
-    </section>
-
-    <section id="palvelut" class="services">
-      <div class="wrap">
-        <h2>Palvelut</h2>
-        <ul class="menu">
-          <li><span class="name">Hiustenleikkaus</span><span class="time">30 min</span><span class="price">35 €</span></li>
-          <li><span class="name">Koneajo</span><span class="time">20 min</span><span class="price">25 €</span></li>
-          <li><span class="name">Parran muotoilu</span><span class="time">20 min</span><span class="price">25 €</span></li>
-          <li><span class="name">Leikkaus + parta</span><span class="time">50 min</span><span class="price">55 €</span></li>
-          <li><span class="name">Kuumapyyhe-parranajo</span><span class="time">40 min</span><span class="price">45 €</span></li>
-          <li><span class="name">Lasten leikkaus <small>alle 12 v</small></span><span class="time">25 min</span><span class="price">25 €</span></li>
-        </ul>
-        <p class="note">Drop-in arkisin klo 10–14 ilman ajanvarausta. Maksu kortilla tai MobilePaylla.</p>
-      </div>
-    </section>
-
-    <section id="parturit" class="barbers">
-      <div class="wrap">
-        <h2>Parturit</h2>
-        <ul class="barber-grid">
-          <li>
-            <picture class="mono">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/parta-640.webp 640w, /kuvat/esimerkit/kulmapaa/parta-1280.webp 1280w" sizes="(min-width: 48rem) 45vw, 100vw">
-            <img src="/kuvat/esimerkit/kulmapaa/parta-960.jpg" width="1280" height="1280" loading="lazy" decoding="async" alt="Parturi muotoilee partaa saksilla">
-          </picture>
-            <h3>Jari</h3>
-            <p>Klassiset leikkaukset ja kuumapyyhe-parranajot. Saksilla yli 20 vuotta.</p>
-          </li>
-          <li>
-            <picture class="mono">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/leikkaus-640.webp 640w, /kuvat/esimerkit/kulmapaa/leikkaus-1280.webp 1280w" sizes="(min-width: 48rem) 45vw, 100vw">
-            <img src="/kuvat/esimerkit/kulmapaa/leikkaus-960.jpg" width="1280" height="1280" loading="lazy" decoding="async" alt="Parturi leikkaa hiuksia kamman yli saksilla">
-          </picture>
-            <h3>Eetu</h3>
-            <p>Häivytykset, koneajot ja tarkat parrat. Kysy rohkeasti, mikä sopisi sinulle.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="yhteys" class="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <h2>Kulmassa,<br>katutasossa.</h2>
+        <div class="hero-teksti">
+          <h1>Tarkka leikkaus. Ei turhaa jutustelua.</h1>
+          <p class="hero-lause">Leikkaukset, parrat ja kuumapyyhe-parranajot. Drop-in arkisin 10–14, muulloin soita ja varaa aika.</p>
+          <div class="napit">
+            <a class="nappi" href="tel:+358400000000">Soita 040 000 0000</a>
+            <a class="nappi nappi-toissijainen" href="#hinnasto">Hinnasto</a>
+          </div>
         </div>
-        <dl class="info">
-          <div><dt>Osoite</dt><dd>Esimerkkikatu 7<br>02600 Espoo</dd></div>
-          <div><dt>Aukioloajat</dt><dd>Ma–pe 10–19<br>La 10–15<br>Su suljettu</dd></div>
-          <div><dt>Ajanvaraus</dt><dd><a href="tel:+358400000000">040 000 0000</a><br><a href="mailto:tuoli@kulmapaa.example">tuoli@kulmapaa.example</a></dd></div>
+      </div>
+    </section>
+
+    <section class="tanaan" aria-label="Aukiolo ja osoite">
+      <div class="kehys">
+        <dl class="tanaan-rivi">
+          <div>
+            <dt>Tänään</dt>
+            <dd data-tanaan>Ma–pe 10–19, la 10–15</dd>
+          </div>
+          <div>
+            <dt>Drop-in</dt>
+            <dd>Arkisin 10–14 ilman ajanvarausta</dd>
+          </div>
+          <div>
+            <dt>Osoite</dt>
+            <dd>Esimerkkikatu 7, 02600 Espoo</dd>
+          </div>
         </dl>
       </div>
     </section>
+
+    <section id="hinnasto" class="hinnasto">
+      <div class="kehys">
+        <h2>Hinnasto</h2>
+        <ul class="taulu">
+          <li><span class="palvelu">Hiustenleikkaus</span><span class="kesto">30 min</span><span class="hinta">35 €</span></li>
+          <li><span class="palvelu">Koneajo</span><span class="kesto">20 min</span><span class="hinta">25 €</span></li>
+          <li><span class="palvelu">Parran muotoilu</span><span class="kesto">20 min</span><span class="hinta">25 €</span></li>
+          <li><span class="palvelu">Leikkaus ja parta</span><span class="kesto">50 min</span><span class="hinta">55 €</span></li>
+          <li><span class="palvelu">Kuumapyyhe-parranajo</span><span class="kesto">40 min</span><span class="hinta">45 €</span></li>
+          <li><span class="palvelu">Lasten leikkaus, alle 12 v</span><span class="kesto">25 min</span><span class="hinta">25 €</span></li>
+        </ul>
+        <p class="huom">Maksu kortilla tai MobilePaylla. Drop-in arkisin 10–14, muulloin ajanvarauksella.</p>
+      </div>
+    </section>
+
+    <div class="jatko">
+      <section id="parturit" class="parturit">
+        <div class="kehys">
+          <h2>Parturit</h2>
+          <ul class="tiimi">
+            <li>
+              <picture class="tiimi-kuva">
+                <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/parta-640.webp 640w, /kuvat/esimerkit/kulmapaa/parta-1280.webp 1280w" sizes="(min-width: 48rem) 44vw, 100vw">
+                <img src="/kuvat/esimerkit/kulmapaa/parta-960.jpg" width="1280" height="1280" loading="lazy" decoding="async" alt="Parturi muotoilee partaa saksilla">
+              </picture>
+              <h3>Jari</h3>
+              <p>Klassiset leikkaukset ja kuumapyyhe-parranajot. Saksilla yli 20 vuotta.</p>
+            </li>
+            <li>
+              <picture class="tiimi-kuva">
+                <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/leikkaus-640.webp 640w, /kuvat/esimerkit/kulmapaa/leikkaus-1280.webp 1280w" sizes="(min-width: 48rem) 44vw, 100vw">
+                <img src="/kuvat/esimerkit/kulmapaa/leikkaus-960.jpg" width="1280" height="1280" loading="lazy" decoding="async" alt="Parturi leikkaa hiuksia kamman yli saksilla">
+              </picture>
+              <h3>Eetu</h3>
+              <p>Häivytykset, koneajot ja tarkat parrat. Kysy rohkeasti, mikä sopisi sinulle.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="yhteys" class="yhteys">
+        <div class="kehys yhteys-sisa">
+          <picture class="yhteys-kuva">
+            <source type="image/webp" srcset="/kuvat/esimerkit/kulmapaa/kulma-640.webp 640w, /kuvat/esimerkit/kulmapaa/kulma-1280.webp 1280w" sizes="(min-width: 64rem) 36vw, 100vw">
+            <img src="/kuvat/esimerkit/kulmapaa/kulma-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Parturiliikkeen kyltti ja parturitolppa kivitalon kulmassa">
+          </picture>
+          <div class="yhteys-teksti">
+            <h2>Kulmassa, katutasossa</h2>
+            <p class="osoite">Esimerkkikatu 7, 02600 Espoo<br>Sisään suoraan kadulta, ei portaita.</p>
+            <dl class="ajat">
+              <div data-paiva="1"><dt>Maanantai</dt><dd>10–19</dd></div>
+              <div data-paiva="2"><dt>Tiistai</dt><dd>10–19</dd></div>
+              <div data-paiva="3"><dt>Keskiviikko</dt><dd>10–19</dd></div>
+              <div data-paiva="4"><dt>Torstai</dt><dd>10–19</dd></div>
+              <div data-paiva="5"><dt>Perjantai</dt><dd>10–19</dd></div>
+              <div data-paiva="6"><dt>Lauantai</dt><dd>10–15</dd></div>
+              <div data-paiva="7"><dt>Sunnuntai</dt><dd>suljettu</dd></div>
+            </dl>
+            <p class="yhteys-linkit"><a href="tel:+358400000000">040 000 0000</a><br><a href="mailto:tuoli@kulmapaa.example">tuoli@kulmapaa.example</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobiilin palkki: tarttuu ruudun alareunaan Parturit-osiosta alkaen (pelkkä CSS, position: sticky) -->
+      <nav class="palkki" aria-label="Soita tai katso sijainti">
+        <a class="nappi" href="tel:+358400000000">Soita</a>
+        <a class="nappi nappi-toissijainen" href="#yhteys">Sijainti</a>
+      </nav>
+    </div>
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot-inner">
+  <footer class="ala">
+    <div class="kehys ala-sisa">
       <p>© Parturi Kulmapää</p>
-      <p>Kuvitteellinen yritys, esimerkkisivu · Sivut: <a href="/">Palin Web</a></p>
-      <p class="credit">Kuvat: <a href="https://unsplash.com/@year1?utm_source=palinweb&amp;utm_medium=referral">YearOne</a>, <a href="https://unsplash.com/@onatecan?utm_source=palinweb&amp;utm_medium=referral">Nathon Oski</a>, <a href="https://unsplash.com/@theshuttervision?utm_source=palinweb&amp;utm_medium=referral">Jonathan Cooper</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
+      <p>Kuvitteellinen yritys, esimerkkisivu.<br>Sivut: <a href="/">Palin Web</a></p>
+      <p class="kiitos">Kuvat: <a href="https://unsplash.com/@theshuttervision?utm_source=palinweb&amp;utm_medium=referral">Jonathan Cooper</a>, <a href="https://unsplash.com/@onatecan?utm_source=palinweb&amp;utm_medium=referral">Nathon Oski</a>, <a href="https://unsplash.com/@haberdoedas?utm_source=palinweb&amp;utm_medium=referral">Haberdoedas</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
     </div>
   </footer>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[ANALYTICS-TOKEN]"}'></script>

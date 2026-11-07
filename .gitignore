@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Editorit
+.vscode/
+.idea/
+*.swp
+
+# Työkalut ja välimuistit
+node_modules/
+.wrangler/
+*.log
+
+# Salaisuudet
+.env
+.env.*

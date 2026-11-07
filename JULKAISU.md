@@ -96,26 +96,22 @@ jos `index.html` avataan suoraan tiedostona.
 
 ## 3. GitHub
 
-Repo on jo alustettu, ja ensimmäinen commit on tehty. Seuraavaksi:
+Repo on **https://github.com/Caroluspalin/Webagency**. Paikallinen `~/portfolio` on
+ainoa git-repo, ja `site/` on sen tavallinen kansio, ei erillinen repo.
+Jos remote puuttuu, lisää se:
 
-1. Luo GitHubissa uusi repo: https://github.com/new
-   - Nimi: **`palinweb`**
-   - Yksityinen tai julkinen, kumpi vain. Cloudflare toimii molempien kanssa.
-   - **Älä** lisää README-, .gitignore- tai lisenssitiedostoa, koska repo on jo olemassa
-     koneellasi.
-2. Kytke paikallinen repo GitHubiin ja pushaa (vaihda `KÄYTTÄJÄ` omaan GitHub-tunnukseesi):
-   ```sh
-   cd ~/portfolio
-   git remote add origin https://github.com/KÄYTTÄJÄ/palinweb.git
-   git push -u origin main
-   ```
-   Jos `gh`-komento on asennettu, kohdat 1 ja 2 hoituvat myös yhdellä komennolla:
-   `gh repo create palinweb --private --source=. --push`
+```sh
+cd ~/portfolio
+git remote add origin https://github.com/Caroluspalin/Webagency.git
+git push -u origin main
+```
 
 Jatkossa julkaiseminen tarkoittaa vain:
 ```sh
 git add -A && git commit -m "Päivitä hinnat" && git push
 ```
+
+> Älä aja `git init` kansiossa `site/`. Sisäkkäinen repo sotkee commitit ja julkaisun.
 
 ---
 
@@ -127,9 +123,9 @@ git add -A && git commit -m "Päivitä hinnat" && git push
 
 1. https://dash.cloudflare.com → **Workers & Pages** → **Create application** →
    **Pages**-välilehti → **Connect to Git** (tai *Import an existing Git repository*).
-2. Valitse **GitHub** ja anna Cloudflarelle pääsy repoon `palinweb`. Voit rajata pääsyn
+2. Valitse **GitHub** ja anna Cloudflarelle pääsy repoon `Webagency`. Voit rajata pääsyn
    vain tähän repoon.
-3. Valitse repo `palinweb` → **Begin setup**.
+3. Valitse repo `Webagency` → **Begin setup**.
 4. Asetukset:
    | Kenttä | Arvo |
    |---|---|
@@ -138,6 +134,9 @@ git add -A && git commit -m "Päivitä hinnat" && git push
    | Framework preset | **None** |
    | Build command | *(jätä tyhjäksi)* |
    | Build output directory | **`site`** |
+   Jos Pages-projekti on jo kytketty `Webagency`-repoon, tarkista samat arvot kohdassa
+   **Settings → Builds & deployments**. Output directoryn pitää olla `site`. Muuten
+   julkaisuun päätyvät myös `CLAUDE.md`, `docs/` ja `tyokalut/`.
 5. **Save and Deploy**. Ensimmäinen julkaisu kestää alle minuutin. Tarkista
    https://palinweb.pages.dev.
 

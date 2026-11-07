@@ -47,11 +47,11 @@ a { color: inherit; }
 .btn:hover { background: var(--tomato-dark); }
 .btn-ghost { background: transparent; color: var(--cream); box-shadow: inset 0 0 0 2px var(--cream); }
 .btn-ghost:hover { background: var(--cream); color: var(--espresso); }
-.hero-art { width: min(100%, 22rem); justify-self: center; }
+.hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 1.5rem; }
 @media (min-width: 56rem) {
   .hero { padding-block: 5rem 6rem; }
   .hero-inner { grid-template-columns: 1.3fr 1fr; }
-  .hero-art { width: 100%; max-width: 26rem; justify-self: end; }
+  .hero-photo img { aspect-ratio: 4 / 5; max-height: 34rem; }
 }
 
 /* Lounas */
@@ -100,3 +100,16 @@ small { font-size: 0.7em; font-weight: 600; color: var(--muted); letter-spacing:
 .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 2rem; padding-block: 1.5rem; }
 .foot p { margin: 0; }
 .foot a { color: var(--cream); }
+
+/* Valokuvat */
+.lunch-grid { display: grid; gap: 2rem; }
+.lunch-photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 1.5rem; }
+@media (min-width: 56rem) {
+  .lunch-grid { grid-template-columns: 0.75fr 1.6fr; gap: 3.5rem; align-items: start; }
+  .lunch-photo img { aspect-ratio: 4 / 5; }
+  .lunch-grid .head { grid-template-columns: 1fr; }
+  .lunch-grid .head p { justify-self: start; text-align: left; }
+}
+.beans { overflow: hidden; }
+.beans-photo img { display: block; width: calc(100% + 4rem); max-width: none; height: auto; aspect-ratio: 4 / 3; object-fit: cover; margin: -2rem -2rem 1.5rem; }
+.credit a { color: #cdbba8; }

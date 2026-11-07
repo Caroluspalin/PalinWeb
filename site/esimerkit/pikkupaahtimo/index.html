@@ -37,20 +37,21 @@
             <a class="btn btn-ghost" href="#yhteys">Löydä perille</a>
           </div>
         </div>
-        <svg class="hero-art" viewBox="0 0 400 400" aria-hidden="true">
-          <circle cx="200" cy="200" r="190" fill="#e2552e"/>
-          <circle cx="300" cy="96" r="44" fill="#e8b04b"/>
-          <path d="M150 120c-14-22 14-34 0-58M200 120c-14-22 14-34 0-58M250 120c-14-22 14-34 0-58" fill="none" stroke="#f6eee2" stroke-width="10" stroke-linecap="round"/>
-          <path d="M96 150h208v70a104 104 0 0 1-208 0Z" fill="#f6eee2"/>
-          <path d="M304 172h18a36 36 0 0 1 0 72h-26" fill="none" stroke="#f6eee2" stroke-width="18"/>
-          <rect x="70" y="318" width="260" height="20" rx="10" fill="#2a1912"/>
-          <ellipse cx="200" cy="196" rx="84" ry="14" fill="#7a4a32"/>
-        </svg>
+        <picture class="hero-photo">
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/hero-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/hero-1280.webp 1280w" sizes="(min-width: 56rem) 40vw, 100vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/hero-960.jpg" width="1280" height="1600" loading="eager" fetchpriority="high" decoding="async" alt="Valoisa kahvila, jossa on rottinkivalaisimia, kasveja ja suuret ikkunat">
+          </picture>
       </div>
     </section>
 
     <section id="lounas" class="lunch">
       <div class="wrap">
+        <div class="lunch-grid">
+          <picture class="lunch-photo">
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/lounas-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/lounas-1280.webp 1280w" sizes="(min-width: 56rem) 30vw, 100vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/lounas-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kaksi kulhoa kurpitsakeittoa ja kurpitsansiemeniä">
+          </picture>
+          <div>
         <div class="head">
           <h2>Viikon lounas</h2>
           <p>Arkisin 10.30–14.00 · 12,90 € · sisältää salaatin, leivän ja kahvin</p>
@@ -62,6 +63,8 @@
           <li><span class="day">To</span><span class="dish">Hernekeitto ja pannukakku, mansikkahillo <small>L</small></span></li>
           <li><span class="day">Pe</span><span class="dish">Bataatti-linssicurry ja raita <small>VEG, G</small></span></li>
         </ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -88,6 +91,10 @@
           </ul>
         </div>
         <aside class="beans">
+          <picture class="beans-photo">
+            <source type="image/webp" srcset="/kuvat/esimerkit/pikkupaahtimo/pavut-640.webp 640w, /kuvat/esimerkit/pikkupaahtimo/pavut-1280.webp 1280w" sizes="(min-width: 56rem) 25vw, 100vw">
+            <img src="/kuvat/esimerkit/pikkupaahtimo/pavut-960.jpg" width="1280" height="960" loading="lazy" decoding="async" alt="Juuri paahdettuja kahvipapuja paahtimen jäähdytysaltaassa">
+          </picture>
           <h2>Pavut mukaan</h2>
           <p>Paahdamme pieniä eriä joka torstai. Talon sekoitus, 250 g.</p>
           <p class="beans-price">13,50 €</p>
@@ -138,6 +145,7 @@
     <div class="wrap foot-inner">
       <p>© Kahvila Pikkupaahtimo</p>
       <p>Kuvitteellinen yritys, esimerkkisivu · Sivut: <a href="/">Palin Web</a></p>
+      <p class="credit">Kuvat: <a href="https://unsplash.com/@thetangledtomato?utm_source=palinweb&amp;utm_medium=referral">Chesley McCarty</a>, <a href="https://unsplash.com/@driadadora?utm_source=palinweb&amp;utm_medium=referral">Mary Potoplyak</a>, <a href="https://unsplash.com/@heyscottcurry?utm_source=palinweb&amp;utm_medium=referral">Scott Soltys-Curry</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
     </div>
   </footer>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[ANALYTICS-TOKEN]"}'></script>

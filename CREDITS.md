@@ -1,0 +1,58 @@
+# Kuvien lähteet
+
+Esimerkkisivujen valokuvat ovat Unsplashista, ja niitä käytetään [Unsplashin lisenssillä](https://unsplash.com/license).
+Lisenssi sallii ilmaisen kaupallisen käytön, muokkaamisen ja kuvien hostaamisen omalla palvelimella. Mainintaa ei vaadita,
+mutta kuvaajat on merkitty sekä tähän tiedostoon että kunkin esimerkkisivun alatunnisteeseen.
+
+Kuvat on haettu Unsplash API:lla ja ladattu API:n virallisen `download_location`-latausosoitteen kautta.
+Ne on rajattu käyttöpaikan muotoon ja pakattu (WebP 640 ja 1280 px sekä JPG 960 px).
+
+Tiedostot: `site/kuvat/esimerkit/<sivu>/<nimi>-{640,1280}.webp` ja `<nimi>-960.jpg`.
+
+## Kahvila Pikkupaahtimo (`/esimerkit/pikkupaahtimo/`)
+
+| Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
+|---|---|---|---|---|---|
+| `hero` | Hero | [Chesley McCarty](https://unsplash.com/@thetangledtomato?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/ZimlF1xeZ8k](https://unsplash.com/photos/white-and-brown-dining-table-and-chairs-ZimlF1xeZ8k) | Unsplash License | rajattu, pakattu |
+| `lounas` | Viikon lounas | [Mary Potoplyak](https://unsplash.com/@driadadora?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/Hd0QSMK2LPw](https://unsplash.com/photos/two-bowls-of-carrot-soup-on-a-white-table-Hd0QSMK2LPw) | Unsplash License | rajattu, pakattu |
+| `pavut` | Pavut mukaan -kortti | [Scott Soltys-Curry](https://unsplash.com/@heyscottcurry?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/_7CVm353m7A](https://unsplash.com/photos/a-close-up-of-a-machine-making-coffee-beans-_7CVm353m7A) | Unsplash License | rajattu, pakattu |
+
+## Hiusstudio Kaislaranta (`/esimerkit/kaislaranta/`)
+
+| Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
+|---|---|---|---|---|---|
+| `hero` | Hero | [Giorgio Trovato](https://unsplash.com/@giorgiotrovato?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/T9u-Xr30FY8](https://unsplash.com/photos/black-and-gray-chair-beside-white-wall-T9u-Xr30FY8) | Unsplash License | rajattu, pakattu |
+| `leikkaus` | Kampaaja Mikael | [Rosalie Gdy](https://unsplash.com/@rosaliegdy?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/Bu7ZCs3ZC2I](https://unsplash.com/photos/person-cutting-hair-with-scissors-Bu7ZCs3ZC2I) | Unsplash License | rajattu, pakattu |
+| `varjays` | Kampaaja Aino | [Lera Kogan](https://unsplash.com/@newyork_creator?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/B1B-53ZBgng](https://unsplash.com/photos/brown-hair-with-white-ribbon-B1B-53ZBgng) | Unsplash License | rajattu, pakattu |
+| `muotoilu` | Kampaaja Sofia | [Baylee Gramling](https://unsplash.com/@bayleejadegramling?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/MMz03PyCOZg](https://unsplash.com/photos/person-holding-gray-hair-curler-MMz03PyCOZg) | Unsplash License | rajattu, pakattu |
+
+## Parturi Kulmapää (`/esimerkit/kulmapaa/`)
+
+| Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
+|---|---|---|---|---|---|
+| `hero` | Hero | [YearOne](https://unsplash.com/@year1?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/Xw1NnubpdPY](https://unsplash.com/photos/a-black-and-white-striped-chair-in-front-of-a-mirror-Xw1NnubpdPY) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
+| `leikkaus` | Parturi Eetu | [Jonathan Cooper](https://unsplash.com/@theshuttervision?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/sS3qRFsKZlg](https://unsplash.com/photos/person-holding-white-and-gold-hair-comb-sS3qRFsKZlg) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
+| `parta` | Parturi Jari | [Nathon Oski](https://unsplash.com/@onatecan?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/fE42nRlBcG8](https://unsplash.com/photos/grayscale-photography-of-person-holding-scissor-clipping-mans-beard-fE42nRlBcG8) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
+
+## Portfolion kuvakaappaukset
+
+`site/kuvat/esimerkit/{pikkupaahtimo,kaislaranta,kulmapaa}.webp` ja heron puhelinruudut `ruutu-*.webp` ovat
+kuvakaappauksia yllä mainituista esimerkkisivuista, ja niissä näkyvät samat kuvat. Ne tehdään komennolla
+`cd tyokalut && npm run kuvat`.
+
+## Fontit
+
+| Fontti | Käyttö | Lisenssi |
+|---|---|---|
+| Schibsted Grotesk | Palin Web, leipäteksti | SIL Open Font License 1.1 |
+| Archivo (rajattu: leveys 100–125 %, paino 600–900, latin) | Palin Web, otsikot | SIL Open Font License 1.1 (`site/fonts/OFL-archivo.txt`) |
+| Bricolage Grotesque | Pikkupaahtimo | SIL Open Font License 1.1 |
+| Instrument Serif | Kaislaranta | SIL Open Font License 1.1 |
+| Big Shoulders Display | Kulmapää | SIL Open Font License 1.1 |
+
+## Kirjastot
+
+| Kirjasto | Versio | Lisenssi |
+|---|---|---|
+| GSAP ja ScrollTrigger | 3.15.0 | GreenSock Standard "no charge" -lisenssi (`site/vendor/LICENSE-gsap.txt`) |
+| Lenis | 1.3.26 | MIT (`site/vendor/LICENSE-lenis.txt`) |

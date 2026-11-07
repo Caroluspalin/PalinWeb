@@ -6,33 +6,39 @@ Cloudflare julkaisee sivun automaattisesti osoitteeseen **palinweb.fi**.
 ```
 portfolio/                      ← git-repo
 ├── JULKAISU.md                 ← tämä ohje (ei julkaista)
-├── tyokalut/                   ← OG-kuvan pohja, kuvien paikkamerkkipohja (ei julkaista)
+├── CREDITS.md                  ← kuvien lähteet, kuvaajat ja lisenssit (ei julkaista)
+├── .env                        ← UNSPLASH_ACCESS_KEY (ei gitissä, ei julkaista)
+├── tyokalut/                   ← kuvakaappaus- ja tarkistusskriptit, OG-kuvan pohja (ei julkaista)
 └── site/                       ← julkaistava sivusto (Cloudflaren "output directory")
     ├── index.html, styles.css, 404.html, favicon.svg
+    ├── alapalkki.js            ← html.js-luokka ja mobiilin kiinteä alapalkki (näkyy, kun hero on ohitettu)
+    ├── liike.js                ← työpöydän vieritysefektit; lataa vendor-kirjastot vain ≥ 1024 px
+    ├── vendor/                 ← GSAP 3.15.0, ScrollTrigger 3.15.0, Lenis 1.3.26 (lisenssit mukana)
     ├── robots.txt, sitemap.xml
     ├── _headers                ← välimuisti, CSP ja muut tietoturvaotsakkeet
-    ├── fonts/                  ← Schibsted Grotesk (SIL OFL)
-    ├── esimerkit/
-    │   ├── pikkupaahtimo/      ← esimerkkisivu: kahvila (palinweb.fi/esimerkit/pikkupaahtimo/)
-    │   └── kaislaranta/        ← esimerkkisivu: kampaamo (palinweb.fi/esimerkit/kaislaranta/)
+    ├── fonts/                  ← Schibsted Grotesk ja Archivo (SIL OFL)
+    ├── esimerkit/              ← esimerkkisivut (noindex), osoitteet palinweb.fi/esimerkit/…/
+    │   ├── pikkupaahtimo/      ← kahvila
+    │   ├── kaislaranta/        ← kampaamo
+    │   └── kulmapaa/           ← parturi
     └── kuvat/
-        ├── og-kuva.png                     1200×630, somejaon kuva
-        ├── kasvokuva.jpg                   1200×1500  ← VAIHDA omaan kuvaan
+        ├── og-kuva.png                       1200×630, somejaon kuva (npm run kuvat)
+        ├── kasvokuva.jpg                     1200×1500  ← VAIHDA omaan kuvaan
         └── esimerkit/
-            ├── esimerkki-1.jpg             1200×800   ← VAIHDA: Royal Fade, tietokone
-            ├── esimerkki-1-mobiili.jpg     780×1688   ← VAIHDA: Royal Fade, puhelin
-            ├── esimerkki-2.jpg             1200×800   (Pikkupaahtimo, valmis)
-            └── esimerkki-3.jpg             1200×800   (Kaislaranta, valmis)
+            ├── pikkupaahtimo.webp            1800×1200  korttikuva + hero (npm run kuvat)
+            ├── ruutu-{pikkupaahtimo,kulmapaa,kaislaranta}.webp  585×3165  heron puhelinruudut (npm run kuvat)
+            ├── kaislaranta.webp, kulmapaa.webp  1800×1200  korttikuvat (npm run kuvat)
+            └── pikkupaahtimo/, kaislaranta/, kulmapaa/   ← esimerkkisivujen valokuvat (Unsplash)
 ```
 
 ---
 
 ## 1. Täytä viimeiset tiedot
 
-Kolme paikkamerkkiä on vielä jäljellä. Tarkista, mitkä niistä löytyvät:
+Kaksi paikkamerkkiä on vielä jäljellä. Tarkista, mitkä niistä löytyvät:
 
 ```sh
-grep -rn "\[PUHELIN\]\|\[ESIMERKKI-1-LINKKI\]\|\[ANALYTICS-TOKEN\]" site/
+grep -rn "\[PUHELIN\]\|\[ANALYTICS-TOKEN\]" site/
 ```
 
 **Puhelinnumero:** `tel:`-linkkiin tarvitaan kansainvälinen muoto ja näkyvään tekstiin
@@ -43,37 +49,35 @@ Korvaa ne näin (vaihda oma numerosi):
 sed -i '' 's/tel:\[PUHELIN\]/tel:+358401234567/g; s/\[PUHELIN\]/040 123 4567/g' site/index.html
 ```
 
-**Royal Fade -linkki:**
-```sh
-sed -i '' 's#\[ESIMERKKI-1-LINKKI\]#https://osoite-royal-fadeen.fi/#' site/index.html
-```
-
 **Analytiikkatunnus:** ks. kohta 5.
 
-**Kuvat:** korvaa yllä merkityt kuvat **samoilla tiedostonimillä ja mitoilla**.
-- Royal Fade, tietokone: kuvakaappaus 1200×800-kokoisesta selainikkunasta.
-- Royal Fade, puhelin: Chromen kehitystyökalut → laitetila → iPhone 12/13/14 (390×844)
-  → *Capture screenshot*. Kuvasta tulee 2× tarkkuudella 780×1688.
-- Kasvokuva: 1200×1500, luonnollinen valo.
-- Pidä jokainen kuva alle ~200 kt (esim. squoosh.app → MozJPEG, laatu 75–80).
+**Kasvokuva:** korvaa `site/kuvat/kasvokuva.jpg` omalla kuvallasi. Käytä **samaa tiedostonimeä
+ja kokoa 1200×1500** (pystykuva 4:5), luonnollista valoa ja pidä tiedosto alle ~200 kt
+(esim. squoosh.app → MozJPEG, laatu 75–80).
 
-**Esimerkkisivujen kuvat päivitetään uudelleen**, jos muutat esimerkkisivuja. Aja ensin
-paikallinen esikatselu (kohta 2), ja aja sitten toisessa ikkunassa:
+---
+
+## 1b. Työkalut: kuvakaappaukset ja tarkistus
+
+Skriptit ovat kansiossa `tyokalut/`. Ne käyttävät Playwrightia koneelle asennetun Chromen kanssa
+ja käynnistävät oman paikallisen palvelimen, joten erillistä esikatselua ei tarvita.
+Asenna riippuvuudet kerran:
+
 ```sh
-CH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-for d in pikkupaahtimo:2 kaislaranta:3; do n=${d%%:*}; i=${d##*:}
-  "$CH" --headless=new --hide-scrollbars --window-size=1200,800 --virtual-time-budget=3000 \
-    --screenshot=/tmp/$n.png http://localhost:8000/esimerkit/$n/
-  sips -s format jpeg -s formatOptions 82 /tmp/$n.png --out site/kuvat/esimerkit/esimerkki-$i.jpg
-done
+cd tyokalut && npm install
 ```
 
-**Somejaon kuva:** jos muutat tekstiä tiedostossa `tyokalut/og-kuva.html`, aja:
-```sh
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
-  --hide-scrollbars --window-size=1200,630 --virtual-time-budget=2000 \
-  --screenshot="$PWD/site/kuvat/og-kuva.png" "file://$PWD/tyokalut/og-kuva.html"
-```
+| Komento | Mitä tekee |
+|---|---|
+| `npm run kuvat` | Ottaa esimerkkisivuista uudet kuvakaappaukset (korttikuvat ja heron tietokone- ja puhelinkuvan) ja tekee somejaon kuvan `tyokalut/og-kuva.html`-pohjasta. Aja tämä aina, kun muutat esimerkkisivuja. |
+| `npm run tarkista` | Tarkistaa, ettei millään sivulla ole vaakavieritystä leveyksillä 320–1440 px. |
+| `npm run kasvokuva-paikkamerkki` | Palauttaa harmaan CP-paikkamerkin. **Ylikirjoittaa `kasvokuva.jpg`:n**, joten älä aja tätä, kun oma kuvasi on paikallaan. |
+
+**Esimerkkisivujen valokuvat** ovat Unsplashista. Kuvaajat ja lisenssit on kirjattu
+tiedostoon `CREDITS.md` ja kunkin esimerkkisivun alatunnisteeseen. Jos vaihdat kuvan,
+päivitä molemmat. Kuvat ovat muodossa `<nimi>-640.webp`, `<nimi>-1280.webp` ja
+`<nimi>-960.jpg`. Ne on valmiiksi rajattu käyttöpaikan muotoon, joten pidä uusissa
+kuvissa sama rajaus ja samat nimet.
 
 **Aloitustarjouksen poisto:** poista tiedostosta `site/index.html` rivit kommenttien
 `<!-- ALOITUSTARJOUS ... -->` ja `<!-- /ALOITUSTARJOUS -->` välistä, kommentit mukaan lukien.
@@ -145,7 +149,7 @@ haaroihin pushatut muutokset saavat oman esikatseluosoitteen.
 ## 5. Cloudflare Web Analytics
 
 Analytiikka ei käytä evästeitä, joten se ei vaadi evästebanneria. Skripti on valmiina
-kaikilla sivuilla (etusivu, 404 ja molemmat esimerkkisivut), ja CSP sallii sen. Puuttuu
+kaikilla sivuilla (etusivu, 404 ja kolme esimerkkisivua), ja CSP sallii sen. Puuttuu
 vain tunnus.
 
 1. https://dash.cloudflare.com → **Analytics & Logs** → **Web Analytics** →

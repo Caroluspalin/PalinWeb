@@ -57,11 +57,11 @@ a { color: inherit; }
 .hero h1 { font-size: clamp(3rem, 11vw, 6.5rem); color: var(--green); margin: 1rem 0 1.5rem; }
 .hero h1 em { color: #8a5a48; }
 .hero-sub { max-width: 30rem; font-size: 1.15rem; color: var(--muted); margin-bottom: 2rem; }
-.hero-art svg { display: block; width: min(100%, 20rem); margin-inline: auto; }
+.hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 4.4; object-fit: cover; border-radius: 14rem 14rem 0 0; }
 @media (min-width: 56rem) {
   .hero { padding-block: 5rem 6rem; }
   .hero-inner { grid-template-columns: 1.4fr 1fr; gap: 4rem; }
-  .hero-art svg { width: 100%; max-width: 24rem; }
+  .hero-photo img { aspect-ratio: 4 / 5; max-height: 36rem; }
 }
 
 /* Hinnasto */
@@ -77,10 +77,7 @@ a { color: inherit; }
 /* Kampaajat */
 .team { padding-block: 4rem; }
 .team-grid { display: grid; gap: 2.5rem; }
-.avatar { display: grid; place-items: center; width: 100%; aspect-ratio: 4 / 5; font-family: var(--serif); font-size: 6rem; color: var(--paper); margin-bottom: 1.25rem; }
-.a1 { background: linear-gradient(160deg, #d9b8aa, #a8786a); }
-.a2 { background: linear-gradient(160deg, #9fb09a, #2f5246); }
-.a3 { background: linear-gradient(160deg, #e7d3c0, #b99a7e); }
+.avatar img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 1.25rem; }
 .team h3 { font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--green); }
 .role { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; font-weight: 600; color: var(--muted); margin: 0.5rem 0 0.75rem; }
 .team li p:last-child { color: var(--muted); }
@@ -109,3 +106,5 @@ a { color: inherit; }
 .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.5rem 2rem; padding-block: 1.5rem; }
 .foot p { margin: 0; }
 .foot-logo { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--green); }
+
+.credit a { color: var(--muted); }

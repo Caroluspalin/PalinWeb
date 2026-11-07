@@ -1,0 +1,14 @@
+{
+  "name": "palinweb-tyokalut",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "kuvat": "node kuvat.mjs",
+    "kasvokuva-paikkamerkki": "node kuvat.mjs --kasvokuva-paikkamerkki",
+    "tarkista": "node tarkista.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1",
+    "sharp": "0.34.4"
+  }
+}

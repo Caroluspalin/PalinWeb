@@ -35,28 +35,10 @@
           <p class="hero-sub">Leikkaukset, värit ja juhlakampaukset rauhallisessa studiossa. Varaamme jokaiselle asiakkaalle aikaa myös kuunteluun.</p>
           <a class="btn" href="#varaa">Varaa aika</a>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 400 500">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#d9b8aa"/>
-                <stop offset="1" stop-color="#b9c4ae"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="500" rx="200" fill="url(#g1)"/>
-            <g fill="none" stroke="#1f3a32" stroke-width="3" stroke-linecap="round">
-              <path d="M120 500C118 400 130 300 150 210"/>
-              <path d="M170 500C172 380 190 260 220 150"/>
-              <path d="M225 500C230 400 250 320 290 240"/>
-              <path d="M270 500C268 440 275 390 300 340"/>
-            </g>
-            <g fill="#1f3a32">
-              <ellipse cx="150" cy="195" rx="9" ry="34" transform="rotate(12 150 195)"/>
-              <ellipse cx="221" cy="132" rx="10" ry="40" transform="rotate(14 221 132)"/>
-              <ellipse cx="292" cy="225" rx="9" ry="32" transform="rotate(28 292 225)"/>
-            </g>
-          </svg>
-        </div>
+        <picture class="hero-photo">
+            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hero-640.webp 640w, /kuvat/esimerkit/kaislaranta/hero-1280.webp 1280w" sizes="(min-width: 56rem) 35vw, 100vw">
+            <img src="/kuvat/esimerkit/kaislaranta/hero-960.jpg" width="1280" height="1600" loading="eager" fetchpriority="high" decoding="async" alt="Rauhallinen kampaamotuoli valoisassa huoneessa ikkunan vieressä">
+          </picture>
       </div>
     </section>
 
@@ -100,19 +82,28 @@
         <h2>Kampaajat</h2>
         <ul class="team-grid">
           <li>
-            <span class="avatar a1" aria-hidden="true">A</span>
+            <picture class="avatar">
+            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/varjays-640.webp 640w, /kuvat/esimerkit/kaislaranta/varjays-1280.webp 1280w" sizes="(min-width: 48rem) 30vw, 100vw">
+            <img src="/kuvat/esimerkit/kaislaranta/varjays-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Raitavärjäys folioilla vaaleissa hiuksissa">
+          </picture>
             <h3>Aino</h3>
             <p class="role">Värit ja balayage</p>
             <p>Aino rakastaa luonnollisia, pehmeästi kasvavia sävyjä, jotka näyttävät hyvältä vielä kahden kuukauden päästä.</p>
           </li>
           <li>
-            <span class="avatar a2" aria-hidden="true">M</span>
+            <picture class="avatar">
+            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/leikkaus-640.webp 640w, /kuvat/esimerkit/kaislaranta/leikkaus-1280.webp 1280w" sizes="(min-width: 48rem) 30vw, 100vw">
+            <img src="/kuvat/esimerkit/kaislaranta/leikkaus-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kampaaja leikkaa hiuksia kamman ja saksien avulla">
+          </picture>
             <h3>Mikael</h3>
             <p class="role">Leikkaukset ja parturityöt</p>
             <p>Mikaelin tuoliin tullaan tarkkojen, helposti laitettavien leikkausten takia.</p>
           </li>
           <li>
-            <span class="avatar a3" aria-hidden="true">S</span>
+            <picture class="avatar">
+            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/muotoilu-640.webp 640w, /kuvat/esimerkit/kaislaranta/muotoilu-1280.webp 1280w" sizes="(min-width: 48rem) 30vw, 100vw">
+            <img src="/kuvat/esimerkit/kaislaranta/muotoilu-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kampaaja kihartaa pitkiä hiuksia kiharraudalla">
+          </picture>
             <h3>Sofia</h3>
             <p class="role">Juhla- ja hääkampaukset</p>
             <p>Sofia tekee kampaukset, jotka kestävät tanssilattiallakin aamuun asti.</p>
@@ -158,6 +149,7 @@
     <div class="wrap foot-inner">
       <p class="foot-logo">Kaislaranta</p>
       <p>Kuvitteellinen yritys, esimerkkisivu · Sivut: <a href="/">Palin Web</a></p>
+      <p class="credit">Kuvat: <a href="https://unsplash.com/@giorgiotrovato?utm_source=palinweb&amp;utm_medium=referral">Giorgio Trovato</a>, <a href="https://unsplash.com/@newyork_creator?utm_source=palinweb&amp;utm_medium=referral">Lera Kogan</a>, <a href="https://unsplash.com/@rosaliegdy?utm_source=palinweb&amp;utm_medium=referral">Rosalie Gdy</a>, <a href="https://unsplash.com/@bayleejadegramling?utm_source=palinweb&amp;utm_medium=referral">Baylee Gramling</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
     </div>
   </footer>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[ANALYTICS-TOKEN]"}'></script>

@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Sivua ei löytynyt – Palin Web</title>
+  <meta name="theme-color" content="#1f3fd1">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <main class="section">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Palin Web</a>
+    </div>
+  </header>
+  <main class="hero error-hero">
     <div class="wrap">
-      <h1 class="section-title">Sivua ei löytynyt</h1>
-      <p class="section-intro">Osoite saattaa olla kirjoitettu väärin tai sivu on siirretty.</p>
-      <p class="back"><a class="btn" href="/">Takaisin etusivulle</a></p>
+      <h1>Sivua ei löytynyt</h1>
+      <p class="hero-lead">Osoite saattaa olla kirjoitettu väärin tai sivu on siirretty.</p>
+      <div class="hero-actions"><a class="btn" href="/"><span class="rulla"><span>Takaisin etusivulle</span></span></a></div>
     </div>
   </main>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[ANALYTICS-TOKEN]"}'></script>

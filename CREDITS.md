@@ -23,7 +23,8 @@ Tiedostot: `site/kuvat/esimerkit/<sivu>/<nimi>-{640,1280}.webp` ja `<nimi>-960.j
 
 | Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
 |---|---|---|---|---|---|
-| `hero` | Hero | [Giorgio Trovato](https://unsplash.com/@giorgiotrovato?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/T9u-Xr30FY8](https://unsplash.com/photos/black-and-gray-chair-beside-white-wall-T9u-Xr30FY8) | Unsplash License | rajattu, pakattu |
+| `hiukset` | Hero, kaislikko (sama kuva seitsemänä suikaleena) | [Rapha Wilde](https://unsplash.com/@veloradio?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/WBQk7aA5HAs](https://unsplash.com/photos/close-up-of-messy-tangled-blonde-hair-WBQk7aA5HAs) | Unsplash License | rajattu neliöksi, pakattu (lisäksi WebP 960 px) |
+| `studio` | Studio-osio | [Barney Goodman](https://unsplash.com/@bgoodpic?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/_Fy7Kq0w6OI](https://unsplash.com/photos/a-modern-hair-salon-interior-with-stylish-chairs-and-mirrors-_Fy7Kq0w6OI) | Unsplash License | rajattu 2:3, pakattu (lisäksi WebP 960 px) |
 | `leikkaus` | Kampaaja Mikael | [Rosalie Gdy](https://unsplash.com/@rosaliegdy?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/Bu7ZCs3ZC2I](https://unsplash.com/photos/person-cutting-hair-with-scissors-Bu7ZCs3ZC2I) | Unsplash License | rajattu, pakattu |
 | `varjays` | Kampaaja Aino | [Lera Kogan](https://unsplash.com/@newyork_creator?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/B1B-53ZBgng](https://unsplash.com/photos/brown-hair-with-white-ribbon-B1B-53ZBgng) | Unsplash License | rajattu, pakattu |
 | `muotoilu` | Kampaaja Sofia | [Baylee Gramling](https://unsplash.com/@bayleejadegramling?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/MMz03PyCOZg](https://unsplash.com/photos/person-holding-gray-hair-curler-MMz03PyCOZg) | Unsplash License | rajattu, pakattu |
@@ -50,7 +51,8 @@ kuvakaappauksia yllä mainituista esimerkkisivuista, ja niissä näkyvät samat 
 | Archivo (rajattu: leveys 100–125 %, paino 600–900, latin) | Palin Web, otsikot | SIL Open Font License 1.1 (`site/fonts/OFL-archivo.txt`) |
 | Young Serif | Pikkupaahtimo, otsikot | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-young-serif.txt`) |
 | Familjen Grotesk (latin) | Pikkupaahtimo, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-familjen-grotesk.txt`) |
-| Instrument Serif | Kaislaranta | SIL Open Font License 1.1 |
+| Bodoni Moda (paino 400–600, optinen koko, latin) | Kaislaranta, otsikot | SIL Open Font License 1.1 (`site/esimerkit/kaislaranta/OFL-bodoni-moda.txt`) |
+| Albert Sans (paino 400–600, latin) | Kaislaranta, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/kaislaranta/OFL-albert-sans.txt`) |
 | Big Shoulders Display | Kulmapää | SIL Open Font License 1.1 |
 
 ## Kirjastot

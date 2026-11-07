@@ -4,152 +4,229 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hiusstudio Kaislaranta – kampaamo Helsingissä</title>
-  <meta name="description" content="Hiusstudio Kaislaranta: leikkaukset, värit ja juhlakampaukset rauhallisessa studiossa.">
+  <meta name="description" content="Hiusstudio Kaislaranta: leikkaukset, värit ja juhlakampaukset rauhallisessa studiossa Helsingissä.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#eef0ea">
+  <meta name="theme-color" content="#E8EBE6">
   <link rel="icon" href="data:,">
-  <link rel="preload" href="instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="tyylit.css">
+  <link rel="preload" href="bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="albert-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" imagesizes="(min-width: 64rem) 58vw, 100vw" fetchpriority="high">
+  <link rel="stylesheet" href="tyylit.css?v=20261108d">
+  <script defer src="aukiolo.js?v=20261108d"></script>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-inner">
+  <a class="ohitus" href="#sisalto">Siirry sisältöön</a>
+
+  <!--
+    Aukioloajat koneluettavana: aukiolo.js laskee näistä "Auki nyt" -tilan.
+    Puuttuva päivä = suljettu.
+  -->
+  <div hidden id="aukiolo" data-ti="10:00-19:00" data-ke="10:00-19:00" data-to="10:00-19:00" data-pe="10:00-19:00" data-la="09:00-15:00"></div>
+
+  <header class="yla">
+    <div class="kehys yla-sisa">
       <a class="logo" href="#">Kaislaranta</a>
-      <nav aria-label="Valikko">
-        <ul>
-          <li><a href="#hinnasto">Hinnasto</a></li>
-          <li><a href="#kampaajat">Kampaajat</a></li>
-          <li><a href="#yhteys">Yhteystiedot</a></li>
-        </ul>
-      </nav>
-      <a class="btn btn-small" href="#varaa">Varaa aika</a>
+      <a class="nappi nappi-pieni" href="#varaa">Varaa aika</a>
     </div>
   </header>
 
-  <main>
+  <main id="sisalto">
     <section class="hero">
-      <div class="wrap hero-inner">
-        <div>
-          <p class="eyebrow">Hiusstudio · Helsinki</p>
-          <h1>Hiukset, joiden kanssa on <em>hyvä olla.</em></h1>
-          <p class="hero-sub">Leikkaukset, värit ja juhlakampaukset rauhallisessa studiossa. Varaamme jokaiselle asiakkaalle aikaa myös kuunteluun.</p>
-          <a class="btn" href="#varaa">Varaa aika</a>
+      <!--
+        Kaislikko: sama kuva seitsemässä kapeassa ikkunassa. Selain lataa kuvan kerran.
+        Demopohjassa riittää vaihtaa kuvan osoitteet; suikaleet syntyvät mistä tahansa kuvasta.
+      -->
+      <div class="kaislat">
+        <div class="kaisla"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="Lähikuva pitkistä, vaaleista hiuksista luonnonvalossa" fetchpriority="high" decoding="async">
+        </picture></div>
+        <div class="kaisla" aria-hidden="true"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="" decoding="async">
+        </picture></div>
+        <div class="kaisla" aria-hidden="true"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="" decoding="async">
+        </picture></div>
+        <div class="kaisla" aria-hidden="true"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="" decoding="async">
+        </picture></div>
+        <div class="kaisla" aria-hidden="true"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="" decoding="async">
+        </picture></div>
+        <div class="kaisla" aria-hidden="true"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="" decoding="async">
+        </picture></div>
+        <div class="kaisla" aria-hidden="true"><picture>
+          <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hiukset-640.webp 640w, /kuvat/esimerkit/kaislaranta/hiukset-960.webp 960w, /kuvat/esimerkit/kaislaranta/hiukset-1280.webp 1280w" sizes="(min-width: 64rem) 58vw, 100vw">
+          <img src="/kuvat/esimerkit/kaislaranta/hiukset-960.jpg" width="960" height="960" alt="" decoding="async">
+        </picture></div>
+      </div>
+      <div class="kehys hero-teksti">
+        <h1>Hiukset, joiden kanssa on hyvä olla.</h1>
+        <p class="hero-lause">Leikkaukset, värit ja juhlakampaukset rauhallisessa studiossa. Jokaiseen aikaan kuuluu myös kuuntelu.</p>
+        <div class="napit">
+          <a class="nappi" href="#varaa">Varaa aika</a>
+          <a class="nappi nappi-toissijainen" href="tel:+358500000000">Soita</a>
         </div>
-        <picture class="hero-photo">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/hero-640.webp 640w, /kuvat/esimerkit/kaislaranta/hero-1280.webp 1280w" sizes="(min-width: 56rem) 35vw, 100vw">
-            <img src="/kuvat/esimerkit/kaislaranta/hero-960.jpg" width="1280" height="1600" loading="eager" fetchpriority="high" decoding="async" alt="Rauhallinen kampaamotuoli valoisassa huoneessa ikkunan vieressä">
-          </picture>
       </div>
     </section>
 
-    <section id="hinnasto" class="prices">
-      <div class="wrap">
+    <section class="tanaan" aria-label="Aukiolo ja osoite">
+      <div class="kehys">
+        <dl class="tanaan-rivi">
+          <div>
+            <dt>Tänään</dt>
+            <dd data-tanaan>Ti–pe 10–19, la 9–15</dd>
+          </div>
+          <div>
+            <dt>Osoite</dt>
+            <dd>Esimerkkitie 3, 00100 Helsinki</dd>
+          </div>
+          <div>
+            <dt>Puhelin</dt>
+            <dd><a href="tel:+358500000000">050 000 0000</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="hinnasto" class="hinnasto">
+      <div class="kehys">
         <h2>Hinnasto</h2>
-        <div class="price-grid">
+        <div class="hinta-ryhmat">
           <div>
             <h3>Leikkaukset</h3>
-            <ul class="list">
-              <li><span>Leikkaus, lyhyet hiukset</span><span>49 €</span></li>
-              <li><span>Leikkaus, pitkät hiukset</span><span>59 €</span></li>
-              <li><span>Parturileikkaus</span><span>39 €</span></li>
-              <li><span>Lasten leikkaus (alle 12 v)</span><span>29 €</span></li>
+            <ul class="hinnat">
+              <li><span class="palvelu">Leikkaus, lyhyet hiukset</span><span class="kesto">45 min</span><span class="hinta">49 €</span></li>
+              <li><span class="palvelu">Leikkaus, pitkät hiukset</span><span class="kesto">60 min</span><span class="hinta">59 €</span></li>
+              <li><span class="palvelu">Parturileikkaus</span><span class="kesto">30 min</span><span class="hinta">39 €</span></li>
+              <li><span class="palvelu">Lasten leikkaus, alle 12 v</span><span class="kesto">30 min</span><span class="hinta">29 €</span></li>
             </ul>
           </div>
           <div>
             <h3>Värit</h3>
-            <ul class="list">
-              <li><span>Tyvivärjäys</span><span>alk. 79 €</span></li>
-              <li><span>Kokovärjäys</span><span>alk. 99 €</span></li>
-              <li><span>Raidat ja balayage</span><span>alk. 129 €</span></li>
-              <li><span>Sävytys</span><span>45 €</span></li>
+            <ul class="hinnat">
+              <li><span class="palvelu">Tyvivärjäys</span><span class="kesto">90 min</span><span class="hinta">alk. 79 €</span></li>
+              <li><span class="palvelu">Kokovärjäys</span><span class="kesto">2 h</span><span class="hinta">alk. 99 €</span></li>
+              <li><span class="palvelu">Raidat ja balayage</span><span class="kesto">3 h</span><span class="hinta">alk. 129 €</span></li>
+              <li><span class="palvelu">Sävytys</span><span class="kesto">45 min</span><span class="hinta">45 €</span></li>
             </ul>
           </div>
           <div>
             <h3>Kampaukset</h3>
-            <ul class="list">
-              <li><span>Föönaus</span><span>35 €</span></li>
-              <li><span>Juhlakampaus</span><span>69 €</span></li>
-              <li><span>Hääkampaus + koekampaus</span><span>159 €</span></li>
+            <ul class="hinnat">
+              <li><span class="palvelu">Föönaus</span><span class="kesto">30 min</span><span class="hinta">35 €</span></li>
+              <li><span class="palvelu">Juhlakampaus</span><span class="kesto">60 min</span><span class="hinta">69 €</span></li>
+              <li><span class="palvelu">Hääkampaus ja koekampaus</span><span class="kesto">2 × 90 min</span><span class="hinta">159 €</span></li>
             </ul>
           </div>
         </div>
-        <p class="small">Värikäsittelyjen hinta riippuu hiusten pituudesta ja paksuudesta. Kerromme tarkan hinnan ennen aloitusta.</p>
+        <p class="huom">Värikäsittelyn hinta riippuu hiusten pituudesta ja paksuudesta. Kerromme tarkan hinnan ennen kuin aloitamme.</p>
       </div>
     </section>
 
-    <section id="kampaajat" class="team">
-      <div class="wrap">
-        <h2>Kampaajat</h2>
-        <ul class="team-grid">
-          <li>
-            <picture class="avatar">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/varjays-640.webp 640w, /kuvat/esimerkit/kaislaranta/varjays-1280.webp 1280w" sizes="(min-width: 48rem) 30vw, 100vw">
-            <img src="/kuvat/esimerkit/kaislaranta/varjays-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Raitavärjäys folioilla vaaleissa hiuksissa">
+      <div class="jatko">
+      <section class="studio">
+        <div class="kehys studio-sisa">
+          <picture class="studio-kuva">
+            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/studio-640.webp 640w, /kuvat/esimerkit/kaislaranta/studio-960.webp 960w, /kuvat/esimerkit/kaislaranta/studio-1280.webp 1280w" sizes="(min-width: 64rem) 30vw, 100vw">
+            <img src="/kuvat/esimerkit/kaislaranta/studio-960.jpg" width="1280" height="1920" loading="lazy" decoding="async" alt="Valoisa kampaamo, jossa on kaarevat peilit ja tummat tuolit">
           </picture>
-            <h3>Aino</h3>
-            <p class="role">Värit ja balayage</p>
-            <p>Aino rakastaa luonnollisia, pehmeästi kasvavia sävyjä, jotka näyttävät hyvältä vielä kahden kuukauden päästä.</p>
-          </li>
-          <li>
-            <picture class="avatar">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/leikkaus-640.webp 640w, /kuvat/esimerkit/kaislaranta/leikkaus-1280.webp 1280w" sizes="(min-width: 48rem) 30vw, 100vw">
-            <img src="/kuvat/esimerkit/kaislaranta/leikkaus-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kampaaja leikkaa hiuksia kamman ja saksien avulla">
-          </picture>
-            <h3>Mikael</h3>
-            <p class="role">Leikkaukset ja parturityöt</p>
-            <p>Mikaelin tuoliin tullaan tarkkojen, helposti laitettavien leikkausten takia.</p>
-          </li>
-          <li>
-            <picture class="avatar">
-            <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/muotoilu-640.webp 640w, /kuvat/esimerkit/kaislaranta/muotoilu-1280.webp 1280w" sizes="(min-width: 48rem) 30vw, 100vw">
-            <img src="/kuvat/esimerkit/kaislaranta/muotoilu-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kampaaja kihartaa pitkiä hiuksia kiharraudalla">
-          </picture>
-            <h3>Sofia</h3>
-            <p class="role">Juhla- ja hääkampaukset</p>
-            <p>Sofia tekee kampaukset, jotka kestävät tanssilattiallakin aamuun asti.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+          <div class="studio-teksti">
+            <h2>Neljä tuolia ja iso ikkuna sisäpihalle</h2>
+            <p>Studio on pieni tarkoituksella. Kerrallaan paikalla on enintään neljä asiakasta, joten ääni pysyy matalana ja jokaiselle jää aikaa.</p>
+            <p>Käytämme vegaanisia hoitotuotteita ja ammoniakittomia värejä. Kahvi ja tee kuuluvat jokaiseen käyntiin.</p>
+          </div>
+        </div>
+      </section>
 
-    <section id="varaa" class="booking">
-      <div class="wrap booking-inner">
-        <h2>Varaa <em>aika</em></h2>
-        <div>
-          <p>Soita tai lähetä viesti, niin etsitään sinulle sopiva aika. Jos et tiedä, mitä palvelua tarvitset, varaa lyhyt konsultaatio – se on maksuton.</p>
-          <a class="btn btn-light" href="tel:+358500000000">Soita 050 000 0000</a>
+      <section id="kampaajat" class="kampaajat">
+        <div class="kehys">
+          <h2>Kampaajat</h2>
+          <ul class="tiimi">
+            <li>
+              <picture class="tiimi-kuva">
+                <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/varjays-640.webp 640w, /kuvat/esimerkit/kaislaranta/varjays-1280.webp 1280w" sizes="(min-width: 48rem) 26vw, 40vw">
+                <img src="/kuvat/esimerkit/kaislaranta/varjays-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Raitavärjäys folioilla vaaleissa hiuksissa">
+              </picture>
+              <div class="tiimi-teksti">
+                <h3>Aino</h3>
+                <p class="rooli">Värit ja balayage</p>
+                <p>Aino rakastaa luonnollisia, pehmeästi kasvavia sävyjä, jotka näyttävät hyvältä vielä kahden kuukauden päästä.</p>
+              </div>
+            </li>
+            <li>
+              <picture class="tiimi-kuva">
+                <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/leikkaus-640.webp 640w, /kuvat/esimerkit/kaislaranta/leikkaus-1280.webp 1280w" sizes="(min-width: 48rem) 26vw, 40vw">
+                <img src="/kuvat/esimerkit/kaislaranta/leikkaus-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kampaaja leikkaa hiuksia kamman ja saksien avulla">
+              </picture>
+              <div class="tiimi-teksti">
+                <h3>Mikael</h3>
+                <p class="rooli">Leikkaukset ja parturityöt</p>
+                <p>Mikaelin tuoliin tullaan tarkkojen leikkausten takia, jotka on helppo laittaa itse kotona.</p>
+              </div>
+            </li>
+            <li>
+              <picture class="tiimi-kuva">
+                <source type="image/webp" srcset="/kuvat/esimerkit/kaislaranta/muotoilu-640.webp 640w, /kuvat/esimerkit/kaislaranta/muotoilu-1280.webp 1280w" sizes="(min-width: 48rem) 26vw, 40vw">
+                <img src="/kuvat/esimerkit/kaislaranta/muotoilu-960.jpg" width="1280" height="1600" loading="lazy" decoding="async" alt="Kampaaja kihartaa pitkiä hiuksia kiharraudalla">
+              </picture>
+              <div class="tiimi-teksti">
+                <h3>Sofia</h3>
+                <p class="rooli">Juhla- ja hääkampaukset</p>
+                <p>Sofia tekee kampaukset, jotka kestävät tanssilattiallakin aamuun asti.</p>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="yhteys" class="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <h3>Osoite</h3>
-          <p>Esimerkkitie 3<br>00100 Helsinki</p>
-          <p>Sisäänkäynti sisäpihan puolelta.</p>
+      <section id="varaa" class="varaa">
+        <div class="kehys varaa-sisa">
+          <div class="varaa-teksti">
+            <h2>Varaa aika</h2>
+            <p>Soita tai lähetä sähköpostia, niin etsitään sinulle sopiva aika. Jos et tiedä, mitä palvelua tarvitset, varaa 15 minuutin konsultaatio. Se on maksuton.</p>
+            <div class="napit">
+              <a class="nappi nappi-vaalea" href="tel:+358500000000">Soita 050 000 0000</a>
+              <a class="nappi nappi-reuna" href="mailto:studio@kaislaranta.example">Lähetä sähköpostia</a>
+            </div>
+          </div>
+          <div class="varaa-tiedot">
+            <h3>Aukioloajat</h3>
+            <dl class="ajat">
+              <div data-paiva="1"><dt>Maanantai</dt><dd>suljettu</dd></div>
+              <div data-paiva="2"><dt>Tiistai</dt><dd>10–19</dd></div>
+              <div data-paiva="3"><dt>Keskiviikko</dt><dd>10–19</dd></div>
+              <div data-paiva="4"><dt>Torstai</dt><dd>10–19</dd></div>
+              <div data-paiva="5"><dt>Perjantai</dt><dd>10–19</dd></div>
+              <div data-paiva="6"><dt>Lauantai</dt><dd>9–15</dd></div>
+              <div data-paiva="7"><dt>Sunnuntai</dt><dd>suljettu</dd></div>
+            </dl>
+            <h3>Osoite</h3>
+            <p>Esimerkkitie 3, 00100 Helsinki<br>Sisäänkäynti sisäpihan puolelta.</p>
+            <p><a href="mailto:studio@kaislaranta.example">studio@kaislaranta.example</a></p>
+          </div>
         </div>
-        <div>
-          <h3>Aukioloajat</h3>
-          <dl class="hours">
-            <div><dt>Ti–pe</dt><dd>10–19</dd></div>
-            <div><dt>La</dt><dd>9–15</dd></div>
-            <div><dt>Su–ma</dt><dd>suljettu</dd></div>
-          </dl>
-        </div>
-        <div>
-          <h3>Yhteys</h3>
-          <p><a href="tel:+358500000000">050 000 0000</a><br><a href="mailto:studio@kaislaranta.example">studio@kaislaranta.example</a></p>
-        </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Mobiilin varauspalkki: tarttuu ruudun alareunaan, kun hero on ohitettu (pelkkä CSS, position: sticky) -->
+      <nav class="palkki" aria-label="Varaa tai soita">
+        <a class="nappi nappi-toissijainen" href="tel:+358500000000">Soita</a>
+        <a class="nappi" href="#varaa">Varaa aika</a>
+      </nav>
+    </div>
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot-inner">
-      <p class="foot-logo">Kaislaranta</p>
-      <p>Kuvitteellinen yritys, esimerkkisivu · Sivut: <a href="/">Palin Web</a></p>
-      <p class="credit">Kuvat: <a href="https://unsplash.com/@giorgiotrovato?utm_source=palinweb&amp;utm_medium=referral">Giorgio Trovato</a>, <a href="https://unsplash.com/@newyork_creator?utm_source=palinweb&amp;utm_medium=referral">Lera Kogan</a>, <a href="https://unsplash.com/@rosaliegdy?utm_source=palinweb&amp;utm_medium=referral">Rosalie Gdy</a>, <a href="https://unsplash.com/@bayleejadegramling?utm_source=palinweb&amp;utm_medium=referral">Baylee Gramling</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
+  <footer class="ala">
+    <div class="kehys ala-sisa">
+      <p class="ala-logo">Kaislaranta</p>
+      <p>Kuvitteellinen yritys, esimerkkisivu.<br>Sivut: <a href="/">Palin Web</a></p>
+      <p class="kiitos">Kuvat: <a href="https://unsplash.com/@veloradio?utm_source=palinweb&amp;utm_medium=referral">Rapha Wilde</a>, <a href="https://unsplash.com/@bgoodpic?utm_source=palinweb&amp;utm_medium=referral">Barney Goodman</a>, <a href="https://unsplash.com/@newyork_creator?utm_source=palinweb&amp;utm_medium=referral">Lera Kogan</a>, <a href="https://unsplash.com/@rosaliegdy?utm_source=palinweb&amp;utm_medium=referral">Rosalie Gdy</a>, <a href="https://unsplash.com/@bayleejadegramling?utm_source=palinweb&amp;utm_medium=referral">Baylee Gramling</a> / <a href="https://unsplash.com/?utm_source=palinweb&amp;utm_medium=referral">Unsplash</a></p>
     </div>
   </footer>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "[ANALYTICS-TOKEN]"}'></script>

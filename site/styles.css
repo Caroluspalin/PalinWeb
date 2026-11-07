@@ -324,9 +324,9 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 }
 /* Pinossa alle jäävä kortti tummuu tämän kerroksen kautta; itse kortti pysyy peittävänä */
 .work-himmennys { position: absolute; inset: 0; z-index: 1; background: #000; opacity: 0; pointer-events: none; }
-.work-kulmapaa      { --kortti: #0e0e0e; --kortti-teksti: #f2f0eb; --kortti-hiljainen: #a3a19c; --kortti-linkki: #c9a467; }
-.work-pikkupaahtimo { --kortti: #2a1912; --kortti-teksti: #f6eee2; --kortti-hiljainen: #cdb9a8; --kortti-linkki: #e8b04b; }
-.work-kaislaranta   { --kortti: #1f3a32; --kortti-teksti: #f8f8f4; --kortti-hiljainen: #b8c7bf; --kortti-linkki: #e7c9bc; }
+.work-kulmapaa      { --kortti: #0A0A0A; --kortti-teksti: #F2F1EC; --kortti-hiljainen: #B4B2AB; --kortti-linkki: #F4C21B; }
+.work-pikkupaahtimo { --kortti: #2A1A12; --kortti-teksti: #E3E4CF; --kortti-hiljainen: #BFA98E; --kortti-linkki: #D2B98E; }
+.work-kaislaranta   { --kortti: #1D3A41; --kortti-teksti: #FFFFFF; --kortti-hiljainen: #D5DEDC; --kortti-linkki: #C4AC72; }
 .work img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top; }
 .work-meta { display: grid; gap: 1rem; align-content: space-between; }
 .work-meta h3 {

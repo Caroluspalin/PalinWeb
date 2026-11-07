@@ -25,6 +25,8 @@ const server = http.createServer(async (req, res) => {
 });
 await new Promise((r) => server.listen(0, "127.0.0.1", r));
 const base = `http://127.0.0.1:${server.address().port}`;
+// Kuvissa näytetään auki-tila: kello asetetaan tiistaille klo 12 (aukiolo.js lukee ?aika=)
+const aika = "?aika=2026-11-10T12:00";
 
 // Käyttää koneelle asennettua Chromea (ei erillistä selainlatausta)
 const browser = await chromium.launch({ channel: "chrome" });
@@ -34,6 +36,15 @@ async function shot(url, { width, height, scale, clipHeight }) {
   await page.route("**/cloudflareinsights.com/**", (r) => r.abort());
   await page.goto(url, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
+  // Mobiilin kiinteä palkki piiloon: koko sivun kaappauksessa se jäisi keskelle sivua
+  await page.addStyleTag({ content: ".palkki { display: none !important; }" });
+  // Laiskat kuvat ladataan heti, koska puhelinruutu kattaa 2,5 näkymää
+  await page.evaluate(() => Promise.all([...document.images].map((i) => {
+    i.loading = "eager";
+    return i.complete ? null : new Promise((r) => { i.onload = i.onerror = r; });
+  })));
+  // Odotetaan avausanimaatioiden loppuminen (pisin noin 2,7 s, Pikkupaahtimon allas)
+  await page.waitForTimeout(3500);
   const buf = clipHeight
     ? await page.screenshot({ type: "png", fullPage: true, clip: { x: 0, y: 0, width, height: clipHeight } })
     : await page.screenshot({ type: "png" });
@@ -48,13 +59,13 @@ async function webp(buf, file, w, h) {
 // Heron "Elävä näyteikkuna": puhelinruudun pitkät kuvat 585×3165
 // (näkymä 390×844, 1,5× tarkkuus, rajattu 2,5 näkymän korkuiseksi)
 for (const slug of ["pikkupaahtimo", "kulmapaa", "kaislaranta"]) {
-  await webp(await shot(`${base}/esimerkit/${slug}/`, { width: 390, height: 844, scale: 1.5, clipHeight: 2110 }), `esimerkit/ruutu-${slug}.webp`, 585, 3165);
+  await webp(await shot(`${base}/esimerkit/${slug}/${aika}`, { width: 390, height: 844, scale: 1.5, clipHeight: 2110 }), `esimerkit/ruutu-${slug}.webp`, 585, 3165);
 }
 if (process.argv.includes("--vain-ruudut")) { await browser.close(); server.close(); process.exit(0); }
 
 // Esimerkkien työpöytäkuvat 1800×1200 ja 900×600 (näkymä 1200×800, 1,5× tarkkuus)
 for (const slug of ["pikkupaahtimo", "kaislaranta", "kulmapaa"]) {
-  const buf = await shot(`${base}/esimerkit/${slug}/`, { width: 1200, height: 800, scale: 1.5 });
+  const buf = await shot(`${base}/esimerkit/${slug}/${aika}`, { width: 1200, height: 800, scale: 1.5 });
   await webp(buf, `esimerkit/${slug}.webp`, 1800, 1200);
   await webp(buf, `esimerkit/${slug}-900.webp`, 900, 600); // mobiilin srcset
 }

@@ -327,7 +327,8 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 .work-kulmapaa      { --kortti: #0A0A0A; --kortti-teksti: #F2F1EC; --kortti-hiljainen: #B4B2AB; --kortti-linkki: #F4C21B; }
 .work-pikkupaahtimo { --kortti: #2A1A12; --kortti-teksti: #E3E4CF; --kortti-hiljainen: #BFA98E; --kortti-linkki: #D2B98E; }
 .work-kaislaranta   { --kortti: #1D3A41; --kortti-teksti: #FFFFFF; --kortti-hiljainen: #D5DEDC; --kortti-linkki: #C4AC72; }
-.work img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top; }
+.work-kaappaus { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top; }
+.work-puhelin { display: none; }
 .work-meta { display: grid; gap: 1rem; align-content: space-between; }
 .work-meta h3 {
   font-family: var(--display); font-stretch: 112%; font-weight: 700;
@@ -336,19 +337,45 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 }
 .work-tag { font-size: 0.95rem; color: var(--kortti-hiljainen); margin: 0.4rem 0 0; }
 .work-meta p:not(.work-tag) { color: var(--kortti-hiljainen); max-width: 30rem; }
-.work-meta a { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--kortti-linkki); }
+.work-linkit { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin: 1.25rem 0 0; }
+.work-meta a { font-weight: 600; color: var(--kortti-linkki); }
 .work-meta a:hover { color: var(--kortti-teksti); }
+/* "Kokeile sivua" on mobiilissa nappi, joka avaa sivun koko ruudun kokeiluun */
+.work-meta .work-kokeile {
+  display: inline-flex; align-items: center; min-height: 3rem; padding: 0.7rem 1.25rem;
+  background: var(--kortti-linkki); color: var(--kortti); text-decoration: none;
+}
+.work-meta .work-kokeile:hover { background: var(--kortti-teksti); color: var(--kortti); }
 .work :focus-visible { outline-color: var(--kortti-linkki); }
 
 @media (min-width: 56rem) {
   .works { gap: 2rem; }
   .work { grid-template-columns: repeat(12, 1fr); column-gap: 2rem; padding: 1.5rem; }
-  .work img { grid-column: 1 / span 8; }
+  .work-kuva { grid-column: 1 / span 8; }
   .work-meta { grid-column: 9 / span 4; padding-block: 0.5rem; }
 }
 /* Pinoutuminen: kortit jäävät vuorotellen kiinni. Ilman JavaScriptiä ne ovat silti tavallinen pino. */
 @media (min-width: 64rem) {
   .work { position: sticky; top: 5.5rem; }
+  /* Työpöydällä kuvakaappauksen tilalla puhelinkehys, jossa on oikea sivu (390 px leveä iframe). */
+  .work-kaappaus { display: none; }
+  .work-kokeile { display: none !important; }
+  .work-kuva { display: grid; place-items: center; }
+  .work-puhelin {
+    --ruutu-k: min(44rem, calc(100svh - 13rem));
+    display: block; position: relative; overflow: hidden;
+    width: calc(390px + 1.25rem); height: calc(var(--ruutu-k) + 1.25rem);
+    border: 0.625rem solid #0b0b0d; border-radius: 2.75rem;
+    background: #0b0b0d;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.12);
+  }
+  .work-ruutu, .work-puhelin iframe {
+    position: absolute; inset: 0; width: 390px; height: 100%;
+    border: 0; border-radius: 2.125rem;
+  }
+  .work-ruutu { object-fit: cover; object-position: top; }
+  .work-puhelin iframe { background: #fff; opacity: 0; transition: opacity 0.4s; }
+  .work-puhelin iframe.on-ladattu { opacity: 1; }
   .work:nth-child(2) { top: 6.25rem; }
   .work:nth-child(3) { top: 7rem; }
 }
@@ -517,3 +544,32 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
+
+/* ---------- Esimerkkisivun kokeilu koko ruudulla (<dialog>) ---------- */
+.kokeilu {
+  width: 100%; height: 100%; max-width: none; max-height: none;
+  margin: 0; padding: 0; border: 0;
+  background: var(--muste); color: #fff;
+}
+.kokeilu[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+.kokeilu::backdrop { background: rgb(18 19 22 / 0.6); }
+.kokeilu-yla {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "otsikko sulje" "uusi sulje";
+  align-items: center; column-gap: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+.kokeilu-otsikko { grid-area: otsikko; margin: 0; font-weight: 600; line-height: 1.3; }
+.kokeilu-uusi { grid-area: uusi; justify-self: start; color: var(--koboltti-teksti); font-size: 0.875rem; }
+.kokeilu-sulje { grid-area: sulje; }
+.kokeilu-sulje {
+  min-height: 2.75rem; padding: 0.5rem 1.1rem; border: 0;
+  background: #fff; color: var(--muste); font: inherit; font-weight: 600; cursor: pointer;
+}
+.kokeilu-sulje:hover { background: var(--koboltti-teksti); }
+.kokeilu-sulje:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.kokeilu iframe { width: 100%; height: 100%; border: 0; background: #fff; }
+html.on-kokeilu { overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) {
+  .kokeilu[open] { animation: kokeilu-auki 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); }
+}
+@keyframes kokeilu-auki { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: none; } }

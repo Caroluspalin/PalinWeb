@@ -25,9 +25,10 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261108a">
+  <link rel="stylesheet" href="/styles.css?v=20261108c">
   <script defer src="/alapalkki.js?v=20261108a"></script>
   <script defer src="/liike.js?v=20261108a"></script>
+  <script defer src="/kokeilu.js?v=20261108a"></script>
 </head>
 <body>
   <a class="skip" href="#sisalto">Siirry sisältöön</a>
@@ -105,7 +106,13 @@
         <div class="works">
           <article class="work work-kulmapaa">
             <span class="work-himmennys" aria-hidden="true"></span>
-            <img src="/kuvat/esimerkit/kulmapaa.webp" srcset="/kuvat/esimerkit/kulmapaa-900.webp 900w, /kuvat/esimerkit/kulmapaa.webp 1800w" sizes="(min-width: 56rem) 60vw, calc(100vw - 4rem)" width="1800" height="1200" loading="lazy" decoding="async" alt="Kuvakaappaus Parturi Kulmapään esimerkkisivusta">
+            <div class="work-kuva">
+              <img class="work-kaappaus" src="/kuvat/esimerkit/kulmapaa.webp" srcset="/kuvat/esimerkit/kulmapaa-900.webp 900w, /kuvat/esimerkit/kulmapaa.webp 1800w" sizes="(min-width: 56rem) 60vw, calc(100vw - 4rem)" width="1800" height="1200" loading="lazy" decoding="async" alt="Kuvakaappaus Parturi Kulmapään esimerkkisivusta">
+              <!-- Työpöydällä (≥ 1024 px) puhelinkehys: kokeilu.js vaihtaa kuvakaappauksen oikeaan sivuun, kun kortti on lähellä näkymää -->
+              <div class="work-puhelin" data-sivu="/esimerkit/kulmapaa/" data-otsikko="Parturi Kulmapää, esimerkkisivu">
+                <img class="work-ruutu" src="/kuvat/esimerkit/ruutu-kulmapaa.webp" width="585" height="3165" alt="" loading="lazy" decoding="async">
+              </div>
+            </div>
             <div class="work-meta">
               <div>
                 <h3>Parturi Kulmapää</h3>
@@ -113,14 +120,23 @@
               </div>
               <div>
                 <p>Hinnasto, drop-in-ajat ja ajanvaraus yhdellä napautuksella.</p>
-                <a href="/esimerkit/kulmapaa/">Katso sivu<span class="visually-hidden">: Parturi Kulmapää</span></a>
+                <p class="work-linkit">
+                  <a class="work-kokeile" href="/esimerkit/kulmapaa/" data-kokeile data-otsikko="Parturi Kulmapää">Kokeile sivua<span class="visually-hidden">: Parturi Kulmapää</span></a>
+                  <a href="/esimerkit/kulmapaa/" target="_blank" rel="noopener">Avaa omassa välilehdessä<span class="visually-hidden">: Parturi Kulmapää</span></a>
+                </p>
               </div>
             </div>
           </article>
 
           <article class="work work-pikkupaahtimo">
             <span class="work-himmennys" aria-hidden="true"></span>
-            <img src="/kuvat/esimerkit/pikkupaahtimo.webp" srcset="/kuvat/esimerkit/pikkupaahtimo-900.webp 900w, /kuvat/esimerkit/pikkupaahtimo.webp 1800w" sizes="(min-width: 56rem) 60vw, calc(100vw - 4rem)" width="1800" height="1200" loading="lazy" decoding="async" alt="Kuvakaappaus Kahvila Pikkupaahtimon esimerkkisivusta">
+            <div class="work-kuva">
+              <img class="work-kaappaus" src="/kuvat/esimerkit/pikkupaahtimo.webp" srcset="/kuvat/esimerkit/pikkupaahtimo-900.webp 900w, /kuvat/esimerkit/pikkupaahtimo.webp 1800w" sizes="(min-width: 56rem) 60vw, calc(100vw - 4rem)" width="1800" height="1200" loading="lazy" decoding="async" alt="Kuvakaappaus Kahvila Pikkupaahtimon esimerkkisivusta">
+              <!-- Työpöydällä (≥ 1024 px) puhelinkehys: kokeilu.js vaihtaa kuvakaappauksen oikeaan sivuun, kun kortti on lähellä näkymää -->
+              <div class="work-puhelin" data-sivu="/esimerkit/pikkupaahtimo/" data-otsikko="Kahvila Pikkupaahtimo, esimerkkisivu">
+                <img class="work-ruutu" src="/kuvat/esimerkit/ruutu-pikkupaahtimo.webp" width="585" height="3165" alt="" loading="lazy" decoding="async">
+              </div>
+            </div>
             <div class="work-meta">
               <div>
                 <h3>Kahvila Pikkupaahtimo</h3>
@@ -128,14 +144,23 @@
               </div>
               <div>
                 <p>Lounaslista, menu, aukioloajat ja kartta.</p>
-                <a href="/esimerkit/pikkupaahtimo/">Katso sivu<span class="visually-hidden">: Kahvila Pikkupaahtimo</span></a>
+                <p class="work-linkit">
+                  <a class="work-kokeile" href="/esimerkit/pikkupaahtimo/" data-kokeile data-otsikko="Kahvila Pikkupaahtimo">Kokeile sivua<span class="visually-hidden">: Kahvila Pikkupaahtimo</span></a>
+                  <a href="/esimerkit/pikkupaahtimo/" target="_blank" rel="noopener">Avaa omassa välilehdessä<span class="visually-hidden">: Kahvila Pikkupaahtimo</span></a>
+                </p>
               </div>
             </div>
           </article>
 
           <article class="work work-kaislaranta">
             <span class="work-himmennys" aria-hidden="true"></span>
-            <img src="/kuvat/esimerkit/kaislaranta.webp" srcset="/kuvat/esimerkit/kaislaranta-900.webp 900w, /kuvat/esimerkit/kaislaranta.webp 1800w" sizes="(min-width: 56rem) 60vw, calc(100vw - 4rem)" width="1800" height="1200" loading="lazy" decoding="async" alt="Kuvakaappaus Hiusstudio Kaislarannan esimerkkisivusta">
+            <div class="work-kuva">
+              <img class="work-kaappaus" src="/kuvat/esimerkit/kaislaranta.webp" srcset="/kuvat/esimerkit/kaislaranta-900.webp 900w, /kuvat/esimerkit/kaislaranta.webp 1800w" sizes="(min-width: 56rem) 60vw, calc(100vw - 4rem)" width="1800" height="1200" loading="lazy" decoding="async" alt="Kuvakaappaus Hiusstudio Kaislarannan esimerkkisivusta">
+              <!-- Työpöydällä (≥ 1024 px) puhelinkehys: kokeilu.js vaihtaa kuvakaappauksen oikeaan sivuun, kun kortti on lähellä näkymää -->
+              <div class="work-puhelin" data-sivu="/esimerkit/kaislaranta/" data-otsikko="Hiusstudio Kaislaranta, esimerkkisivu">
+                <img class="work-ruutu" src="/kuvat/esimerkit/ruutu-kaislaranta.webp" width="585" height="3165" alt="" loading="lazy" decoding="async">
+              </div>
+            </div>
             <div class="work-meta">
               <div>
                 <h3>Hiusstudio Kaislaranta</h3>
@@ -143,7 +168,10 @@
               </div>
               <div>
                 <p>Hinnasto, kampaajat ja ajanvaraus.</p>
-                <a href="/esimerkit/kaislaranta/">Katso sivu<span class="visually-hidden">: Hiusstudio Kaislaranta</span></a>
+                <p class="work-linkit">
+                  <a class="work-kokeile" href="/esimerkit/kaislaranta/" data-kokeile data-otsikko="Hiusstudio Kaislaranta">Kokeile sivua<span class="visually-hidden">: Hiusstudio Kaislaranta</span></a>
+                  <a href="/esimerkit/kaislaranta/" target="_blank" rel="noopener">Avaa omassa välilehdessä<span class="visually-hidden">: Hiusstudio Kaislaranta</span></a>
+                </p>
               </div>
             </div>
           </article>
@@ -297,6 +325,15 @@
   </footer>
 
   <!-- Kiinteä alapalkki mobiilissa (näkyy, kun hero on vieritetty ohi) -->
+  <!-- Esimerkkisivun kokeilu koko ruudulla (alle 1024 px). kokeilu.js lisää iframen; ilman JavaScriptiä "Kokeile sivua" on tavallinen linkki. -->
+  <dialog class="kokeilu" aria-labelledby="kokeilu-otsikko">
+    <div class="kokeilu-yla">
+      <p class="kokeilu-otsikko" id="kokeilu-otsikko">Esimerkkisivu</p>
+      <a class="kokeilu-uusi" href="/" target="_blank" rel="noopener">Avaa omassa välilehdessä</a>
+      <button class="kokeilu-sulje" type="button">Sulje</button>
+    </div>
+  </dialog>
+
   <nav class="mobile-bar" aria-label="Pikayhteys">
     <a class="btn btn-outline" href="tel:[PUHELIN]"><span class="rulla"><span>Soita</span></span></a>
     <a class="btn" href="mailto:palin@palinweb.fi?subject=Ilmainen%20luonnos&amp;body=Hei!%0A%0AYrityksen%20nimi%3A%20%0AToimiala%3A%20%0ANykyinen%20nettisivu%20(jos%20on)%3A%20%0APuhelinnumero%3A%20%0A"><span class="rulla"><span>Pyydä luonnos</span></span></a>

@@ -13,6 +13,7 @@ portfolio/                      ← git-repo
     ├── index.html, styles.css, 404.html, favicon.svg
     ├── alapalkki.js            ← html.js-luokka ja mobiilin kiinteä alapalkki (näkyy, kun hero on ohitettu)
     ├── liike.js                ← työpöydän vieritysefektit; lataa vendor-kirjastot vain ≥ 1024 px
+    ├── kokeilu.js              ← esimerkkikortit: iframe puhelinkehyksessä (≥ 1024 px), mobiilissa koko ruudun dialogi
     ├── vendor/                 ← GSAP 3.15.0, ScrollTrigger 3.15.0, Lenis 1.3.26 (lisenssit mukana)
     ├── robots.txt, sitemap.xml
     ├── _headers                ← välimuisti, CSP ja muut tietoturvaotsakkeet
@@ -214,6 +215,7 @@ Pelkkä päädomain (`palinweb.fi` ilman www:tä) toimii Pagesissa vain, jos dom
 
 CSP sallii vain sivuston omat tiedostot sekä Cloudflare Web Analyticsin osoitteet
 `static.cloudflareinsights.com` (skripti) ja `cloudflareinsights.com` (tietojen lähetys).
+Esimerkkisivut näytetään etusivulla iframeina, joten CSP:ssä on `frame-src 'self'` ja `frame-ancestors 'self'` (ja `X-Frame-Options: SAMEORIGIN`). Muut sivustot eivät voi upottaa sivuja.
 Jos lisäät myöhemmin ulkoisen palvelun, esimerkiksi upotetun kartan tai ajanvarauswidgetin,
 sen osoite pitää lisätä CSP:hen. Muuten selain estää sen.
 Tarkista rikkomukset selaimen kehitystyökalujen Console-välilehdeltä.

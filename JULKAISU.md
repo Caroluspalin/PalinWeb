@@ -96,13 +96,13 @@ jos `index.html` avataan suoraan tiedostona.
 
 ## 3. GitHub
 
-Repo on **https://github.com/Caroluspalin/Webagency**. Paikallinen `~/portfolio` on
+Repo on **https://github.com/Caroluspalin/PalinWeb**. Paikallinen `~/portfolio` on
 ainoa git-repo, ja `site/` on sen tavallinen kansio, ei erillinen repo.
 Jos remote puuttuu, lisää se:
 
 ```sh
 cd ~/portfolio
-git remote add origin https://github.com/Caroluspalin/Webagency.git
+git remote add origin https://github.com/Caroluspalin/PalinWeb.git
 git push -u origin main
 ```
 
@@ -123,9 +123,9 @@ git add -A && git commit -m "Päivitä hinnat" && git push
 
 1. https://dash.cloudflare.com → **Workers & Pages** → **Create application** →
    **Pages**-välilehti → **Connect to Git** (tai *Import an existing Git repository*).
-2. Valitse **GitHub** ja anna Cloudflarelle pääsy repoon `Webagency`. Voit rajata pääsyn
+2. Valitse **GitHub** ja anna Cloudflarelle pääsy repoon `PalinWeb`. Voit rajata pääsyn
    vain tähän repoon.
-3. Valitse repo `Webagency` → **Begin setup**.
+3. Valitse repo `PalinWeb` → **Begin setup**.
 4. Asetukset:
    | Kenttä | Arvo |
    |---|---|
@@ -134,7 +134,7 @@ git add -A && git commit -m "Päivitä hinnat" && git push
    | Framework preset | **None** |
    | Build command | *(jätä tyhjäksi)* |
    | Build output directory | **`site`** |
-   Jos Pages-projekti on jo kytketty `Webagency`-repoon, tarkista samat arvot kohdassa
+   Jos Pages-projekti on jo kytketty `PalinWeb`-repoon, tarkista samat arvot kohdassa
    **Settings → Builds & deployments**. Output directoryn pitää olla `site`. Muuten
    julkaisuun päätyvät myös `CLAUDE.md`, `docs/` ja `tyokalut/`.
 5. **Save and Deploy**. Ensimmäinen julkaisu kestää alle minuutin. Tarkista

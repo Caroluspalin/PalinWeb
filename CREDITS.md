@@ -33,10 +33,9 @@ Tiedostot: `site/kuvat/esimerkit/<sivu>/<nimi>-{640,1280}.webp` ja `<nimi>-960.j
 
 | Tiedosto | Käyttö | Kuvaaja | Alkuperäinen kuva | Lisenssi | Muokkaukset |
 |---|---|---|---|---|---|
-| `pyyhe` | Hero, kulmakyltin kuva | [Jonathan Cooper](https://unsplash.com/@theshuttervision?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/MzgQbB72dDo](https://unsplash.com/photos/a-man-getting-his-hair-cut-by-a-barber-MzgQbB72dDo) | Unsplash License | rajattu, pakattu (lisäksi WebP 960 px), **muokattu: mustavalkoiseksi** |
 | `kulma` | Kulmassa, katutasossa | [Haberdoedas](https://unsplash.com/@haberdoedas?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/zj2CkHpoDPQ](https://unsplash.com/photos/barbershop-sign-with-a-traditional-pole-zj2CkHpoDPQ) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
-| `leikkaus` | Parturi Eetu | [Jonathan Cooper](https://unsplash.com/@theshuttervision?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/sS3qRFsKZlg](https://unsplash.com/photos/person-holding-white-and-gold-hair-comb-sS3qRFsKZlg) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
-| `parta` | Parturi Jari | [Nathon Oski](https://unsplash.com/@onatecan?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/fE42nRlBcG8](https://unsplash.com/photos/grayscale-photography-of-person-holding-scissor-clipping-mans-beard-fE42nRlBcG8) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
+| `leikkaus` | Hero, kulmakyltin kuva | [Jonathan Cooper](https://unsplash.com/@theshuttervision?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/sS3qRFsKZlg](https://unsplash.com/photos/person-holding-white-and-gold-hair-comb-sS3qRFsKZlg) | Unsplash License | rajattu, pakattu (lisäksi WebP 960 px), **muokattu: mustavalkoiseksi** |
+| `parta` | Parturit-osio | [Nathon Oski](https://unsplash.com/@onatecan?utm_source=palinweb&utm_medium=referral) | [unsplash.com/photos/fE42nRlBcG8](https://unsplash.com/photos/grayscale-photography-of-person-holding-scissor-clipping-mans-beard-fE42nRlBcG8) | Unsplash License | rajattu, pakattu, **muokattu: mustavalkoiseksi** |
 
 ## Portfolion kuvakaappaukset
 

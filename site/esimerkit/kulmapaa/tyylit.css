@@ -85,7 +85,7 @@ h2::before { content: ""; display: block; width: 0.32em; height: 0.32em; margin-
 .kyltti { container-type: inline-size; }
 .kyltti-sisa {
   --k: 0.52;
-  --H: 100cqw;
+  --H: 84cqw;
   --fs-max: 34cqw;
   --fs: min(100cqw / (var(--n1) * var(--k) + 1.1), var(--H) / (var(--n2) * var(--k)), var(--fs-max));
   --S: calc(var(--fs) * 1.1);
@@ -162,9 +162,11 @@ h2::before { content: ""; display: block; width: 0.32em; height: 0.32em; margin-
 
 /* Parturit */
 .parturit { padding-block: 4.5rem; }
-.tiimi { list-style: none; margin: 0; padding: 0; display: grid; gap: 3rem; }
-.tiimi-kuva img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-.tiimi h3 { font-size: 2.25rem; margin: 1.25rem 0 0.5rem; }
+.tiimi { display: grid; gap: 2rem; }
+.tiimi-kuva img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 75%; }
+.tiimi-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
+.tiimi-lista li { padding-top: 1.25rem; border-top: 2px solid var(--musta); }
+.tiimi h3 { font-size: 2.25rem; margin: 0 0 0.5rem; }
 .tiimi p { max-width: 40ch; margin: 0; color: var(--harmaa); }
 
 /* Yhteystiedot */
@@ -200,8 +202,8 @@ h2::before { content: ""; display: block; width: 0.32em; height: 0.32em; margin-
   .yhteys-kuva img { aspect-ratio: 3 / 2; }
 }
 @media (min-width: 48rem) {
-  .tiimi { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
-  .tiimi li:nth-child(2) { margin-top: 5rem; }
+  .tiimi { grid-template-columns: 5fr 7fr; column-gap: 3rem; align-items: start; }
+  .tiimi-kuva img { aspect-ratio: 1; }
 }
 @media (min-width: 64rem) {
   .hero-sisa {

@@ -426,7 +426,6 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 .price-unit { font-size: 0.4em; letter-spacing: -0.02em; }
 .price-list li { padding-block: 0.65rem; border-top: 1px solid var(--hius); }
 .price-list li:last-child { border-bottom: 1px solid var(--hius); }
-.offer { margin: 1.5rem 0 0; padding: 0.9rem 1.1rem; background: var(--koboltti); color: #fff; font-weight: 600; font-size: 1rem; line-height: 1.4; }
 
 /* Ylläpito: erillinen rivi pakettien alla */
 .upkeep { padding-block: 2rem 2.5rem; border-top: 1px solid var(--muste); border-bottom: 1px solid var(--muste); }

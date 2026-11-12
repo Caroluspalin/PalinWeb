@@ -80,9 +80,6 @@ päivitä molemmat. Kuvat ovat muodossa `<nimi>-640.webp`, `<nimi>-1280.webp` ja
 `<nimi>-960.jpg`. Ne on valmiiksi rajattu käyttöpaikan muotoon, joten pidä uusissa
 kuvissa sama rajaus ja samat nimet.
 
-**Aloitustarjouksen poisto:** poista tiedostosta `site/index.html` rivit kommenttien
-`<!-- ALOITUSTARJOUS ... -->` ja `<!-- /ALOITUSTARJOUS -->` välistä, kommentit mukaan lukien.
-
 ---
 
 ## 2. Esikatselu omalla koneella

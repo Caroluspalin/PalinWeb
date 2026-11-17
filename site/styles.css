@@ -394,8 +394,8 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 .steps-note { margin-top: 1.5rem; font-weight: 600; max-width: 40rem; }
 
 /* ---------- Hinta ---------- */
-/* Kolme pakettia: mobiilissa pinossa, työpöydällä rinnakkain. Laajempi on korostettu valkoisella pohjalla.
-   Rivit (nimi, hinta, lista, tarjous) linjataan pakettien välillä subgridillä. */
+/* Kolme pakettia: mobiilissa pinossa, työpöydällä rinnakkain. Remonttisivu on korostettu valkoisella pohjalla.
+   Rivit (nimi, hinta, lista, ylläpito) linjataan pakettien välillä subgridillä. */
 .prices { display: grid; border-top: 1px solid var(--muste); }
 .price { display: grid; grid-template-rows: auto auto 1fr auto; padding-block: 2rem 2.5rem; }
 .price + .price { border-top: 1px solid var(--hius); }
@@ -406,7 +406,7 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
   background: #fff; box-shadow: inset 0 3px 0 var(--koboltti);
 }
 .price + .price-korostettu, .price-korostettu + .price { border-top-color: transparent; }
-.price-amount, .upkeep-amount {
+.price-amount {
   font-family: var(--display); font-stretch: 125%; font-weight: 800;
   letter-spacing: -0.05em; line-height: 0.95; white-space: nowrap;
 }
@@ -417,14 +417,14 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
   display: block; margin-bottom: 0.6rem;
   font-family: var(--font); font-stretch: 100%; font-size: 1rem; font-weight: 500; letter-spacing: 0; color: var(--harmaa);
 }
-.price-unit { font-size: 0.4em; letter-spacing: -0.02em; }
+.price-lisa { margin-top: 1.25rem; font-weight: 600; }
+.price-lisa span { display: block; margin-top: 0.35rem; font-weight: 400; color: var(--harmaa); }
 .price-list li { padding-block: 0.65rem; border-top: 1px solid var(--hius); }
 .price-list li:last-child { border-bottom: 1px solid var(--hius); }
 
 /* Ylläpito: erillinen rivi pakettien alla */
 .upkeep { padding-block: 2rem 2.5rem; border-top: 1px solid var(--muste); border-bottom: 1px solid var(--muste); }
 .upkeep h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
-.upkeep-amount { font-size: clamp(2.25rem, 10vw, 3.25rem); margin: 1rem 0 1.5rem; }
 .note { margin-top: 1.25rem; color: var(--harmaa); font-size: 1rem; }
 
 @media (min-width: 56rem) {
@@ -435,13 +435,14 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
   .price + .price { border-top: 0; border-left: 1px solid var(--hius); }
   .price-korostettu, .price + .price-korostettu { margin-inline: 0; padding-inline: 2rem; border-left-color: transparent; }
   .price-korostettu + .price { border-left-color: transparent; }
+  /* Korostettu ensimmäisenä: valkoinen pohja ulottuu reunuksen yli, teksti pysyy sisältöreunassa */
+  .price-korostettu:first-child { margin-left: calc(var(--gutter) * -1); padding-left: var(--gutter); }
   .price-amount { font-size: clamp(3rem, 6vw, 5rem); }
   .price-amount-teksti { font-size: clamp(1.75rem, 2.9vw, 2.5rem); }
 
-  .upkeep { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto 1fr; column-gap: 2rem; align-items: start; }
-  .upkeep h3 { grid-column: 1 / span 4; grid-row: 1; }
-  .upkeep-amount { grid-column: 1 / span 4; grid-row: 2; margin-bottom: 0; }
-  .upkeep .price-list { grid-column: 5 / span 8; grid-row: 1 / span 2; }
+  .upkeep { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 2rem; align-items: start; }
+  .upkeep h3 { grid-column: 1 / span 4; }
+  .upkeep .price-list { grid-column: 5 / span 8; }
 }
 
 /* ---------- UKK ---------- */
@@ -527,7 +528,7 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 
 /* ---------- Hero mobiilissa: faktat kolmena sarakkeena, napit rinnakkain (kapeimmilla allekkain) ---------- */
 @media (max-width: 39.99rem) {
-  .facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; font-size: 0.95rem; }
+  .facts { display: grid; grid-template-columns: repeat(2, auto); justify-content: start; font-size: 0.95rem; }
   .facts li { padding-inline: 0.75rem; }
   .hero-actions { gap: 0.5rem; }
   .hero-actions .btn { flex: 1 1 auto; white-space: nowrap; padding-inline: 1.25rem; }

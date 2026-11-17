@@ -7,7 +7,7 @@ Cloudflare julkaisee sivun automaattisesti osoitteeseen **palinweb.fi**.
 portfolio/                      ← git-repo
 ├── JULKAISU.md                 ← tämä ohje (ei julkaista)
 ├── CREDITS.md                  ← kuvien lähteet, kuvaajat ja lisenssit (ei julkaista)
-├── .env                        ← UNSPLASH_ACCESS_KEY (ei gitissä, ei julkaista)
+├── .env                        ← paikalliset avaimet (ei gitissä, ei julkaista)
 ├── tyokalut/                   ← kuvakaappaus- ja tarkistusskriptit, OG-kuvan pohja (ei julkaista)
 └── site/                       ← julkaistava sivusto (Cloudflaren "output directory")
     ├── index.html, styles.css, 404.html, favicon.svg
@@ -19,17 +19,14 @@ portfolio/                      ← git-repo
     ├── _headers                ← välimuisti, CSP ja muut tietoturvaotsakkeet
     ├── fonts/                  ← Schibsted Grotesk ja Archivo (SIL OFL)
     ├── esimerkit/              ← esimerkkisivut (noindex), osoitteet palinweb.fi/esimerkit/…/
-    │   ├── pikkupaahtimo/      ← kahvila
-    │   ├── kaislaranta/        ← kampaamo
-    │   └── kulmapaa/           ← parturi
+    │   ├── halkola/            ← kylpyhuone- ja saunaremontit (index.html, style.css, app.js, fontit, assets/)
+    │   └── hongisto/           ← lämpöpumput (index.html, style.css, app.js, fontit, assets/)
     └── kuvat/
         ├── og-kuva.png                       1200×630, somejaon kuva (npm run kuvat)
         ├── kasvokuva.jpg                     1200×1500  ← VAIHDA omaan kuvaan
         └── esimerkit/
-            ├── pikkupaahtimo.webp            1800×1200  korttikuva + hero (npm run kuvat)
-            ├── ruutu-{pikkupaahtimo,kulmapaa,kaislaranta}.webp  585×3165  heron puhelinruudut (npm run kuvat)
-            ├── kaislaranta.webp, kulmapaa.webp  1800×1200  korttikuvat (npm run kuvat)
-            └── pikkupaahtimo/, kaislaranta/, kulmapaa/   ← esimerkkisivujen valokuvat (Unsplash)
+            ├── halkola.webp, hongisto.webp   1800×1200  korttikuvat (+ -900-versiot, npm run kuvat)
+            └── ruutu-{halkola,hongisto}.webp 585×3165   heron puhelinruudut (npm run kuvat)
 ```
 
 ---
@@ -70,15 +67,13 @@ cd tyokalut && npm install
 
 | Komento | Mitä tekee |
 |---|---|
-| `npm run kuvat` | Ottaa esimerkkisivuista uudet kuvakaappaukset (korttikuvat ja heron tietokone- ja puhelinkuvan) ja tekee somejaon kuvan `tyokalut/og-kuva.html`-pohjasta. Aja tämä aina, kun muutat esimerkkisivuja. |
+| `npm run kuvat` | Ottaa esimerkkisivuista uudet kuvakaappaukset (korttikuvat ja heron puhelinruudut) ja tekee somejaon kuvan `tyokalut/og-kuva.html`-pohjasta. Aja tämä aina, kun muutat esimerkkisivuja. |
 | `npm run tarkista` | Tarkistaa, ettei millään sivulla ole vaakavieritystä leveyksillä 320–1440 px. |
 | `npm run kasvokuva-paikkamerkki` | Palauttaa harmaan CP-paikkamerkin. **Ylikirjoittaa `kasvokuva.jpg`:n**, joten älä aja tätä, kun oma kuvasi on paikallaan. |
 
-**Esimerkkisivujen valokuvat** ovat Unsplashista. Kuvaajat ja lisenssit on kirjattu
-tiedostoon `CREDITS.md` ja kunkin esimerkkisivun alatunnisteeseen. Jos vaihdat kuvan,
-päivitä molemmat. Kuvat ovat muodossa `<nimi>-640.webp`, `<nimi>-1280.webp` ja
-`<nimi>-960.jpg`. Ne on valmiiksi rajattu käyttöpaikan muotoon, joten pidä uusissa
-kuvissa sama rajaus ja samat nimet.
+**Esimerkkisivujen kuvat** ovat tekoälyllä tehtyä kuvitusta (ks. `CREDITS.md`). Sivuilla on
+kuvia varten kansio `assets/`, ja heron 121 framea ovat kansioissa `assets/f/` (työpöytä) ja
+`assets/m/` (mobiili). Jos vaihdat kuvan, pidä sama tiedostonimi ja koko.
 
 ---
 
@@ -146,7 +141,7 @@ haaroihin pushatut muutokset saavat oman esikatseluosoitteen.
 ## 5. Cloudflare Web Analytics
 
 Analytiikka ei käytä evästeitä, joten se ei vaadi evästebanneria. Skripti on valmiina
-kaikilla sivuilla (etusivu, 404 ja kolme esimerkkisivua), ja CSP sallii sen. Puuttuu
+etusivulla ja 404-sivulla (esimerkkisivuilla sitä ei ole), ja CSP sallii sen. Puuttuu
 vain tunnus.
 
 1. https://dash.cloudflare.com → **Analytics & Logs** → **Web Analytics** →
@@ -200,7 +195,7 @@ Pelkkä päädomain (`palinweb.fi` ilman www:tä) toimii Pagesissa vain, jos dom
 ### 6.4 Lopuksi
 - **SSL/TLS** → **Edge Certificates** → **Always Use HTTPS** päälle.
 - Kokeile osoitteita `http://palinweb.fi`, `https://www.palinweb.fi` ja
-  `https://www.palinweb.fi/esimerkit/kaislaranta/`. Kaikkien pitää ohjautua
+  `https://www.palinweb.fi/esimerkit/halkola/`. Kaikkien pitää ohjautua
   `https://palinweb.fi/…`-alkuiseen osoitteeseen.
 - Somejaon esikatselu: https://www.opengraph.xyz/url/https%3A%2F%2Fpalinweb.fi
 - Google Search Console: lisää `palinweb.fi` ja lähetä `https://palinweb.fi/sitemap.xml`.

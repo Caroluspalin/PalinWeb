@@ -32,7 +32,7 @@ Esimerkkikortit käyttävät kunkin esimerkkiyrityksen omia värejä (`.work-hal
 - `prefers-reduced-motion: reduce` poistaa kaiken liikkeen, eikä kirjastoja silloin ladata.
 - CSP on `style-src 'self'`, joten HTML:ssä ei saa olla `style`-attribuutteja. Porrastus tehdään `nth-child`-valitsimilla.
 
-**Heron puhelin**: ruutukuvat `kuvat/esimerkit/ruutu-*.webp` tehdään komennolla `node tyokalut/kuvat.mjs --vain-ruudut`. Kuvat ovat 2,5 näkymän korkuisia, ja ajoitukset (kierros 7,5 s: Halkola, Hongisto, takaisin Halkolaan) ovat `@keyframes rata`, `ruutu-1` ja `ruutu-2` -avainkehyksissä. Ne olettavat juuri tämän korkeuden. Ruutukuvan päällä on animoitu WebP `anim-*.webp` (demon hero ennen → jälkeen, 585×1266, alle 300 kt), jonka tekee `npm run animaatiot`. Ilman liikettä (`prefers-reduced-motion`) näkyy vain ruutukuvan jälkeen-tila.
+**Heron puhelin**: ruutukuvat `kuvat/esimerkit/ruutu-*.webp` tehdään komennolla `node tyokalut/kuvat.mjs --vain-ruudut`. Kuvat ovat 2,5 näkymän korkuisia, ja ajoitukset (kierros 7,5 s: Halkola, Hongisto, Halkolan kopio) ovat `@keyframes rata`, `ruutu-1` ja `ruutu-2` -avainkehyksissä. Ne olettavat juuri tämän korkeuden.
 
 ## Esimerkkisivut
 

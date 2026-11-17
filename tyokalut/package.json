@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "kuvat": "node kuvat.mjs",
-    "animaatiot": "node animaatiot.mjs",
     "kasvokuva-paikkamerkki": "node kuvat.mjs --kasvokuva-paikkamerkki",
     "tarkista": "node tarkista.mjs"
   },

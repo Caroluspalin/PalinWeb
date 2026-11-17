@@ -212,12 +212,9 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 .phone-icons svg { width: auto; height: calc(var(--pw) * 0.04); fill: currentColor; }
 .phone-icons svg + svg { height: calc(var(--pw) * 0.044); }
 .phone-view { position: relative; flex: 1; overflow: hidden; background: #1F2B2A; /* Halkolan yläosa ennen kuvan latautumista */ }
-.phone-track { height: 200%; }
-.panel { height: 50%; overflow: hidden; }
-.panel-kuva { position: relative; }
+.phone-track { height: 300%; }
+.panel { height: 33.3333%; overflow: hidden; }
 .panel img { width: 100%; height: auto; }
-/* Heron ennen → jälkeen -animaatio (WebP) peittää ruutukuvan yläosan; ilman liikettä näkyy vain jälkeen-kuva */
-.panel .anim { display: none; position: absolute; left: 0; top: 0; }
 
 /* Työpöytä: kaksi saraketta, puhelin oikealla */
 @media (min-width: 64rem) {
@@ -252,11 +249,11 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
 
   .phone { animation: puhelin 1.1s var(--ease-out) 0.4s both; }
 
-  .phone-track, .panel-kuva { animation: 7.5s 1s infinite both; }
+  .phone-track, .panel img { animation: 7.5s 1s infinite both; }
   .phone-track { animation-name: rata; }
-  .panel-1 .panel-kuva { animation-name: ruutu-1; }
-  .panel-2 .panel-kuva { animation-name: ruutu-2; }
-  .panel .anim { display: block; }
+  .panel-1 img { animation-name: ruutu-1; }
+  .panel-2 img { animation-name: ruutu-2; }
+  .panel-3 img { animation: none; }
 }
 
 @keyframes nousu { to { transform: none; } }
@@ -267,11 +264,12 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
   to { opacity: 1; transform: rotate(-4deg); }
 }
 
-/* Yksi kierros 7,5 s. Rata siirtyy 50 % (yksi ruutu) kerrallaan ja palaa lopussa ensimmäiseen. */
+/* Yksi kierros 7,5 s. Rata siirtyy 33,333 % (yksi ruutu) kerrallaan;
+   viimeinen paneeli on kopio ensimmäisestä, joten kierros jatkuu saumatta. */
 @keyframes rata {
-  0%, 18.7%   { transform: translateY(0);    animation-timing-function: var(--ease-swipe); }
-  26.7%, 73.3%{ transform: translateY(-50%); animation-timing-function: var(--ease-swipe); }
-  81.3%, 100% { transform: translateY(0); }
+  0%, 18.7%   { transform: translateY(0);        animation-timing-function: var(--ease-swipe); }
+  26.7%, 73.3%{ transform: translateY(-33.3333%); animation-timing-function: var(--ease-swipe); }
+  81.3%, 100% { transform: translateY(-66.6667%); }
 }
 /* Ruutukuva vierii paneelin sisällä; −60 % = kuvan alareuna */
 @keyframes ruutu-1 {

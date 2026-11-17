@@ -49,6 +49,9 @@ kuvakaappauksia yllä mainituista esimerkkisivuista, ja niissä näkyvät samat 
 |---|---|---|
 | Schibsted Grotesk | Palin Web, leipäteksti | SIL Open Font License 1.1 |
 | Archivo (rajattu: leveys 100–125 %, paino 600–900, latin) | Palin Web, otsikot | SIL Open Font License 1.1 (`site/fonts/OFL-archivo.txt`) |
+| Archivo (variable, leveys 62–125 %, paino 300–800, latin ja latin-ext) | Halkolan Märkätilat | SIL Open Font License 1.1 (`site/esimerkit/halkola/OFL-archivo.txt`) |
+| Barlow (paino 400–700, latin ja latin-ext) | Hongiston Lämpö, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/hongisto/OFL-barlow.txt`) |
+| Barlow Condensed (paino 600–800, latin ja latin-ext) | Hongiston Lämpö, otsikot | SIL Open Font License 1.1 (`site/esimerkit/hongisto/OFL-barlow-condensed.txt`) |
 | Young Serif | Pikkupaahtimo, otsikot | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-young-serif.txt`) |
 | Familjen Grotesk (latin) | Pikkupaahtimo, leipäteksti | SIL Open Font License 1.1 (`site/esimerkit/pikkupaahtimo/OFL-familjen-grotesk.txt`) |
 | Bodoni Moda (paino 400–600, optinen koko, latin) | Kaislaranta, otsikot | SIL Open Font License 1.1 (`site/esimerkit/kaislaranta/OFL-bodoni-moda.txt`) |

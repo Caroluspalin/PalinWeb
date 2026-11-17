@@ -18,7 +18,7 @@ const server = http.createServer(async (req, res) => {
 await new Promise((r) => server.listen(0, "127.0.0.1", r));
 const base = `http://127.0.0.1:${server.address().port}`;
 
-const pages = ["/", "/404.html", "/esimerkit/pikkupaahtimo/", "/esimerkit/kaislaranta/", "/esimerkit/kulmapaa/"];
+const pages = ["/", "/404.html", "/esimerkit/halkola/", "/esimerkit/hongisto/", "/esimerkit/pikkupaahtimo/", "/esimerkit/kaislaranta/", "/esimerkit/kulmapaa/"];
 const widths = [320, 360, 375, 390, 414, 768, 1024, 1280, 1440];
 const browser = await chromium.launch({ channel: "chrome" });
 let fails = 0;

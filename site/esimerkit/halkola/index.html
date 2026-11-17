@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Halkolan Märkätilat – esimerkkisivu (Palin Web)</title>
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<div class="demo-bar" role="note">
+  <div class="wrap">
+    <span><b>Esimerkkisivu.</b> Halkolan Märkätilat on kuvitteellinen yritys, ja kuvat ovat kuvitusta. Keltaiset laput kertovat, mitä teidän sivullenne tulisi.</span>
+    <span class="demo-actions"><button type="button" id="notesToggle" aria-pressed="true">Piilota keltaiset laput</button> Tehnyt <a href="https://palinweb.fi">Palin Web</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Halkolan Märkätilat, etusivu">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="brand-name">Halkolan Märkätilat<small>Kylpyhuoneet ja saunat, Espoo</small></span>
+    </a>
+    <nav class="main" aria-label="Päävalikko">
+      <a href="#palvelut">Palvelut</a>
+      <a href="#vaiheet">Näin remontti etenee</a>
+      <a href="#vahennys">Kotitalousvähennys</a>
+      <a href="#tarjous">Yhteystiedot</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="#tarjous">Pyydä tarjous</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="scrub" id="scrub" aria-label="Kylpyhuone ennen remonttia ja sen jälkeen">
+  <div class="scrub-sticky">
+    <img class="scrub-fallback" src="assets/jalkeen.webp" alt="Valmis kylpyhuone: isot vaaleat laatat, lasiseinä ja tammitaso" width="1344" height="752">
+    <canvas id="scrubCanvas" aria-hidden="true"></canvas>
+    <div class="scrub-shade" aria-hidden="true"></div>
+    <div class="wrap scrub-copy">
+      <h1>Kylpyhuone valmiiksi viidessä viikossa. Hinta sovitaan ennen purkua.</h1>
+      <p class="lede">Teen kylpyhuone- ja saunaremontit Espoossa, Helsingissä ja Vantaalla. Sama työnjohtaja on mukana arviointikäynnistä luovutukseen.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#tarjous">Pyydä tarjous</a>
+        <a class="btn btn-light" href="#vahennys">Laske kotitalousvähennys</a>
+      </div>
+    </div>
+    <ol class="scrub-steps" aria-hidden="true">
+      <li data-at="0">Ennen</li><li data-at="0.28">Purku</li><li data-at="0.52">Laatoitus</li><li data-at="0.82">Valmis</li>
+    </ol>
+    <button type="button" class="replay" id="replay">Katso remontti uudelleen</button>
+  </div>
+</section>
+
+<section class="compare-sec" aria-labelledby="vertaa-h">
+  <div class="wrap compare-grid">
+    <div>
+      <h2 id="vertaa-h">Vertaa itse: sama kylpyhuone ennen ja jälkeen</h2>
+      <ul class="promises">
+        <li>Arviointikäynti ja kirjallinen tarjous ilman maksua</li>
+        <li>Vedeneristys sertifioidulla asentajalla, eristys kuvataan</li>
+        <li>Urakkasopimus kuluttajasopimusehtojen (KSE 2013) mukaan</li>
+      </ul>
+      <p class="note">Tähän tulevat teidän omat ennen- ja jälkeen-kuvanne työmailta. Puhelimella otetut kuvat riittävät.</p>
+    </div>
+    <div>
+      <div class="compare" id="compare">
+        <img class="before" src="assets/ennen.webp" alt="Ennen: vanha kylpyhuone, beiget pikkulaatat, suihkuverho ja loisteputkivalo" width="1344" height="752" loading="lazy">
+        <img class="after" src="assets/jalkeen.webp" alt="Jälkeen: uusi kylpyhuone, isot vaaleat laatat, lasiseinä ja tammitaso" width="1344" height="752" loading="lazy">
+        <div class="handle" aria-hidden="true">
+          <span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="#1F2B2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        </div>
+        <span class="tag l">Ennen</span><span class="tag r">Jälkeen</span>
+        <label class="sr" for="cmp">Vertaa ennen ja jälkeen</label>
+        <input id="cmp" type="range" min="0" max="100" value="100" aria-valuetext="0 prosenttia jälkeen-kuvaa näkyvissä">
+      </div>
+      <p class="compare-cap">Voitte myös vetää itse.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="sovitaan">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="sovitaan">Kolme asiaa sovitaan kirjallisesti ennen kuin mitään puretaan</h2>
+      <p>Remontti jännittää, koska kotiin tulee vieraita ihmisiä viikoiksi. Siksi nämä kirjataan sopimukseen.</p>
+    </div>
+    <div class="agreed">
+      <div><h3>Kokonaishinta</h3><p>Tarjouksessa työ ja materiaalit eritellään. Lisätyöt tehdään vain kirjallisella hyväksynnällänne.</p></div>
+      <div><h3>Aikataulu</h3><p>Aloitus- ja luovutuspäivä sovitaan etukäteen. Viikkoviesti kertoo, missä vaiheessa ollaan.</p></div>
+      <div><h3>Kuka on paikalla</h3><p>Tiedätte etukäteen, kuka asentaja tulee ja milloin. Työmaa siivotaan joka päivä.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="palvelut" aria-labelledby="palvelut-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="palvelut-h">Palvelut</h2>
+      <p>Kesto on tyypillinen arvio tavalliselle kerrostalo- tai rivitalokohteelle. Tarkka aikataulu tulee tarjoukseen.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile dark">
+        <div class="ph"><img src="assets/jalkeen.webp" alt="Valmis kylpyhuone lasiseinällä ja tammitasolla" loading="lazy" width="1344" height="752"></div>
+        <h3>Kylpyhuoneremontti</h3>
+        <p>Purku, pohjat, vedeneristys, laatoitus, kalusteet ja sähkö- ja LVI-työt alihankkijoiden kanssa yhdellä sopimuksella.</p>
+        <div class="dur"><b>4–5</b> viikkoa</div>
+      </div>
+      <div class="tile">
+        <div class="ph"><img src="assets/sauna.webp" alt="Uusi sauna haapalauteilla ja lasiseinällä" loading="lazy"></div>
+        <h3>Saunaremontti</h3>
+        <p>Paneelit, lauteet, kiuas ja valaistus. Myös pesuhuoneen ja saunan yhdistelmät.</p>
+        <div class="dur"><b>2–3</b> viikkoa</div>
+      </div>
+      <div class="tile">
+        <div class="ph"><img src="assets/wc.webp" alt="Pieni WC, jossa seinä-WC ja isot vaaleat laatat" loading="lazy"></div>
+        <h3>WC-remontti</h3>
+        <p>Seinä-WC, laatoitus ja pienet tilat, joissa jokainen sentti pitää käyttää.</p>
+        <div class="dur"><b>1–2</b> viikkoa</div>
+      </div>
+      <div class="tile">
+        <div class="ph"><img src="assets/eristys.webp" alt="Kerrostalon kylpyhuone vedeneristysvaiheessa" loading="lazy"></div>
+        <h3>Taloyhtiöt</h3>
+        <p>Märkätilojen pintatyöt linjasaneerauksen yhteydessä ja osakasmuutostyöt. Ilmoitukset isännöitsijälle hoidetaan.</p>
+        <div class="dur">Aikataulu hankkeen mukaan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vaiheet" class="band" aria-labelledby="vaiheet-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="vaiheet-h">Näin remontti etenee</h2>
+      <p>Esimerkki viiden viikon kylpyhuoneremontista.</p>
+    </div>
+    <ol class="timeline">
+      <li><span class="when">Ennen aloitusta</span><h3>Arviointikäynti</h3><p>Katsotaan tila, rakenteet ja toiveet. Kesto noin tunti.</p></li>
+      <li><span class="when">1 viikon sisällä</span><h3>Tarjous ja sopimus</h3><p>Kiinteä hinta, aikataulu ja materiaalit kirjallisena.</p></li>
+      <li><span class="when">Viikko 1</span><h3>Purku ja pohjat</h3><p>Suojaus, purku, kosteusmittaus ja tasoitus.</p></li>
+      <li><span class="when">Viikot 2–4</span><h3>Vedeneristys ja laatoitus</h3><p>Eristys kuvataan ja dokumentoidaan ennen laatoitusta.</p></li>
+      <li><span class="when">Viikko 5</span><h3>Kalusteet ja luovutus</h3><p>Asennukset, loppusiivous ja luovutuskansio takuuehtoineen.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="statement" aria-labelledby="statement-h">
+  <div class="wrap statement-grid">
+    <h2 id="statement-h" class="big"><span>5 viikkoa.</span><span>Yksi työnjohtaja.</span><span>Hinta kirjallisena ennen purkua.</span></h2>
+    <div class="ph tall"><img src="assets/detalji.webp" alt="Lähikuva: suorat saumat, lattiakaivo ja musta suihkuhana" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="vahennys" aria-labelledby="vahennys-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="vahennys-h">Paljonko saatte kotitalousvähennystä?</h2>
+      <p>Vähennys lasketaan vain työn osuudesta, ei materiaaleista. Tarjouksessa työn osuus on eritelty, joten luvun saa suoraan sieltä.</p>
+    </div>
+    <div class="calc">
+      <div class="calc-in">
+        <div class="field">
+          <label for="price">Remontin kokonaishinta (€, sis. alv)</label>
+          <input id="price" type="number" inputmode="numeric" min="0" step="500" value="16000">
+        </div>
+        <div class="field">
+          <span class="lbl" id="share-lbl">Työn osuus hinnasta</span>
+          <div class="range-row">
+            <input id="share" type="range" min="20" max="80" step="5" value="55" aria-labelledby="share-lbl">
+            <output id="shareOut" for="share">55 %</output>
+          </div>
+          <span class="hint">Kylpyhuoneremontissa työn osuus on usein noin puolet. Tarkka luku on tarjouksessa.</span>
+        </div>
+        <div class="field">
+          <span class="lbl" id="ppl-lbl">Kuinka moni maksaa laskun?</span>
+          <div class="seg" role="radiogroup" aria-labelledby="ppl-lbl">
+            <label><input type="radio" name="ppl" value="1"><span>1 henkilö</span></label>
+            <label><input type="radio" name="ppl" value="2" checked><span>2 henkilöä</span></label>
+          </div>
+          <span class="hint">Kumpikin voi hakea vähennystä omasta osuudestaan.</span>
+        </div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <span>Kotitalousvähennys yhteensä</span>
+        <span class="out-big" id="deduct">0 €</span>
+        <div class="out-row"><span>Työn osuus</span><b id="work">0 €</b></div>
+        <div class="out-row"><span>Hinta vähennyksen jälkeen</span><b id="net">0 €</b></div>
+        <small>Laskettu vuoden 2026 säännöillä: 40 % työn osuudesta, omavastuu 150 € ja enintään 2 100 € henkilöä kohden vuodessa. Arvio, ei verotuspäätös. Tarkista omat tietosi <a href="https://www.vero.fi/henkiloasiakkaat/vahennykset/kotitalousvahennys/">vero.fi:stä</a>.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="arvostelut-h">
+  <div class="wrap reviews">
+    <div class="g-box">
+      <b>Asiakkaiden arviot Googlessa</b>
+      <a class="btn btn-ghost btn-small" href="#arvostelut-h">Lue arvostelut Googlessa</a>
+    </div>
+    <div>
+      <h2 id="arvostelut-h">Lukekaa, mitä aiemmat asiakkaat sanovat</h2>
+      <p class="soft-52">Arvostelut ovat Googlessa, jossa jokainen on kirjoitettu omalla nimellä. Kysykää rohkeasti myös referenssikohdetta lähialueeltanne.</p>
+      <p class="note">Linkki vie teidän omaan Google-profiiliinne. Arvosteluja ei kopioida sivulle, joten ne pysyvät aina ajan tasalla.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tarjous" aria-labelledby="tarjous-h">
+  <div class="wrap form-wrap">
+    <div>
+      <h2 id="tarjous-h">Pyydä tarjous</h2>
+      <p class="soft-40">Kertokaa tilasta muutamalla sanalla. Soitan kahden arkipäivän sisällä ja sovitaan arviointikäynti.</p>
+      <ul class="contact-list">
+        <li><span>Puhelin</span><b>Numeronne tähän</b></li>
+        <li><span>Sähköposti</span><b>tarjous@halkola.example</b></li>
+        <li><span>Toimialue</span><b>Espoo, Helsinki, Vantaa, Kauniainen</b></li>
+      </ul>
+      <p class="note">Tähän teidän oikeat yhteystietonne. Tarjouspyynnöt tulevat suoraan sähköpostiinne.</p>
+    </div>
+
+    <form id="quote" novalidate>
+      <div class="form-grid">
+        <fieldset class="field full chips-set">
+          <legend class="lbl">Mikä remontti?</legend>
+          <div class="chips">
+            <label><input type="radio" name="type" value="kylpyhuone" checked><span>Kylpyhuone</span></label>
+            <label><input type="radio" name="type" value="sauna"><span>Sauna</span></label>
+            <label><input type="radio" name="type" value="kylpyhuone+sauna"><span>Kylpyhuone ja sauna</span></label>
+            <label><input type="radio" name="type" value="wc"><span>WC</span></label>
+            <label><input type="radio" name="type" value="muu"><span>Muu</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="area">Pinta-ala (m²)</label>
+          <input id="area" type="number" inputmode="decimal" min="1" placeholder="esim. 5">
+        </div>
+        <div class="field">
+          <label for="zip">Postinumero</label>
+          <input id="zip" type="text" inputmode="numeric" maxlength="5" placeholder="esim. 02230">
+        </div>
+        <div class="field">
+          <label for="when">Toivottu aloitus</label>
+          <select id="when">
+            <option>Mahdollisimman pian</option>
+            <option>1–3 kuukauden päästä</option>
+            <option>Myöhemmin tai ei vielä tiedossa</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="house">Talotyyppi</label>
+          <select id="house">
+            <option>Kerrostalo</option><option>Rivitalo</option><option>Omakotitalo</option><option>Paritalo</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="msg">Lisätiedot (vapaaehtoinen)</label>
+          <textarea id="msg" rows="3" placeholder="Esim. rakennusvuosi, toiveet tai erityiset huolet"></textarea>
+        </div>
+        <div class="field" id="f-name">
+          <label for="name">Nimi</label>
+          <input id="name" type="text" autocomplete="name" required>
+          <span class="err">Kirjoittakaa nimenne.</span>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="phone">Puhelin</label>
+          <input id="phone" type="tel" autocomplete="tel" required>
+          <span class="err">Puhelinnumero tarvitaan, jotta voin soittaa.</span>
+        </div>
+      </div>
+      <div class="submit-row">
+        <button class="btn btn-primary" type="submit">Lähetä tarjouspyyntö</button>
+        <small>Tietoja käytetään vain tarjouksen tekemiseen.</small>
+      </div>
+      <div class="sent" role="status">
+        <h3>Tarjouspyyntö lähetetty</h3>
+        <p>Kiitos! Soitan kahden arkipäivän sisällä. Tämä on esimerkkisivu, joten tietoja ei oikeasti lähetetty minnekään.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Halkolan Märkätilat</b> (kuvitteellinen yritys)<br>Kylpyhuone- ja saunaremontit pääkaupunkiseudulla</div>
+    <div>Esimerkkisivu, ei julkaistu yrityksen nimissä. Kuvat: tekoälyllä tehty kuvitus.<br>Sivut: <a href="https://palinweb.fi">Palin Web</a></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-ghost" href="#tarjous">Soita</a>
+  <a class="btn btn-primary" href="#tarjous">Pyydä tarjous</a>
+</div>
+
+<script src="app.js?v=1" defer></script>
+</body>
+</html>

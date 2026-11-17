@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hongiston Lämpö – esimerkkisivu (Palin Web)</title>
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<div class="demo-bar" role="note">
+  <div class="wrap">
+    <span><b>Esimerkkisivu.</b> Hongiston Lämpö on kuvitteellinen yritys, ja kuvat ovat kuvitusta. Keltaiset laput kertovat, mitä teidän sivullenne tulisi.</span>
+    <span class="demo-actions"><button type="button" id="notesToggle" aria-pressed="true">Piilota keltaiset laput</button> Tehnyt <a href="https://palinweb.fi">Palin Web</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Hongiston Lämpö, etusivu">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Hongiston Lämpö<small>Lämpöpumput, Espoo ja Uusimaa</small></span>
+    </a>
+    <nav class="main" aria-label="Päävalikko">
+      <a href="#vaihtoehdot">Vaihtoehdot</a>
+      <a href="#vaiheet">Näin asennus etenee</a>
+      <a href="#vahennys">Kotitalousvähennys</a>
+      <a href="#tarjous">Yhteystiedot</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="#tarjous">Pyydä kartoitus</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="scrub" id="scrub" aria-label="Lämmityshuone ennen ja jälkeen öljykattilan vaihdon">
+  <div class="scrub-sticky">
+    <img class="scrub-fallback" id="heroImg" src="assets/jalkeen.webp" alt="Valmis lämmityshuone: valkoinen maalämpöpumppu, eristetyt putket ja vaaleat seinät" width="1344" height="752">
+    <canvas id="scrubCanvas" aria-hidden="true"></canvas>
+    <div class="scrub-shade" aria-hidden="true"></div>
+    <div class="wrap scrub-copy">
+      <h1>Öljykattila pois. Lämpöpumppu tilalle.</h1>
+      <p class="lede">Vaihdan öljylämmityksen maalämpöön tai ilma-vesilämpöpumppuun Espoossa ja Uudellamaalla. Puran vanhan kattilan ja säiliön samalla kertaa, eikä teidän tarvitse soittaa kenellekään muulle.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#tarjous">Pyydä maksuton kartoitus</a>
+        <a class="btn btn-light" href="#vahennys">Laske kotitalousvähennys</a>
+      </div>
+    </div>
+    <div class="readout" aria-hidden="true">
+      <div><span>Lämmitys</span><b id="roHeat">Öljy</b></div>
+      <div><span>Vaihe</span><b id="roStep">Ennen</b></div>
+    </div>
+    <ol class="scrub-steps" aria-hidden="true">
+      <li data-at="0">Ennen</li><li data-at="0.28">Purku</li><li data-at="0.55">Asennus</li><li data-at="0.84">Valmis</li>
+    </ol>
+    <button type="button" class="replay" id="replay">Katso muutos uudelleen</button>
+  </div>
+</section>
+
+<section aria-labelledby="vertaa-h">
+  <div class="wrap compare-grid">
+    <div>
+      <h2 id="vertaa-h">Sama lämmityshuone ennen ja jälkeen</h2>
+      <ul class="promises">
+        <li>Kartoituskäynti ja kirjallinen tarjous ilman maksua</li>
+        <li>Öljykattilan, säiliön ja putkien purku ja vienti kuuluvat urakkaan</li>
+        <li>Lämpöpumppu mitoitetaan talon todellisen kulutuksen mukaan</li>
+      </ul>
+      <p class="note">Tähän tulevat teidän omat kuvanne asennuskohteista. Puhelimella otetut ennen- ja jälkeen-kuvat riittävät.</p>
+    </div>
+    <div>
+      <div class="compare" id="compare">
+        <img class="before" src="assets/ennen.webp" alt="Ennen: vanha öljykattila, iso öljysäiliö ja kellastuneet seinät" width="1344" height="752" loading="lazy">
+        <img class="after" src="assets/jalkeen.webp" alt="Jälkeen: maalämpöpumppu, eristetyt putket ja vasta maalatut seinät" width="1344" height="752" loading="lazy">
+        <div class="handle" aria-hidden="true"><span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="#1C2226" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+        <span class="tag l">Ennen</span><span class="tag r">Jälkeen</span>
+        <label class="sr" for="cmp">Vertaa ennen ja jälkeen</label>
+        <input id="cmp" type="range" min="0" max="100" value="100" aria-valuetext="0 prosenttia jälkeen-kuvaa näkyvissä">
+      </div>
+      <p class="compare-cap">Voitte myös vetää itse.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vaihtoehdot" class="band" aria-labelledby="vaihtoehdot-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="vaihtoehdot-h">Kolme vaihtoehtoa. Kartoituksessa selviää, mikä sopii teidän taloonne.</h2>
+      <p>Valinta riippuu tontista, talon koosta ja nykyisestä lämmönjaosta. Vesikiertoiset patterit ja lattialämmitys jäävät käyttöön maalämmössä ja ilma-vesilämpöpumpussa.</p>
+    </div>
+    <div class="options">
+      <article class="opt best">
+        <div class="ph"><img src="assets/kaivo.webp" alt="Porakone poraa energiakaivoa omakotitalon pihalla syksyllä" loading="lazy" width="1296" height="768"></div>
+        <div class="opt-body">
+          <span class="badge">Yleisin öljytalossa</span>
+          <h3>Maalämpö</h3>
+          <p>Lämpö otetaan porakaivosta. Tasainen teho myös pakkasilla, ja laite tuottaa myös käyttöveden.</p>
+          <dl class="plate">
+            <dt>Sopii</dt><dd>Öljy- ja sähkötalot</dd>
+            <dt>Asennus</dt><dd>Poraus + 2–3 pv</dd>
+            <dt>Lämmittää vedenkin</dt><dd>Kyllä</dd>
+            <dt>Huomioi</dt><dd>Toimenpidelupa</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="opt">
+        <div class="ph"><img src="assets/ulko.webp" alt="Ilma-vesilämpöpumpun ulkoyksikkö punaisen talon seinustalla lumisena päivänä" loading="lazy" width="1296" height="768"></div>
+        <div class="opt-body">
+          <h3>Ilma-vesilämpöpumppu</h3>
+          <p>Ei porausta eikä kaivettavaa pihaa. Ulkoyksikkö seinän viereen, sisäyksikkö vanhan kattilan paikalle.</p>
+          <dl class="plate">
+            <dt>Sopii</dt><dd>Pienet tontit, pohjavesialueet</dd>
+            <dt>Asennus</dt><dd>1–3 pv</dd>
+            <dt>Lämmittää vedenkin</dt><dd>Kyllä</dd>
+            <dt>Huomioi</dt><dd>Teho laskee kovilla pakkasilla</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="opt">
+        <div class="ph"><img src="assets/sisa.webp" alt="Ilmalämpöpumpun sisäyksikkö olohuoneen seinällä" loading="lazy" width="1296" height="768"></div>
+        <div class="opt-body">
+          <h3>Ilmalämpöpumppu</h3>
+          <p>Lisälämmitys ja viilennys kesäksi. Ei korvaa öljylämmitystä yksinään, mutta pienentää sähkö- ja öljylaskua.</p>
+          <dl class="plate">
+            <dt>Sopii</dt><dd>Lisäksi mihin taloon tahansa</dd>
+            <dt>Asennus</dt><dd>Puoli päivää</dd>
+            <dt>Lämmittää vedenkin</dt><dd>Ei</dd>
+            <dt>Huomioi</dt><dd>Ei korotettua vähennystä</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+    <p class="plate-note">Asennusajat ovat tyypillisiä arvioita omakotitalolle. Tarkka aikataulu ja porakaivon syvyys tulevat tarjoukseen.</p>
+    <p class="note">Kortteihin tulevat teidän myymänne laitteet ja omat arvionne asennusajoista. Merkkejä ja malleja voi lisätä, jos haluatte.</p>
+  </div>
+</section>
+
+<section aria-labelledby="sovitaan">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="sovitaan">Talo ei jää kylmäksi vaihdon aikana</h2>
+      <p>Öljykattila puretaan vasta, kun uusi laite on valmis lämmittämään. Nämä sovitaan kirjallisesti ennen aloitusta.</p>
+    </div>
+    <div class="agreed">
+      <div><h3>Kokonaishinta</h3><p>Laite, poraus, asennus ja öljylaitteiston purku eritellään tarjoukseen. Työn osuus näkyy erikseen kotitalousvähennystä varten.</p></div>
+      <div><h3>Lämpökatko</h3><p>Kerron etukäteen, montako tuntia lämpö on poikki ja milloin. Tyypillisesti se osuu yhteen päivään.</p></div>
+      <div><h3>Öljysäiliö</h3><p>Säiliö tyhjennetään, puhdistetaan ja viedään pois asianmukaisesti. Saatte siitä todistuksen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vaiheet" class="band" aria-labelledby="vaiheet-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="vaiheet-h">Näin vaihto etenee</h2>
+      <p>Esimerkki maalämpöön siirtymisestä omakotitalossa.</p>
+    </div>
+    <ol class="timeline">
+      <li><span class="when">Ennen tarjousta</span><h3>Kartoituskäynti</h3><p>Katson lämmityshuoneen, patterit ja kulutuksen. Kesto noin tunti.</p></li>
+      <li><span class="when">1 viikon sisällä</span><h3>Mitoitus ja tarjous</h3><p>Laite, kaivon syvyys ja hinta kirjallisena. Neuvon toimenpideluvan haussa.</p></li>
+      <li><span class="when">Luvan jälkeen</span><h3>Porakaivo</h3><p>Poraus päivässä tai kahdessa. Piha siistitään porauksen jälkeen.</p></li>
+      <li><span class="when">2–3 päivää</span><h3>Asennus ja purku</h3><p>Uusi pumppu kytketään, sitten öljykattila ja säiliö puretaan.</p></li>
+      <li><span class="when">Viimeinen päivä</span><h3>Käyttöönotto</h3><p>Säädöt ja opastus. Saatte kuitin, jossa työn osuus on eritelty.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="statement" aria-labelledby="statement-h">
+  <div class="wrap statement-grid">
+    <h2 id="statement-h" class="big"><span>60 %</span><span>työn osuudesta verosta.</span><span>Kun öljylämmitys vaihtuu lämpöpumppuun, kotitalousvähennys on korotettu vuoden 2027 loppuun asti.</span></h2>
+    <div class="ph tall"><img src="assets/detalji.webp" alt="Lähikuva: kupariputkien juotokset, mustat eristeet ja painemittari" loading="lazy" width="896" height="1120"></div>
+  </div>
+</section>
+
+<section id="vahennys" class="band" aria-labelledby="vahennys-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="vahennys-h">Paljonko saatte kotitalousvähennystä?</h2>
+      <p>Vähennys lasketaan vain työn osuudesta, ei laitteesta. Tarjouksessa työn osuus on eritelty, joten luvun saa suoraan sieltä.</p>
+    </div>
+    <div class="calc">
+      <div class="calc-in">
+        <div class="field">
+          <span class="lbl" id="oil-lbl">Millä talo lämpiää nyt?</span>
+          <div class="seg" role="radiogroup" aria-labelledby="oil-lbl">
+            <label><input type="radio" name="oil" value="1" checked><span>Öljyllä</span></label>
+            <label><input type="radio" name="oil" value="0"><span>Jollain muulla</span></label>
+          </div>
+          <span class="hint">Korotettu vähennys koskee vain öljylämmityksestä luopumista.</span>
+        </div>
+        <div class="field">
+          <label for="price">Kokonaishinta (€, sis. alv)</label>
+          <input id="price" type="number" inputmode="numeric" min="0" step="500" value="18000">
+        </div>
+        <div class="field">
+          <span class="lbl" id="share-lbl">Työn osuus hinnasta</span>
+          <div class="range-row">
+            <input id="share" type="range" min="10" max="70" step="5" value="40" aria-labelledby="share-lbl">
+            <output id="shareOut" for="share">40 %</output>
+          </div>
+          <span class="hint">Porakaivon poraus ja asennustyö ovat työtä, itse laite ei. Tarkka luku on tarjouksessa.</span>
+        </div>
+        <div class="field">
+          <span class="lbl" id="ppl-lbl">Kuinka moni maksaa laskun?</span>
+          <div class="seg" role="radiogroup" aria-labelledby="ppl-lbl">
+            <label><input type="radio" name="ppl" value="1"><span>1 henkilö</span></label>
+            <label><input type="radio" name="ppl" value="2" checked><span>2 henkilöä</span></label>
+          </div>
+          <span class="hint">Kumpikin voi hakea vähennystä omasta osuudestaan.</span>
+        </div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <span>Kotitalousvähennys yhteensä</span>
+        <span class="out-big" id="deduct">0 €</span>
+        <div class="out-row"><span>Työn osuus</span><b id="work">0 €</b></div>
+        <div class="out-row"><span>Hinta vähennyksen jälkeen</span><b id="net">0 €</b></div>
+        <div class="diff" id="diff"></div>
+        <small>Laskettu vuoden 2026 säännöillä. Öljylämmityksestä luopuminen: 60 % työn osuudesta, enintään 3 500 € henkilöä kohden. Muu työ: 40 %, enintään 2 100 €. Omavastuu 150 € henkilöä kohden vuodessa. Arvio, ei verotuspäätös. Vähennystä ei saa, jos samaan työhön on saatu muuta tukea. Tarkistakaa omat tietonne <a href="https://www.vero.fi/henkiloasiakkaat/vahennykset/kotitalousvahennys/">vero.fi:stä</a>.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="arvostelut-h">
+  <div class="wrap reviews">
+    <div class="g-box">
+      <b>Asiakkaiden arviot Googlessa</b>
+      <a class="btn btn-ghost btn-small" href="#arvostelut-h">Lue arvostelut Googlessa</a>
+    </div>
+    <div>
+      <h2 id="arvostelut-h">Lukekaa, mitä aiemmat asiakkaat sanovat</h2>
+      <p class="soft-52">Arvostelut ovat Googlessa omilla nimillä kirjoitettuina. Kysykää myös referenssikohdetta lähialueeltanne.</p>
+      <p class="note">Linkki vie teidän omaan Google-profiiliinne. Arvosteluja ei kopioida sivulle, joten ne pysyvät aina ajan tasalla.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tarjous" class="band" aria-labelledby="tarjous-h">
+  <div class="wrap form-wrap">
+    <div>
+      <h2 id="tarjous-h">Pyydä maksuton kartoitus</h2>
+      <p class="soft-40">Kertokaa talosta muutamalla sanalla. Soitan kahden arkipäivän sisällä ja sovitaan käynti.</p>
+      <ul class="contact-list">
+        <li><span>Puhelin</span><b>Numeronne tähän</b></li>
+        <li><span>Sähköposti</span><b>kartoitus@hongistonlampo.example</b></li>
+        <li><span>Toimialue</span><b>Espoo, Kirkkonummi, Vihti, Lohja ja muu Uusimaa</b></li>
+      </ul>
+      <p class="note">Tähän teidän oikeat yhteystietonne. Kartoituspyynnöt tulevat suoraan sähköpostiinne.</p>
+    </div>
+    <form id="quote" novalidate>
+      <div class="form-grid">
+        <fieldset class="field full chips-set">
+          <legend class="lbl">Mikä kiinnostaa?</legend>
+          <div class="chips">
+            <label><input type="radio" name="type" value="maalampo" checked><span>Maalämpö</span></label>
+            <label><input type="radio" name="type" value="ilmavesi"><span>Ilma-vesilämpöpumppu</span></label>
+            <label><input type="radio" name="type" value="ilmalampo"><span>Ilmalämpöpumppu</span></label>
+            <label><input type="radio" name="type" value="eos"><span>En tiedä vielä</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="heat">Nykyinen lämmitys</label>
+          <select id="heat"><option>Öljy</option><option>Suora sähkö</option><option>Varaava sähkö</option><option>Puu tai pelletti</option><option>Muu</option></select>
+        </div>
+        <div class="field">
+          <label for="area">Talon koko (m²)</label>
+          <input id="area" type="number" inputmode="numeric" min="1" placeholder="esim. 140">
+        </div>
+        <div class="field">
+          <label for="zip">Postinumero</label>
+          <input id="zip" type="text" inputmode="numeric" maxlength="5" placeholder="esim. 02400">
+        </div>
+        <div class="field">
+          <label for="when">Toivottu aikataulu</label>
+          <select id="when"><option>Ennen seuraavaa talvea</option><option>Mahdollisimman pian</option><option>Ei vielä tiedossa</option></select>
+        </div>
+        <div class="field full">
+          <label for="msg">Lisätiedot (vapaaehtoinen)</label>
+          <textarea id="msg" rows="3" placeholder="Esim. rakennusvuosi, vuosittainen öljynkulutus tai patterit vs. lattialämmitys"></textarea>
+        </div>
+        <div class="field" id="f-name">
+          <label for="name">Nimi</label>
+          <input id="name" type="text" autocomplete="name" required>
+          <span class="err">Kirjoittakaa nimenne.</span>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="phone">Puhelin</label>
+          <input id="phone" type="tel" autocomplete="tel" required>
+          <span class="err">Puhelinnumero tarvitaan, jotta voin soittaa.</span>
+        </div>
+      </div>
+      <div class="submit-row">
+        <button class="btn btn-primary" type="submit">Lähetä kartoituspyyntö</button>
+        <small>Tietoja käytetään vain kartoituksen sopimiseen.</small>
+      </div>
+      <div class="sent" role="status">
+        <h3>Pyyntö lähetetty</h3>
+        <p>Kiitos! Soitan kahden arkipäivän sisällä. Tämä on esimerkkisivu, joten tietoja ei oikeasti lähetetty minnekään.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Hongiston Lämpö</b> (kuvitteellinen yritys)<br>Maalämpö ja ilmalämpöpumput Uudellamaalla</div>
+    <div>Esimerkkisivu, ei julkaistu yrityksen nimissä. Kuvat: tekoälyllä tehty kuvitus.<br>Sivut: <a href="https://palinweb.fi">Palin Web</a></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-ghost" href="#tarjous">Soita</a>
+  <a class="btn btn-primary" href="#tarjous">Pyydä kartoitus</a>
+</div>
+
+<script src="app.js?v=1" defer></script>
+</body>
+</html>

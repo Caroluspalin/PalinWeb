@@ -26,7 +26,8 @@ portfolio/                      ← git-repo
         ├── kasvokuva.jpg                     1200×1500  ← VAIHDA omaan kuvaan
         └── esimerkit/
             ├── halkola.webp, hongisto.webp   1800×1200  korttikuvat (+ -900-versiot, npm run kuvat)
-            └── ruutu-{halkola,hongisto}.webp 585×3165   heron puhelinruudut (npm run kuvat)
+            ├── ruutu-{halkola,hongisto}.webp 585×3165   heron puhelinruudut (npm run kuvat)
+            └── anim-{halkola,hongisto}.webp  585×1266   puhelinruudun ennen → jälkeen -animaatio (npm run animaatiot)
 ```
 
 ---
@@ -68,6 +69,7 @@ cd tyokalut && npm install
 | Komento | Mitä tekee |
 |---|---|
 | `npm run kuvat` | Ottaa esimerkkisivuista uudet kuvakaappaukset (korttikuvat ja heron puhelinruudut) ja tekee somejaon kuvan `tyokalut/og-kuva.html`-pohjasta. Aja tämä aina, kun muutat esimerkkisivuja. |
+| `npm run animaatiot` | Tekee heron puhelinruudun animaatiot (`anim-*.webp`) esimerkkisivujen heroista. Aja `npm run kuvat` ensin, jos sivut ovat muuttuneet. |
 | `npm run tarkista` | Tarkistaa, ettei millään sivulla ole vaakavieritystä leveyksillä 320–1440 px. |
 | `npm run kasvokuva-paikkamerkki` | Palauttaa harmaan CP-paikkamerkin. **Ylikirjoittaa `kasvokuva.jpg`:n**, joten älä aja tätä, kun oma kuvasi on paikallaan. |
 

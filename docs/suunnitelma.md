@@ -134,4 +134,5 @@ Kilpailijakatsauksen perusteella etusivu kohdennettiin remontti- ja lämpöpumpp
 - **Yhteystiedot:** tekijäkortti (kuva, nimi, "Teen sivut itse ja vastaan itse.", puhelin, sähköposti, vastausaika). Työpöydällä oikealla, mobiilissa ennen sähköpostia.
 - **Footer:** rivi "Laskutus kevytyrittäjäpalvelun kautta." Ei Y-tunnusta.
 - **Mobiilin alapalkki:** oli jo olemassa (`.mobile-bar`, 48 px napit, footerin alapadding), ei muutettu.
-- **Ei tehty:** Halkola- ja Hongisto-kortit (eivät ole tässä repossa, ks. kysymys käyttäjälle) ja heron hintarivi "Remonttisivu alkaen 990 €" (hinnat tulevat seuraavassa tehtävässä; hero näyttää yhä "Paketit alkaen 390 €").
+- **Esimerkkikortit (Halkola, Hongisto):** kolme toimintotagia kummallekin (`.work-toiminnot`). Tagit vastaavat sivujen oikeita osioita. Halkolalla on "Tarjouspyyntö" eikä "Tarjouspyyntö kuvilla", koska esimerkkisivun lomakkeessa ei ole kuvan lähetystä.
+- **Hinta:** hero näyttää "Remonttisivu alkaen 990 €" (tuli GitHubista, ei tämän muutoksen osa).

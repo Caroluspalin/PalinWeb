@@ -125,3 +125,13 @@ Jokaisen vaiheen jälkeen otan kuvakaappaukset (390 ja 1440 px) ja lyhyen videon
    - Lighthouse-raportti
    - vaakavieritys- ja reduced-motion-testit
    - "Design system" -osio tiedostoon `CLAUDE.md`
+
+## 9. Sisältömuutokset 18.11.2026 (kilpailijakatsaus)
+
+Kilpailijakatsauksen perusteella etusivu kohdennettiin remontti- ja lämpöpumppufirmoille ja luottamusta tukevia elementtejä lisättiin. Värit, fontit, avausanimaatio ja Hinta-osio eivät muuttuneet.
+
+- **Hero:** otsikko "Nettisivut remontti- ja lämpöpumppufirmoille." ja uusi alaotsikko (työnjälki, kotitalousvähennys, tarjouspyynnöt). Napien alle rivi "Luonnos on ilmainen. Lasku vasta, kun olette hyväksyneet valmiin sivun." Title, description ja OG-tekstit päivitetty. Pitkä sana katkeaa pehmeällä tavuviivalla (`lämpöpumppu&shy;firmoille`), koska muuten otsikko pitäisi pienentää 320 px:ssä noin 22 px:ään. Tämä poikkeaa säännöstä "pitkät sanat eivät katkea", mutta katko on vain yhdyssanan sauma.
+- **Yhteystiedot:** tekijäkortti (kuva, nimi, "Teen sivut itse ja vastaan itse.", puhelin, sähköposti, vastausaika). Työpöydällä oikealla, mobiilissa ennen sähköpostia.
+- **Footer:** rivi "Laskutus kevytyrittäjäpalvelun kautta." Ei Y-tunnusta.
+- **Mobiilin alapalkki:** oli jo olemassa (`.mobile-bar`, 48 px napit, footerin alapadding), ei muutettu.
+- **Ei tehty:** Halkola- ja Hongisto-kortit (eivät ole tässä repossa, ks. kysymys käyttäjälle) ja heron hintarivi "Remonttisivu alkaen 990 €" (hinnat tulevat seuraavassa tehtävässä; hero näyttää yhä "Paketit alkaen 390 €").

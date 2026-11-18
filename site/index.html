@@ -25,7 +25,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=20261118a">
+  <link rel="stylesheet" href="/styles.css?v=20261118b">
   <script defer src="/alapalkki.js?v=20261108a"></script>
   <script defer src="/liike.js?v=20261108a"></script>
   <script defer src="/kokeilu.js?v=20261108a"></script>
@@ -270,21 +270,29 @@
     <section id="yhteys" class="contact" aria-labelledby="yhteys-otsikko">
       <div class="wrap">
         <h2 id="yhteys-otsikko">Kertokaa yrityksestänne, niin teen ilmaisen luonnoksen.</h2>
-        <p class="contact-sub">Vastaan yleensä arkipäivän sisällä.</p>
-        <a class="contact-email" href="mailto:palin@palinweb.fi?subject=Ilmainen%20luonnos&amp;body=Hei!%0A%0AYrityksen%20nimi%3A%20%0AToimiala%3A%20%0ANykyinen%20nettisivu%20(jos%20on)%3A%20%0APuhelinnumero%3A%20%0A">palin@palinweb.fi</a>
-        <dl class="contact-list">
-          <div>
-            <dt>Puhelin</dt>
-            <dd><a href="tel:+358401792233">040 179 2233</a></dd>
+        <div class="contact-grid">
+          <aside class="me-card" aria-labelledby="me-nimi">
+            <img class="me-photo" src="/kuvat/kasvokuva.jpg" width="1200" height="1500" loading="lazy" decoding="async" alt="Carolus Palin">
+            <div class="me-body">
+              <h3 id="me-nimi">Carolus Palin</h3>
+              <p>Teen sivut itse ja vastaan itse.</p>
+              <p>Teette sivun suoraan tekijän kanssa.</p>
+              <ul class="me-links">
+                <li><a href="tel:+358401792233">040 179 2233</a></li>
+                <li><a href="mailto:palin@palinweb.fi">palin@palinweb.fi</a></li>
+              </ul>
+              <p class="me-vastaus">Vastaan yleensä arkipäivän sisällä.</p>
+            </div>
+          </aside>
+          <div class="contact-main">
+            <a class="contact-email" href="mailto:palin@palinweb.fi?subject=Ilmainen%20luonnos&amp;body=Hei!%0A%0AYrityksen%20nimi%3A%20%0AToimiala%3A%20%0ANykyinen%20nettisivu%20(jos%20on)%3A%20%0APuhelinnumero%3A%20%0A">palin@palinweb.fi</a>
+            <dl class="contact-list">
+              <div>
+                <dt>Alue</dt>
+                <dd>Pääkaupunkiseudulla paikan päällä, etänä koko Suomessa</dd>
+              </div>
+            </dl>
           </div>
-          <div>
-            <dt>Alue</dt>
-            <dd>Pääkaupunkiseudulla paikan päällä, etänä koko Suomessa</dd>
-          </div>
-        </dl>
-        <div class="me">
-          <img class="me-photo" src="/kuvat/kasvokuva.jpg" width="1200" height="1500" loading="lazy" decoding="async" alt="Carolus Palin">
-          <p><strong>Carolus Palin, Palin Web</strong><br>Teen sivut itse ja vastaan itse – yksi ihminen, jolle voi aina soittaa.</p>
         </div>
       </div>
     </section>

@@ -419,14 +419,25 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
   display: block; margin-bottom: 0.6rem;
   font-family: var(--font); font-stretch: 100%; font-size: 1rem; font-weight: 500; letter-spacing: 0; color: var(--harmaa);
 }
-.price-lisa { margin-top: 1.25rem; font-weight: 600; }
-.price-lisa span { display: block; margin-top: 0.35rem; font-weight: 400; color: var(--harmaa); }
+.price-lisa { margin-top: 1.25rem; }
+.price-lisa p { margin: 0 0 0.75rem; }
+.price-lisa > p:first-child { font-weight: 600; }
+.price-vuosi { padding: 0.15rem 0 0.15rem 0.8rem; border-left: 3px solid var(--koboltti); }
+.price-vuosi strong { font-weight: 700; }
+.price-vuosi small { display: block; font-size: 0.875rem; color: var(--harmaa); }
+.price-kk { color: var(--harmaa); font-size: 1rem; }
+.price-kk strong { color: var(--muste); }
+.price-etiketti { display: block; margin-top: 0.25rem; font-size: 0.95rem; font-weight: 500; letter-spacing: 0; color: var(--harmaa); }
+.price-perus .price-amount { font-size: clamp(2rem, 10vw, 3.25rem); }
 .price-list li { padding-block: 0.65rem; border-top: 1px solid var(--hius); }
 .price-list li:last-child { border-bottom: 1px solid var(--hius); }
 
-/* Ylläpito: erillinen rivi pakettien alla */
-.upkeep { padding-block: 2rem 2.5rem; border-top: 1px solid var(--muste); border-bottom: 1px solid var(--muste); }
-.upkeep h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
+/* Sisältyy / ei sisälly: mobiilissa kaksi pinottua listaa, työpöydällä rinnakkain */
+.sisalto-taulu { padding-block: 2rem 2.5rem; border-top: 1px solid var(--muste); border-bottom: 1px solid var(--muste); }
+.sisalto-taulu > h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
+.sisalto-sarakkeet { display: grid; gap: 2rem; margin-top: 1.25rem; }
+.sisalto-sarakkeet h4 { margin: 0 0 0.5rem; font-size: 1rem; font-weight: 700; }
+.sisalto-sarakkeet h4:not(:first-child) { margin-top: 1.75rem; }
 .note { margin-top: 1.25rem; color: var(--harmaa); font-size: 1rem; }
 
 @media (min-width: 56rem) {
@@ -442,9 +453,11 @@ a:hover { color: var(--koboltti-tumma); text-decoration-thickness: 2px; }
   .price-amount { font-size: clamp(3rem, 6vw, 5rem); }
   .price-amount-teksti { font-size: clamp(1.75rem, 2.9vw, 2.5rem); }
 
-  .upkeep { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 2rem; align-items: start; }
-  .upkeep h3 { grid-column: 1 / span 4; }
-  .upkeep .price-list { grid-column: 5 / span 8; }
+  .sisalto-sarakkeet { grid-template-columns: repeat(12, 1fr); column-gap: 2rem; }
+  .sisalto-sarakkeet > div:first-child { grid-column: 1 / span 7; }
+  .sisalto-sarakkeet > div:last-child { grid-column: 9 / span 4; }
+  .price-perus .price-amount { font-size: clamp(2rem, 4vw, 3.25rem); }
+}
 }
 
 /* ---------- UKK ---------- */
